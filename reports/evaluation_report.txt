@@ -1,0 +1,92 @@
+MODEL EVALUATION REPORT
+==================================================
+MODEL PERFORMANCE COMPARISON:
+----------------------------------------
+Naive (7d):
+  MAE: ₹217
+  RMSE: ₹273
+  MAPE: 2.3%
+  SMAPE: 2.3%
+  MASE: 0.880
+  Directional Accuracy: 76.8%
+
+Naive (14d):
+  MAE: ₹217
+  RMSE: ₹273
+  MAPE: 2.3%
+  SMAPE: 2.3%
+  MASE: 0.880
+  Directional Accuracy: 76.8%
+
+Moving_Average (7d):
+  MAE: ₹189
+  RMSE: ₹237
+  MAPE: 2.0%
+  SMAPE: 2.0%
+  MASE: 0.767
+  Directional Accuracy: 77.8%
+
+Moving_Average (14d):
+  MAE: ₹189
+  RMSE: ₹237
+  MAPE: 2.0%
+  SMAPE: 2.0%
+  MASE: 0.767
+  Directional Accuracy: 77.8%
+
+ARIMA (7d):
+  MAE: ₹196
+  RMSE: ₹249
+  MAPE: 2.1%
+  SMAPE: 2.1%
+  MASE: 0.797
+  Directional Accuracy: 77.8%
+
+ARIMA (14d):
+  MAE: ₹196
+  RMSE: ₹249
+  MAPE: 2.1%
+  SMAPE: 2.1%
+  MASE: 0.797
+  Directional Accuracy: 77.8%
+
+Random_Forest (7d):
+  MAE: ₹156
+  RMSE: ₹195
+  MAPE: 1.7%
+  SMAPE: 1.7%
+  MASE: 0.632
+  Directional Accuracy: 74.7%
+
+Random_Forest (14d):
+  MAE: ₹156
+  RMSE: ₹195
+  MAPE: 1.7%
+  SMAPE: 1.7%
+  MASE: 0.632
+  Directional Accuracy: 74.7%
+
+XGBoost (7d):
+  MAE: ₹180
+  RMSE: ₹223
+  MAPE: 1.9%
+  SMAPE: 1.9%
+  MASE: 0.729
+  Directional Accuracy: 62.6%
+
+XGBoost (14d):
+  MAE: ₹180
+  RMSE: ₹223
+  MAPE: 1.9%
+  SMAPE: 1.9%
+  MASE: 0.729
+  Directional Accuracy: 62.6%
+
+BEST MODELS BY METRIC:
+----------------------------------------
+MAE: Random_Forest (155.71)
+RMSE: Random_Forest (194.95)
+MAPE: Random_Forest (1.66)
+SMAPE: Random_Forest (1.66)
+MASE: Random_Forest (0.63)
+Directional_Accuracy: Moving_Average (77.78)
