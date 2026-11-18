@@ -1,0 +1,21 @@
+/* TelanganaMap Styles */
+.custom-mandi-marker {
+  background: transparent;
+  border: none;
+}
+
+.telangana-map-wrapper .leaflet-popup-content-wrapper {
+  border-radius: 12px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.15), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e2e8f0;
+}
+
+.telangana-map-wrapper .leaflet-popup-content {
+  margin: 12px;
+  line-height: 1.4;
+}
+
+.telangana-map-wrapper .leaflet-container {
+  font-family: inherit;
+  z-index: 10;
+}

@@ -1,0 +1,22 @@
+{
+  "name": "telangana-mandi-forecast",
+  "version": "1.0.0",
+  "description": "Smart Mandi Price Forecasting and Sell-Time Advisory System for Telangana Farmers",
+  "scripts": {
+    "dev": "npm --prefix frontend run dev",
+    "build": "npm --prefix frontend run build",
+    "preview": "npm --prefix frontend run preview",
+    "app": "cd app && streamlit run app.py"
+  },
+  "keywords": [
+    "mandi",
+    "agriculture",
+    "telangana",
+    "price-forecasting",
+    "react",
+    "leaflet",
+    "machine-learning"
+  ],
+  "author": "Smart Mandi Team",
+  "license": "MIT"
+}

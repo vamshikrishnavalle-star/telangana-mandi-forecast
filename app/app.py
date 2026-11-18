@@ -182,6 +182,86 @@ if page == "🏠 Home":
                  barmode='group')
     st.plotly_chart(fig, use_container_width=True)
 
+    # ==================== TELANGANA MAP SECTION ====================
+    st.markdown("---")
+    st.subheader("🗺️ Telangana Market Yard Geospatial Map & Distances")
+    
+    yard_geo = {
+        'Hyderabad RCI Market': {'lat': 17.3850, 'lon': 78.4867, 'district': 'Hyderabad', 'type': 'Primary'},
+        'Warangal Gurramguda': {'lat': 17.9784, 'lon': 79.6023, 'district': 'Warangal', 'type': 'Primary'},
+        'Karimnagar BCCL Market': {'lat': 18.4385, 'lon': 79.1287, 'district': 'Karimnagar', 'type': 'Primary'},
+        'Nizamabad': {'lat': 18.6725, 'lon': 78.0941, 'district': 'Nizamabad', 'type': 'Secondary'},
+        'Khammam': {'lat': 17.2473, 'lon': 80.1514, 'district': 'Khammam', 'type': 'Secondary'},
+        'Adilabad': {'lat': 19.6641, 'lon': 78.5320, 'district': 'Adilabad', 'type': 'Secondary'},
+    }
+    
+    map_col1, map_col2 = st.columns([2, 1])
+    
+    with map_col2:
+        st.markdown("##### Reference Origin Mandi")
+        ref_yard = st.selectbox("Select Origin Mandi", list(yard_geo.keys()), key="home_ref_yard")
+        show_lines = st.checkbox("Show Distance Lines to Other Mandis", value=True)
+        
+        def calc_km(lat1, lon1, lat2, lon2):
+            R = 6371
+            dlat = np.radians(lat2 - lat1)
+            dlon = np.radians(lon2 - lon1)
+            a = np.sin(dlat/2)**2 + np.cos(np.radians(lat1)) * np.cos(np.radians(lat2)) * np.sin(dlon/2)**2
+            return int(R * 2 * np.arctan2(np.sqrt(a), np.sqrt(1 - a)))
+            
+        ref_info = yard_geo[ref_yard]
+        dist_list = []
+        for name, info in yard_geo.items():
+            if name != ref_yard:
+                d = calc_km(ref_info['lat'], ref_info['lon'], info['lat'], info['lon'])
+                dist_list.append({'Mandi': name, 'District': info['district'], 'Distance (km)': d})
+        
+        dist_df = pd.DataFrame(dist_list).sort_values('Distance (km)')
+        st.dataframe(dist_df, use_container_width=True, hide_index=True)
+    
+    with map_col1:
+        geo_df = pd.DataFrame([
+            {
+                'yard': name,
+                'lat': info['lat'],
+                'lon': info['lon'],
+                'district': info['district'],
+                'type': info['type'],
+                'size': 20 if info['type'] == 'Primary' else 14
+            }
+            for name, info in yard_geo.items()
+        ])
+        
+        fig_map = px.scatter_mapbox(
+            geo_df,
+            lat='lat',
+            lon='lon',
+            hover_name='yard',
+            hover_data={'district': True, 'type': True, 'lat': False, 'lon': False, 'size': False},
+            color='type',
+            color_discrete_map={'Primary': '#16a34a', 'Secondary': '#0284c7'},
+            size='size',
+            zoom=6.2,
+            center={'lat': 18.2, 'lon': 79.1},
+            mapbox_style='carto-positron',
+            title=f"Market Yards across Telangana (Origin: {ref_yard})"
+        )
+        
+        if show_lines:
+            for _, row in dist_df.iterrows():
+                target_info = yard_geo[row['Mandi']]
+                fig_map.add_trace(go.Scattermapbox(
+                    lat=[ref_info['lat'], target_info['lat']],
+                    lon=[ref_info['lon'], target_info['lon']],
+                    mode='lines',
+                    line=dict(width=2, color='rgba(239, 68, 68, 0.7)'),
+                    name=f"to {row['Mandi']} ({row['Distance (km)']} km)",
+                    hoverinfo='name'
+                ))
+                
+        fig_map.update_layout(margin={"r":0,"t":40,"l":0,"b":0}, height=450)
+        st.plotly_chart(fig_map, use_container_width=True)
+
 # ==================== PRICE FORECAST PAGE ====================
 elif page == "📈 Price Forecast":
     st.header("📈 Price Forecasting")
