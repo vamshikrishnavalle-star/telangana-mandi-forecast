@@ -1,48 +1,74 @@
-# Deployment Guide for Smart Mandi Advisory System
+# Production Deployment Guide: Smart Mandi Advisory
 
-## Streamlit Community Cloud Deployment
+This guide details how to deploy the **FastAPI Backend**, **React Frontend**, and **Streamlit Dashboard**.
 
-### Prerequisites
-1. GitHub repository with the project code (`https://github.com/vamshikrishnavalle-star/telangana-mandi-forecast.git`)
-2. Streamlit Community Cloud account
+---
 
-### Deployment Steps
-1. Fork or push the repository to your GitHub account
-2. Go to [Streamlit Community Cloud](https://share.streamlit.io/)
-3. Click "New app"
-4. Select your repository: `telangana-mandi-forecast`
-5. Set branch: `main`
-6. Set the main file path to: `app/app.py`
-7. Click "Deploy"
+## 1. FastAPI Backend Deployment (Render / Railway)
 
-### Environment Variables
-Set the following environment variables in Streamlit Community Cloud if required:
-- `DATA_PATH`: Path to your data directory (defaults to `data/processed/market_data_cleaned.csv`)
-- `MODEL_PATH`: Path to your trained models (`models/`)
+### Deploying on Render (Free Tier)
+1. Sign in to [Render](https://render.com) with GitHub.
+2. Click **New +** -> **Web Service**.
+3. Connect repository: `vamshikrishnavalle-star/telangana-mandi-forecast`.
+4. Configure:
+   - **Name**: `telangana-mandi-api`
+   - **Region**: `Singapore` (closest to India)
+   - **Branch**: `main`
+   - **Runtime**: `Python 3`
+   - **Build Command**:
+     ```bash
+     pip install -r requirements.txt && pip install fastapi uvicorn pydantic requests
+     ```
+   - **Start Command**:
+     ```bash
+     uvicorn backend.app:app --host 0.0.0.0 --port $PORT
+     ```
+   - **Instance Type**: `Free`
+5. Click **Deploy**. Note your live URL (e.g. `https://telangana-mandi-api.onrender.com`).
+6. Verify by opening `https://<YOUR-APP>.onrender.com/docs`.
 
-## Local Deployment
+---
 
-### Using Docker
+## 2. React + Leaflet Frontend Deployment (Vercel)
+
+### Deploying on Vercel
+1. Sign in to [Vercel](https://vercel.com) with GitHub.
+2. Click **Add New...** -> **Project**.
+3. Import `vamshikrishnavalle-star/telangana-mandi-forecast`.
+4. Configure settings:
+   - **Framework Preset**: `Vite`
+   - **Root Directory**: `frontend` (Click Edit and select the `frontend` folder)
+   - **Build Command**: `npm run build`
+   - **Output Directory**: `dist`
+5. Set Environment Variable:
+   - **Name**: `VITE_API_BASE_URL`
+   - **Value**: `https://<YOUR-RENDER-API-URL>/api/v1`
+6. Click **Deploy**. Your React app with the Telangana map will be live globally.
+
+---
+
+## 3. Docker Deployment (Single Server / AWS EC2 / DigitalOcean)
+
+To host both frontend and backend on a single server:
 ```bash
-docker build -t smart-mandi-advisory .
-docker run -p 8501:8501 smart-mandi-advisory
-```
-
-### Manual Installation
-```bash
-# Clone repository
+# Clone repository on your VPS
 git clone https://github.com/vamshikrishnavalle-star/telangana-mandi-forecast.git
 cd telangana-mandi-forecast
 
-# Install dependencies
-pip install -r requirements.txt
+# Build multi-stage Docker container (React + Nginx + FastAPI)
+docker build -t smart-mandi .
 
-# Run Streamlit dashboard
-cd app
-streamlit run app.py
+# Run on port 80
+docker run -d -p 80:80 --restart always --name smart-mandi-app smart-mandi
 ```
+Now navigating to `http://<YOUR-SERVER-IP>` serves the React frontend, and `/api/` routes directly to the FastAPI backend.
 
-## Performance Optimization
-- Caching with `@st.cache_data` and `@st.cache_resource` for instant loading
-- Vectorized pandas lag/rolling transformations
-- Interactive Plotly figures optimized for browser responsiveness
+---
+
+## 4. Streamlit Python App Deployment (Streamlit Community Cloud)
+
+1. Sign in to [share.streamlit.io](https://share.streamlit.io/).
+2. Click **New app**.
+3. Select repository: `vamshikrishnavalle-star/telangana-mandi-forecast`.
+4. Main file path: `app/app.py`.
+5. Click **Deploy**.
