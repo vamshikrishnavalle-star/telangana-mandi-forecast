@@ -1,15 +1,41 @@
-import React, { useState } from 'react';
-import TelanganaMap, { defaultMarketYards, haversineDistance } from '../components/ui/TelanganaMap';
+import React, { useState, useEffect } from 'react';
+import TelanganaMap, { defaultMarketYards, haversineDistance, MarketYard } from '../components/ui/TelanganaMap';
 import RecommendationCard from '../components/ui/RecommendationCard';
-import { MapPin, Navigation, TrendingUp, DollarSign, Calendar, ShieldCheck } from 'lucide-react';
+import { MapPin, Navigation, TrendingUp, DollarSign, Calendar, ShieldCheck, Radio } from 'lucide-react';
+import { api, LatestPriceItem } from '../api/client';
 
 export const Dashboard: React.FC = () => {
   const [selectedYard, setSelectedYard] = useState<string>('Hyderabad RCI Market');
   const [showDistances, setShowDistances] = useState<boolean>(true);
   const [selectedCrop, setSelectedCrop] = useState<string>('Cotton');
+  const [livePrices, setLivePrices] = useState<LatestPriceItem[]>([]);
+  const [isLiveConnected, setIsLiveConnected] = useState<boolean>(false);
+  const [yards, setYards] = useState<MarketYard[]>(defaultMarketYards);
+
+  // Fetch real-time mandi prices on mount
+  useEffect(() => {
+    async function loadRealtimePrices() {
+      const prices = await api.getLatestPrices();
+      if (prices && prices.length > 0) {
+        setLivePrices(prices);
+        setIsLiveConnected(true);
+
+        // Update yards with live modal prices
+        setYards((prevYards) =>
+          prevYards.map((y) => {
+            const match = prices.find(
+              (p) => p.market_yard.toLowerCase().includes(y.name.split(' ')[0].toLowerCase())
+            );
+            return match ? { ...y, currentPrice: Math.round(match.modal_price) } : y;
+          })
+        );
+      }
+    }
+    loadRealtimePrices();
+  }, []);
 
   // Currently selected yard object
-  const currentYardObj = defaultMarketYards.find((y) => y.name === selectedYard) || defaultMarketYards[0];
+  const currentYardObj = yards.find((y) => y.name === selectedYard) || yards[0];
 
   // Recommendations data
   const sampleRecommendations = [
@@ -112,10 +138,18 @@ export const Dashboard: React.FC = () => {
       <section className="space-y-4">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white p-4 rounded-2xl border border-slate-200 shadow-sm">
           <div>
-            <h2 className="text-lg font-bold text-slate-900 flex items-center gap-2">
-              <MapPin className="w-5 h-5 text-emerald-600" />
-              Telangana Market Yards & Distance Network
-            </h2>
+            <div className="flex items-center gap-2">
+              <h2 className="text-lg font-bold text-slate-900 flex items-center gap-2">
+                <MapPin className="w-5 h-5 text-emerald-600" />
+                Telangana Market Yards & Distance Network
+              </h2>
+              {isLiveConnected && (
+                <span className="text-[10px] bg-emerald-100 text-emerald-800 font-bold px-2 py-0.5 rounded-full flex items-center gap-1 border border-emerald-300">
+                  <Radio className="w-3 h-3 text-emerald-600 animate-pulse" />
+                  Live API Feed
+                </span>
+              )}
+            </div>
             <p className="text-xs text-slate-500">
               Select any reference mandi to measure haul distances and identify regional price spreads.
             </p>
@@ -153,6 +187,7 @@ export const Dashboard: React.FC = () => {
           selectedYard={selectedYard}
           showDistances={showDistances}
           onSelectYard={(yard) => setSelectedYard(yard)}
+          yards={yards}
         />
       </section>
 
