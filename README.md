@@ -9,7 +9,7 @@
 
 | Service | Platform | URL | Status |
 |:--------|:---------|:----|:-------|
-| **React Dashboard** (Frontend) | Vercel | _Deploying — link will appear here after Vercel build succeeds_ | 🟡 Building |
+| **React Dashboard** (Frontend) | Vercel | https://telangana-mandi-forecast.vercel.app/ | 🟢 Live  |
 | **FastAPI Backend** | Render | [https://telangana-mandi-forecast.onrender.com](https://telangana-mandi-forecast.onrender.com) | 🟢 Live |
 | **API Docs (Swagger UI)** | Render | [https://telangana-mandi-forecast.onrender.com/docs](https://telangana-mandi-forecast.onrender.com/docs) | 🟢 Live |
 
