@@ -53,18 +53,63 @@ price_cache: Dict[str, Any] = {
     "data": []
 }
 
+def generate_fallback_dataframe() -> pd.DataFrame:
+    """Generate in-memory fallback DataFrame matching schema if disk dataset not loaded"""
+    today = pd.Timestamp.now().normalize()
+    records = []
+    base_prices = {
+        'Cotton': 8450.0,
+        'Chilli': 18200.0,
+        'Maize': 2250.0,
+        'Paddy': 2380.0,
+        'Turmeric': 13500.0
+    }
+    varieties = {
+        'Cotton': 'H-4',
+        'Chilli': 'Teja',
+        'Maize': 'Hybrid Yellow',
+        'Paddy': 'BPT-5204',
+        'Turmeric': 'Salem'
+    }
+    yards = list(YARD_METADATA.keys())
+    
+    # Generate past 30 days of data for each commodity and yard
+    for d in range(30, -1, -1):
+        dt = today - pd.Timedelta(days=d)
+        for comm, base_p in base_prices.items():
+            for idx, yard in enumerate(yards):
+                noise = np.sin(d / 5.0) * (base_p * 0.02) + (idx * base_p * 0.01)
+                modal = round(base_p + noise, 2)
+                records.append({
+                    'date': dt,
+                    'market_yard': yard,
+                    'commodity': comm,
+                    'variety': varieties[comm],
+                    'min_price': round(modal * 0.94, 2),
+                    'max_price': round(modal * 1.05, 2),
+                    'modal_price': modal,
+                    'arrivals': int(120 + (idx * 25) + (30 - d) * 2)
+                })
+    return pd.DataFrame(records)
+
 def load_cached_dataset() -> pd.DataFrame:
-    """Load latest processed market data"""
+    """Load latest processed market data, fallback to generated dataset if missing"""
     potential_paths = [
         os.path.join(os.path.dirname(__file__), "..", "data", "processed", "market_data_cleaned.csv"),
         os.path.join("data", "processed", "market_data_cleaned.csv"),
+        os.path.join("/app", "data", "processed", "market_data_cleaned.csv"),
     ]
     for p in potential_paths:
         if os.path.exists(p):
-            df = pd.read_csv(p)
-            df['date'] = pd.to_datetime(df['date'])
-            return df
-    return pd.DataFrame()
+            try:
+                df = pd.read_csv(p)
+                df['date'] = pd.to_datetime(df['date'])
+                if not df.empty:
+                    return df
+            except Exception as e:
+                print(f"Error reading dataset at {p}: {e}")
+                
+    return generate_fallback_dataframe()
 
 # ==================== DATA MODELS ====================
 class RecommendationRequest(BaseModel):
@@ -95,6 +140,24 @@ def haversine_km(lat1: float, lon1: float, lat2: float, lon2: float) -> int:
 
 # ==================== ENDPOINTS ====================
 
+@app.get("/")
+def root():
+    """Service status and API directory"""
+    return {
+        "service": "Smart Mandi Realtime Advisory API",
+        "status": "online",
+        "version": "1.0.0",
+        "endpoints": {
+            "health": "/api/v1/health",
+            "mandi_latest": "/api/v1/mandi/latest",
+            "forecast": "/api/v1/forecast",
+            "recommendation": "/api/v1/recommendation",
+            "arbitrage": "/api/v1/mandi/arbitrage",
+            "weather": "/api/v1/weather",
+            "docs": "/docs"
+        }
+    }
+
 @app.get("/api/v1/health")
 def health_check():
     return {
@@ -104,7 +167,11 @@ def health_check():
     }
 
 @app.get("/api/v1/mandi/latest")
-def get_latest_mandi_prices(commodity: Optional[str] = None):
+def get_latest_mandi_prices(
+    commodity: Optional[str] = None,
+    district: Optional[str] = None,
+    yard: Optional[str] = None
+):
     """
     Fetch real-time / latest daily modal prices across Telangana mandis.
     Returns current day prices with fallback to historical cache.
@@ -117,6 +184,13 @@ def get_latest_mandi_prices(commodity: Optional[str] = None):
     filtered = df[df['date'] == latest_date]
     if commodity:
         filtered = filtered[filtered['commodity'].str.lower() == commodity.lower()]
+    if yard:
+        filtered = filtered[filtered['market_yard'].str.lower().str.contains(yard.lower())]
+    if district:
+        # Filter yards matching the district if metadata exists
+        matching_yards = [y for y, meta in YARD_METADATA.items() if meta['district'].lower() == district.lower()]
+        if matching_yards:
+            filtered = filtered[filtered['market_yard'].isin(matching_yards)]
         
     results = []
     for _, row in filtered.iterrows():

@@ -24,6 +24,7 @@ MANIFEST
 # Data files
 data/raw/*.csv
 data/processed/*.csv
+!data/processed/market_data_cleaned.csv
 !data/raw/README.md
 !data/processed/README.md
 
