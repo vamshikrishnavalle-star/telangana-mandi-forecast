@@ -1,0 +1,113 @@
+{
+  "crop": "Cotton",
+  "yard": "Nalgonda",
+  "horizon": 14,
+  "asOf": "2026-11-19",
+  "currentPrice": 7603,
+  "forecastPrice": 8056,
+  "expectedChangePct": 4.1,
+  "rangeMin": 7634,
+  "rangeMax": 8056,
+  "confidence": 0.88,
+  "model": "Random Forest",
+  "points": [
+    {
+      "day": 1,
+      "date": "2026-11-20",
+      "forecast": 7634,
+      "lower": 7507,
+      "upper": 7761
+    },
+    {
+      "day": 2,
+      "date": "2026-11-21",
+      "forecast": 7666,
+      "lower": 7486,
+      "upper": 7846
+    },
+    {
+      "day": 3,
+      "date": "2026-11-22",
+      "forecast": 7698,
+      "lower": 7477,
+      "upper": 7919
+    },
+    {
+      "day": 4,
+      "date": "2026-11-23",
+      "forecast": 7730,
+      "lower": 7473,
+      "upper": 7987
+    },
+    {
+      "day": 5,
+      "date": "2026-11-24",
+      "forecast": 7762,
+      "lower": 7474,
+      "upper": 8050
+    },
+    {
+      "day": 6,
+      "date": "2026-11-25",
+      "forecast": 7794,
+      "lower": 7477,
+      "upper": 8111
+    },
+    {
+      "day": 7,
+      "date": "2026-11-26",
+      "forecast": 7826,
+      "lower": 7482,
+      "upper": 8170
+    },
+    {
+      "day": 8,
+      "date": "2026-11-27",
+      "forecast": 7858,
+      "lower": 7489,
+      "upper": 8227
+    },
+    {
+      "day": 9,
+      "date": "2026-11-28",
+      "forecast": 7891,
+      "lower": 7498,
+      "upper": 8284
+    },
+    {
+      "day": 10,
+      "date": "2026-11-29",
+      "forecast": 7924,
+      "lower": 7508,
+      "upper": 8340
+    },
+    {
+      "day": 11,
+      "date": "2026-11-30",
+      "forecast": 7957,
+      "lower": 7519,
+      "upper": 8395
+    },
+    {
+      "day": 12,
+      "date": "2026-12-01",
+      "forecast": 7990,
+      "lower": 7531,
+      "upper": 8449
+    },
+    {
+      "day": 13,
+      "date": "2026-12-02",
+      "forecast": 8023,
+      "lower": 7543,
+      "upper": 8503
+    },
+    {
+      "day": 14,
+      "date": "2026-12-03",
+      "forecast": 8056,
+      "lower": 7556,
+      "upper": 8556
+    }
+  ]
+}

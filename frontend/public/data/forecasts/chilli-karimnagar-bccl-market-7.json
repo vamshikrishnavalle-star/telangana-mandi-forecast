@@ -1,0 +1,64 @@
+{
+  "crop": "Chilli",
+  "yard": "Karimnagar BCCL Market",
+  "horizon": 7,
+  "asOf": "2026-11-19",
+  "currentPrice": 12542,
+  "forecastPrice": 12937,
+  "expectedChangePct": 3.1,
+  "rangeMin": 12598,
+  "rangeMax": 12937,
+  "confidence": 0.95,
+  "model": "Random Forest",
+  "points": [
+    {
+      "day": 1,
+      "date": "2026-11-20",
+      "forecast": 12598,
+      "lower": 12389,
+      "upper": 12807
+    },
+    {
+      "day": 2,
+      "date": "2026-11-21",
+      "forecast": 12654,
+      "lower": 12357,
+      "upper": 12951
+    },
+    {
+      "day": 3,
+      "date": "2026-11-22",
+      "forecast": 12710,
+      "lower": 12345,
+      "upper": 13075
+    },
+    {
+      "day": 4,
+      "date": "2026-11-23",
+      "forecast": 12766,
+      "lower": 12342,
+      "upper": 13190
+    },
+    {
+      "day": 5,
+      "date": "2026-11-24",
+      "forecast": 12823,
+      "lower": 12347,
+      "upper": 13299
+    },
+    {
+      "day": 6,
+      "date": "2026-11-25",
+      "forecast": 12880,
+      "lower": 12356,
+      "upper": 13404
+    },
+    {
+      "day": 7,
+      "date": "2026-11-26",
+      "forecast": 12937,
+      "lower": 12369,
+      "upper": 13505
+    }
+  ]
+}

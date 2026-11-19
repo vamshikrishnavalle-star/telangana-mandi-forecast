@@ -1,0 +1,64 @@
+{
+  "crop": "Maize",
+  "yard": "Khammam",
+  "horizon": 7,
+  "asOf": "2026-11-19",
+  "currentPrice": 2261,
+  "forecastPrice": 2268,
+  "expectedChangePct": 0.2,
+  "rangeMin": 2262,
+  "rangeMax": 2268,
+  "confidence": 0.95,
+  "model": "Random Forest",
+  "points": [
+    {
+      "day": 1,
+      "date": "2026-11-20",
+      "forecast": 2262,
+      "lower": 2224,
+      "upper": 2300
+    },
+    {
+      "day": 2,
+      "date": "2026-11-21",
+      "forecast": 2263,
+      "lower": 2210,
+      "upper": 2316
+    },
+    {
+      "day": 3,
+      "date": "2026-11-22",
+      "forecast": 2264,
+      "lower": 2199,
+      "upper": 2329
+    },
+    {
+      "day": 4,
+      "date": "2026-11-23",
+      "forecast": 2265,
+      "lower": 2190,
+      "upper": 2340
+    },
+    {
+      "day": 5,
+      "date": "2026-11-24",
+      "forecast": 2266,
+      "lower": 2182,
+      "upper": 2350
+    },
+    {
+      "day": 6,
+      "date": "2026-11-25",
+      "forecast": 2267,
+      "lower": 2175,
+      "upper": 2359
+    },
+    {
+      "day": 7,
+      "date": "2026-11-26",
+      "forecast": 2268,
+      "lower": 2168,
+      "upper": 2368
+    }
+  ]
+}

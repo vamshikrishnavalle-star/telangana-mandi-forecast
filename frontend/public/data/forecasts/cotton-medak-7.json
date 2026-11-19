@@ -1,0 +1,64 @@
+{
+  "crop": "Cotton",
+  "yard": "Medak",
+  "horizon": 7,
+  "asOf": "2026-11-19",
+  "currentPrice": 8556,
+  "forecastPrice": 8730,
+  "expectedChangePct": 2.0,
+  "rangeMin": 8580,
+  "rangeMax": 8730,
+  "confidence": 0.95,
+  "model": "Random Forest",
+  "points": [
+    {
+      "day": 1,
+      "date": "2026-11-20",
+      "forecast": 8580,
+      "lower": 8438,
+      "upper": 8722
+    },
+    {
+      "day": 2,
+      "date": "2026-11-21",
+      "forecast": 8605,
+      "lower": 8403,
+      "upper": 8807
+    },
+    {
+      "day": 3,
+      "date": "2026-11-22",
+      "forecast": 8630,
+      "lower": 8382,
+      "upper": 8878
+    },
+    {
+      "day": 4,
+      "date": "2026-11-23",
+      "forecast": 8655,
+      "lower": 8368,
+      "upper": 8942
+    },
+    {
+      "day": 5,
+      "date": "2026-11-24",
+      "forecast": 8680,
+      "lower": 8358,
+      "upper": 9002
+    },
+    {
+      "day": 6,
+      "date": "2026-11-25",
+      "forecast": 8705,
+      "lower": 8351,
+      "upper": 9059
+    },
+    {
+      "day": 7,
+      "date": "2026-11-26",
+      "forecast": 8730,
+      "lower": 8347,
+      "upper": 9113
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "crop": "Paddy",
+  "yard": "Nalgonda",
+  "horizon": 7,
+  "asOf": "2026-11-19",
+  "currentPrice": 1947,
+  "forecastPrice": 2003,
+  "expectedChangePct": 2.9,
+  "rangeMin": 1955,
+  "rangeMax": 2003,
+  "confidence": 0.95,
+  "model": "Random Forest",
+  "points": [
+    {
+      "day": 1,
+      "date": "2026-11-20",
+      "forecast": 1955,
+      "lower": 1923,
+      "upper": 1987
+    },
+    {
+      "day": 2,
+      "date": "2026-11-21",
+      "forecast": 1963,
+      "lower": 1917,
+      "upper": 2009
+    },
+    {
+      "day": 3,
+      "date": "2026-11-22",
+      "forecast": 1971,
+      "lower": 1914,
+      "upper": 2028
+    },
+    {
+      "day": 4,
+      "date": "2026-11-23",
+      "forecast": 1979,
+      "lower": 1913,
+      "upper": 2045
+    },
+    {
+      "day": 5,
+      "date": "2026-11-24",
+      "forecast": 1987,
+      "lower": 1913,
+      "upper": 2061
+    },
+    {
+      "day": 6,
+      "date": "2026-11-25",
+      "forecast": 1995,
+      "lower": 1914,
+      "upper": 2076
+    },
+    {
+      "day": 7,
+      "date": "2026-11-26",
+      "forecast": 2003,
+      "lower": 1915,
+      "upper": 2091
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "crop": "Cotton",
+  "yard": "Khammam",
+  "horizon": 14,
+  "asOf": "2026-11-19",
+  "currentPrice": 8565,
+  "forecastPrice": 8593,
+  "expectedChangePct": 0.3,
+  "rangeMin": 8567,
+  "rangeMax": 8593,
+  "confidence": 0.88,
+  "model": "Random Forest",
+  "points": [
+    {
+      "day": 1,
+      "date": "2026-11-20",
+      "forecast": 8567,
+      "lower": 8425,
+      "upper": 8709
+    },
+    {
+      "day": 2,
+      "date": "2026-11-21",
+      "forecast": 8569,
+      "lower": 8368,
+      "upper": 8770
+    },
+    {
+      "day": 3,
+      "date": "2026-11-22",
+      "forecast": 8571,
+      "lower": 8325,
+      "upper": 8817
+    },
+    {
+      "day": 4,
+      "date": "2026-11-23",
+      "forecast": 8573,
+      "lower": 8288,
+      "upper": 8858
+    },
+    {
+      "day": 5,
+      "date": "2026-11-24",
+      "forecast": 8575,
+      "lower": 8257,
+      "upper": 8893
+    },
+    {
+      "day": 6,
+      "date": "2026-11-25",
+      "forecast": 8577,
+      "lower": 8228,
+      "upper": 8926
+    },
+    {
+      "day": 7,
+      "date": "2026-11-26",
+      "forecast": 8579,
+      "lower": 8202,
+      "upper": 8956
+    },
+    {
+      "day": 8,
+      "date": "2026-11-27",
+      "forecast": 8581,
+      "lower": 8178,
+      "upper": 8984
+    },
+    {
+      "day": 9,
+      "date": "2026-11-28",
+      "forecast": 8583,
+      "lower": 8156,
+      "upper": 9010
+    },
+    {
+      "day": 10,
+      "date": "2026-11-29",
+      "forecast": 8585,
+      "lower": 8134,
+      "upper": 9036
+    },
+    {
+      "day": 11,
+      "date": "2026-11-30",
+      "forecast": 8587,
+      "lower": 8114,
+      "upper": 9060
+    },
+    {
+      "day": 12,
+      "date": "2026-12-01",
+      "forecast": 8589,
+      "lower": 8095,
+      "upper": 9083
+    },
+    {
+      "day": 13,
+      "date": "2026-12-02",
+      "forecast": 8591,
+      "lower": 8077,
+      "upper": 9105
+    },
+    {
+      "day": 14,
+      "date": "2026-12-03",
+      "forecast": 8593,
+      "lower": 8059,
+      "upper": 9127
+    }
+  ]
+}

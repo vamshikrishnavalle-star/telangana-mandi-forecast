@@ -1,5 +1,6 @@
-import React from 'react';
-import { MODEL_PERFORMANCE } from '../data/staticData';
+import React, { useEffect, useState } from 'react';
+import { loadModels, ModelMetrics } from '../services/dataLoader';
+import { AgCard, Callout } from '../components/agfarm/Common';
 import {
   BarChart,
   Bar,
@@ -10,177 +11,183 @@ import {
   ResponsiveContainer,
   Cell
 } from 'recharts';
-import { Award, BarChart3, CheckCircle2 } from 'lucide-react';
+import { BarChart3, CheckCircle2 } from 'lucide-react';
 
 export const ModelPerformancePage: React.FC = () => {
-  // Sort by MAE ascending (best to worst)
-  const sortedByMAE = [...MODEL_PERFORMANCE].sort((a, b) => a.mae - b.mae);
+  const [models, setModels] = useState<ModelMetrics[]>([]);
 
-  // Gradient colors
-  const redColors = ['#991b1b', '#dc2626', '#ea580c', '#f97316', '#fdba74'];
-  const blueColors = ['#1e3a8a', '#2563eb', '#38bdf8', '#7dd3fc', '#bae6fd'];
-  const greenColors = ['#15803d', '#16a34a', '#22c55e', '#4ade80', '#86efac'];
+  useEffect(() => {
+    loadModels().then(setModels);
+  }, []);
+
+  const sortedByMAE = [...models].sort((a, b) => a.mae - b.mae);
+  const bestModel = sortedByMAE[0] || { model: 'Random Forest', mae: 155.71, mape: 1.66 };
 
   return (
     <div className="space-y-8">
       {/* Header */}
-      <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-xl space-y-2">
-        <h1 className="text-xl font-bold text-white flex items-center gap-2">
-          <BarChart3 className="w-5 h-5 text-emerald-400" />
-          📊 Model Performance
+      <div>
+        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-100 text-brand-900 text-xs font-bold mb-2">
+          <BarChart3 className="w-3.5 h-3.5" />
+          <span>Evaluation Benchmark</span>
+        </div>
+        <h1 className="text-3xl sm:text-4xl font-black text-ink-900 tracking-tight">
+          Model Performance
         </h1>
-        <p className="text-xs text-slate-400">
-          Validation metrics across historical datasets (2020–2026) evaluating 5 forecasting algorithms
+        <p className="text-xs text-ink-600 mt-1">
+          Rigorous out-of-sample backtesting against 7 years of Telangana daily mandi arrivals (2020–2026)
         </p>
       </div>
 
-      {/* Best Model Banner */}
-      <div className="bg-emerald-950/60 border border-emerald-500/40 rounded-xl p-4 flex items-center gap-3 text-emerald-200">
-        <Award className="w-6 h-6 text-emerald-400 shrink-0" />
-        <div>
-          <p className="text-sm font-bold">
-            🏆 Best Performing Model: Random Forest with MAE of ₹155.71 and MAPE of 1.66%
-          </p>
-          <p className="text-xs text-emerald-300/80">
-            Achieves 74.8% Directional Accuracy with lowest Mean Absolute Scaled Error (0.632)
-          </p>
-        </div>
-      </div>
+      {/* Dynamic Best Model Callout Banner */}
+      <Callout
+        kind="success"
+        title={`Best Performing Model: ${bestModel.model} with MAE of ₹${bestModel.mae.toFixed(2)} and MAPE of ${bestModel.mape.toFixed(2)}%`}
+      >
+        Criterion: lowest Mean Absolute Error across test folds. Minimizes rupee-per-quintal prediction deviation.
+      </Callout>
 
-      {/* Metrics Table */}
-      <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-xl space-y-4">
-        <h2 className="text-base font-bold text-white">
+      {/* Validation Metrics Table */}
+      <AgCard className="space-y-4">
+        <h2 className="text-base font-bold text-ink-900">
           Model Performance Metrics (Validated 2020–2026)
         </h2>
 
         <div className="overflow-x-auto">
           <table className="w-full text-left text-xs">
-            <thead className="bg-slate-800 text-slate-300 uppercase font-bold text-[10px] tracking-wider border-b border-slate-700">
+            <thead className="bg-surface text-ink-600 uppercase font-bold text-[10px] tracking-wider border-b border-black/5">
               <tr>
                 <th className="py-3 px-4">Model</th>
                 <th className="py-3 px-4">MAE (₹/q)</th>
                 <th className="py-3 px-4">RMSE (₹/q)</th>
                 <th className="py-3 px-4">MAPE (%)</th>
                 <th className="py-3 px-4">MASE</th>
-                <th className="py-3 px-4">Directional Accuracy (%)</th>
+                <th className="py-3 px-4 text-right">Directional Accuracy (%)</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-slate-800 font-medium text-slate-200">
+            <tbody className="divide-y divide-black/5 font-medium text-ink-900">
               {sortedByMAE.map((m, idx) => (
-                <tr
-                  key={m.model}
-                  className={`hover:bg-slate-800/60 transition-colors ${
-                    idx === 0 ? 'bg-emerald-950/40 font-bold' : ''
-                  }`}
-                >
-                  <td className="py-3 px-4 flex items-center gap-2">
-                    {idx === 0 && <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />}
-                    <span className="text-white">{m.model}</span>
+                <tr key={m.model} className={`hover:bg-brand-100/30 transition-colors ${idx === 0 ? 'bg-brand-100/20 font-bold' : ''}`}>
+                  <td className="py-3.5 px-4 font-bold flex items-center gap-2">
+                    {idx === 0 && <CheckCircle2 className="w-4 h-4 text-brand-900" />}
+                    <span>{m.model}</span>
                     {idx === 0 && (
-                      <span className="text-[10px] bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 px-1.5 py-0.5 rounded">
-                        Top Rank
+                      <span className="text-[10px] bg-brand-900 text-white px-2 py-0.5 rounded-full font-bold ml-1">
+                        Best Performer
                       </span>
                     )}
                   </td>
-                  <td className="py-3 px-4 text-emerald-400 font-bold">{m.mae.toFixed(2)}</td>
-                  <td className="py-3 px-4">{m.rmse.toFixed(2)}</td>
-                  <td className="py-3 px-4 text-sky-400 font-bold">{m.mape.toFixed(2)}%</td>
-                  <td className="py-3 px-4">{m.mase.toFixed(3)}</td>
-                  <td className="py-3 px-4 text-amber-400">{m.da.toFixed(2)}%</td>
+                  <td className="py-3.5 px-4 font-black text-brand-900">₹{m.mae.toFixed(2)}</td>
+                  <td className="py-3.5 px-4 text-ink-600">₹{m.rmse.toFixed(2)}</td>
+                  <td className="py-3.5 px-4 font-bold text-emerald-800">{m.mape.toFixed(2)}%</td>
+                  <td className="py-3.5 px-4 text-ink-600">{m.mase.toFixed(3)}</td>
+                  <td className="py-3.5 px-4 text-right font-bold text-ink-900">{m.directionalAccuracy.toFixed(2)}%</td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
-      </div>
+      </AgCard>
 
-      {/* Side-by-side Bar Charts: MAE & MAPE */}
+      {/* Single-Hue Charts Rule: Best model in --brand-900 (#0A4D2E), rest in neutral (#B8C4BA) */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {/* MAE Bar Chart */}
-        <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-xl space-y-4">
+        {/* MAE Chart */}
+        <AgCard className="space-y-4">
           <div>
-            <h3 className="text-sm font-bold text-white">Mean Absolute Error Comparison (₹/quintal)</h3>
-            <p className="text-[11px] text-slate-400">Lower is better • Random Forest achieves ₹155.71/q</p>
+            <h2 className="text-sm font-bold text-ink-900">Mean Absolute Error (₹/quintal)</h2>
+            <p className="text-[11px] text-ink-400">Lower is better • Sorted ascending by prediction error</p>
           </div>
-
-          <div className="h-[260px] w-full pt-2">
+          <div className="h-[250px] w-full pt-2">
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={sortedByMAE} margin={{ top: 10, right: 10, left: 0, bottom: 20 }}>
-                <CartesianGrid strokeDasharray="3 3" stroke="#334155" />
-                <XAxis dataKey="model" stroke="#94a3b8" tick={{ fill: '#94a3b8', fontSize: 10 }} interval={0} />
-                <YAxis stroke="#94a3b8" tick={{ fill: '#94a3b8', fontSize: 11 }} domain={[100, 250]} />
+                <CartesianGrid strokeDasharray="3 3" stroke="#EEF3EE" />
+                <XAxis dataKey="model" stroke="#8A948D" tick={{ fill: '#5B665F', fontSize: 10 }} interval={0} />
+                <YAxis stroke="#8A948D" tick={{ fill: '#5B665F', fontSize: 11 }} domain={[100, 250]} />
                 <Tooltip
-                  contentStyle={{ backgroundColor: '#0f172a', borderColor: '#334155', borderRadius: '0.75rem', color: '#fff' }}
-                  itemStyle={{ fontSize: '12px' }}
+                  contentStyle={{
+                    backgroundColor: '#FFFFFF',
+                    borderRadius: '16px',
+                    border: '1px solid rgba(0,0,0,0.08)',
+                    boxShadow: '0 8px 24px rgba(16,24,20,0.06)',
+                    color: '#111613',
+                    fontSize: '12px',
+                  }}
                 />
-                <Bar dataKey="mae" name="MAE (₹/q)" radius={[4, 4, 0, 0]}>
+                <Bar dataKey="mae" name="MAE (₹/q)" radius={[6, 6, 0, 0]}>
                   {sortedByMAE.map((_, index) => (
-                    <Cell key={`cell-mae-${index}`} fill={redColors[index % redColors.length]} />
+                    <Cell key={`cell-mae-${index}`} fill={index === 0 ? '#0A4D2E' : '#B8C4BA'} />
                   ))}
                 </Bar>
               </BarChart>
             </ResponsiveContainer>
           </div>
-        </div>
+        </AgCard>
 
-        {/* MAPE Bar Chart */}
-        <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-xl space-y-4">
+        {/* MAPE Chart */}
+        <AgCard className="space-y-4">
           <div>
-            <h3 className="text-sm font-bold text-white">Mean Absolute Percentage Error (%)</h3>
-            <p className="text-[11px] text-slate-400">Lower is better • Evaluates relative error margin</p>
+            <h2 className="text-sm font-bold text-ink-900">Mean Absolute Percentage Error (%)</h2>
+            <p className="text-[11px] text-ink-400">Lower is better • Measures relative percentage deviation</p>
           </div>
-
-          <div className="h-[260px] w-full pt-2">
+          <div className="h-[250px] w-full pt-2">
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={sortedByMAE} margin={{ top: 10, right: 10, left: 0, bottom: 20 }}>
-                <CartesianGrid strokeDasharray="3 3" stroke="#334155" />
-                <XAxis dataKey="model" stroke="#94a3b8" tick={{ fill: '#94a3b8', fontSize: 10 }} interval={0} />
-                <YAxis stroke="#94a3b8" tick={{ fill: '#94a3b8', fontSize: 11 }} domain={[0, 3]} />
+                <CartesianGrid strokeDasharray="3 3" stroke="#EEF3EE" />
+                <XAxis dataKey="model" stroke="#8A948D" tick={{ fill: '#5B665F', fontSize: 10 }} interval={0} />
+                <YAxis stroke="#8A948D" tick={{ fill: '#5B665F', fontSize: 11 }} domain={[0, 3]} />
                 <Tooltip
-                  contentStyle={{ backgroundColor: '#0f172a', borderColor: '#334155', borderRadius: '0.75rem', color: '#fff' }}
-                  itemStyle={{ fontSize: '12px' }}
+                  contentStyle={{
+                    backgroundColor: '#FFFFFF',
+                    borderRadius: '16px',
+                    border: '1px solid rgba(0,0,0,0.08)',
+                    boxShadow: '0 8px 24px rgba(16,24,20,0.06)',
+                    color: '#111613',
+                    fontSize: '12px',
+                  }}
                 />
-                <Bar dataKey="mape" name="MAPE (%)" radius={[4, 4, 0, 0]}>
+                <Bar dataKey="mape" name="MAPE (%)" radius={[6, 6, 0, 0]}>
                   {sortedByMAE.map((_, index) => (
-                    <Cell key={`cell-mape-${index}`} fill={blueColors[index % blueColors.length]} />
+                    <Cell key={`cell-mape-${index}`} fill={index === 0 ? '#0A4D2E' : '#B8C4BA'} />
                   ))}
                 </Bar>
               </BarChart>
             </ResponsiveContainer>
           </div>
-        </div>
+        </AgCard>
       </div>
 
       {/* Directional Accuracy Chart */}
-      <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-xl space-y-4">
+      <AgCard className="space-y-4">
         <div>
-          <h2 className="text-base font-bold text-white">Directional Accuracy by Model (%)</h2>
-          <p className="text-xs text-slate-400">
-            Percentage of times model accurately predicted the sign of price change (bullish vs. bearish)
-          </p>
+          <h2 className="text-sm font-bold text-ink-900">Directional Accuracy by Model (%)</h2>
+          <p className="text-[11px] text-ink-400">Higher is better • Evaluates correctness of price direction sign</p>
         </div>
-
-        <div className="h-[260px] w-full pt-2">
+        <div className="h-[250px] w-full pt-2">
           <ResponsiveContainer width="100%" height="100%">
-            <BarChart data={sortedByMAE} margin={{ top: 10, right: 20, left: 10, bottom: 20 }}>
-              <CartesianGrid strokeDasharray="3 3" stroke="#334155" />
-              <XAxis dataKey="model" stroke="#94a3b8" tick={{ fill: '#94a3b8', fontSize: 11 }} />
-              <YAxis stroke="#94a3b8" tick={{ fill: '#94a3b8', fontSize: 11 }} domain={[0, 100]} />
+            <BarChart data={sortedByMAE} margin={{ top: 10, right: 20, left: 0, bottom: 20 }}>
+              <CartesianGrid strokeDasharray="3 3" stroke="#EEF3EE" />
+              <XAxis dataKey="model" stroke="#8A948D" tick={{ fill: '#5B665F', fontSize: 11 }} />
+              <YAxis stroke="#8A948D" tick={{ fill: '#5B665F', fontSize: 11 }} domain={[0, 100]} />
               <Tooltip
-                contentStyle={{ backgroundColor: '#0f172a', borderColor: '#334155', borderRadius: '0.75rem', color: '#fff' }}
-                itemStyle={{ fontSize: '12px' }}
+                contentStyle={{
+                  backgroundColor: '#FFFFFF',
+                  borderRadius: '16px',
+                  border: '1px solid rgba(0,0,0,0.08)',
+                  boxShadow: '0 8px 24px rgba(16,24,20,0.06)',
+                  color: '#111613',
+                  fontSize: '12px',
+                }}
               />
-              <Bar dataKey="da" name="Directional Accuracy (%)" radius={[4, 4, 0, 0]}>
-                {sortedByMAE.map((_, index) => (
-                  <Cell key={`cell-da-${index}`} fill={greenColors[index % greenColors.length]} />
+              <Bar dataKey="directionalAccuracy" name="Directional Accuracy (%)" radius={[6, 6, 0, 0]}>
+                {sortedByMAE.map((entry) => (
+                  <Cell key={`cell-da-${entry.model}`} fill={entry.directionalAccuracy > 75 ? '#0A4D2E' : '#B8C4BA'} />
                 ))}
               </Bar>
             </BarChart>
           </ResponsiveContainer>
         </div>
-      </div>
+      </AgCard>
     </div>
   );
 };
-
 export default ModelPerformancePage;

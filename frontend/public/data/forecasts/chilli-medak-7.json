@@ -1,0 +1,64 @@
+{
+  "crop": "Chilli",
+  "yard": "Medak",
+  "horizon": 7,
+  "asOf": "2026-11-19",
+  "currentPrice": 12974,
+  "forecastPrice": 13235,
+  "expectedChangePct": 2.0,
+  "rangeMin": 13011,
+  "rangeMax": 13235,
+  "confidence": 0.95,
+  "model": "Random Forest",
+  "points": [
+    {
+      "day": 1,
+      "date": "2026-11-20",
+      "forecast": 13011,
+      "lower": 12795,
+      "upper": 13227
+    },
+    {
+      "day": 2,
+      "date": "2026-11-21",
+      "forecast": 13048,
+      "lower": 12742,
+      "upper": 13354
+    },
+    {
+      "day": 3,
+      "date": "2026-11-22",
+      "forecast": 13085,
+      "lower": 12709,
+      "upper": 13461
+    },
+    {
+      "day": 4,
+      "date": "2026-11-23",
+      "forecast": 13122,
+      "lower": 12686,
+      "upper": 13558
+    },
+    {
+      "day": 5,
+      "date": "2026-11-24",
+      "forecast": 13159,
+      "lower": 12671,
+      "upper": 13647
+    },
+    {
+      "day": 6,
+      "date": "2026-11-25",
+      "forecast": 13197,
+      "lower": 12660,
+      "upper": 13734
+    },
+    {
+      "day": 7,
+      "date": "2026-11-26",
+      "forecast": 13235,
+      "lower": 12654,
+      "upper": 13816
+    }
+  ]
+}

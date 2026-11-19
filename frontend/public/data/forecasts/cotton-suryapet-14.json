@@ -1,0 +1,113 @@
+{
+  "crop": "Cotton",
+  "yard": "Suryapet",
+  "horizon": 14,
+  "asOf": "2026-11-19",
+  "currentPrice": 8502,
+  "forecastPrice": 8071,
+  "expectedChangePct": -3.6,
+  "rangeMin": 8071,
+  "rangeMax": 8470,
+  "confidence": 0.88,
+  "model": "Random Forest",
+  "points": [
+    {
+      "day": 1,
+      "date": "2026-11-20",
+      "forecast": 8470,
+      "lower": 8329,
+      "upper": 8611
+    },
+    {
+      "day": 2,
+      "date": "2026-11-21",
+      "forecast": 8439,
+      "lower": 8241,
+      "upper": 8637
+    },
+    {
+      "day": 3,
+      "date": "2026-11-22",
+      "forecast": 8408,
+      "lower": 8166,
+      "upper": 8650
+    },
+    {
+      "day": 4,
+      "date": "2026-11-23",
+      "forecast": 8377,
+      "lower": 8099,
+      "upper": 8655
+    },
+    {
+      "day": 5,
+      "date": "2026-11-24",
+      "forecast": 8346,
+      "lower": 8036,
+      "upper": 8656
+    },
+    {
+      "day": 6,
+      "date": "2026-11-25",
+      "forecast": 8315,
+      "lower": 7977,
+      "upper": 8653
+    },
+    {
+      "day": 7,
+      "date": "2026-11-26",
+      "forecast": 8284,
+      "lower": 7920,
+      "upper": 8648
+    },
+    {
+      "day": 8,
+      "date": "2026-11-27",
+      "forecast": 8253,
+      "lower": 7866,
+      "upper": 8640
+    },
+    {
+      "day": 9,
+      "date": "2026-11-28",
+      "forecast": 8222,
+      "lower": 7813,
+      "upper": 8631
+    },
+    {
+      "day": 10,
+      "date": "2026-11-29",
+      "forecast": 8191,
+      "lower": 7761,
+      "upper": 8621
+    },
+    {
+      "day": 11,
+      "date": "2026-11-30",
+      "forecast": 8161,
+      "lower": 7712,
+      "upper": 8610
+    },
+    {
+      "day": 12,
+      "date": "2026-12-01",
+      "forecast": 8131,
+      "lower": 7663,
+      "upper": 8599
+    },
+    {
+      "day": 13,
+      "date": "2026-12-02",
+      "forecast": 8101,
+      "lower": 7616,
+      "upper": 8586
+    },
+    {
+      "day": 14,
+      "date": "2026-12-03",
+      "forecast": 8071,
+      "lower": 7570,
+      "upper": 8572
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "crop": "Paddy",
+  "yard": "Adilabad",
+  "horizon": 14,
+  "asOf": "2026-11-19",
+  "currentPrice": 2059,
+  "forecastPrice": 2325,
+  "expectedChangePct": 8.5,
+  "rangeMin": 2077,
+  "rangeMax": 2325,
+  "confidence": 0.88,
+  "model": "Random Forest",
+  "points": [
+    {
+      "day": 1,
+      "date": "2026-11-20",
+      "forecast": 2077,
+      "lower": 2043,
+      "upper": 2111
+    },
+    {
+      "day": 2,
+      "date": "2026-11-21",
+      "forecast": 2095,
+      "lower": 2046,
+      "upper": 2144
+    },
+    {
+      "day": 3,
+      "date": "2026-11-22",
+      "forecast": 2113,
+      "lower": 2052,
+      "upper": 2174
+    },
+    {
+      "day": 4,
+      "date": "2026-11-23",
+      "forecast": 2131,
+      "lower": 2060,
+      "upper": 2202
+    },
+    {
+      "day": 5,
+      "date": "2026-11-24",
+      "forecast": 2150,
+      "lower": 2070,
+      "upper": 2230
+    },
+    {
+      "day": 6,
+      "date": "2026-11-25",
+      "forecast": 2169,
+      "lower": 2081,
+      "upper": 2257
+    },
+    {
+      "day": 7,
+      "date": "2026-11-26",
+      "forecast": 2188,
+      "lower": 2092,
+      "upper": 2284
+    },
+    {
+      "day": 8,
+      "date": "2026-11-27",
+      "forecast": 2207,
+      "lower": 2103,
+      "upper": 2311
+    },
+    {
+      "day": 9,
+      "date": "2026-11-28",
+      "forecast": 2226,
+      "lower": 2115,
+      "upper": 2337
+    },
+    {
+      "day": 10,
+      "date": "2026-11-29",
+      "forecast": 2245,
+      "lower": 2127,
+      "upper": 2363
+    },
+    {
+      "day": 11,
+      "date": "2026-11-30",
+      "forecast": 2265,
+      "lower": 2140,
+      "upper": 2390
+    },
+    {
+      "day": 12,
+      "date": "2026-12-01",
+      "forecast": 2285,
+      "lower": 2154,
+      "upper": 2416
+    },
+    {
+      "day": 13,
+      "date": "2026-12-02",
+      "forecast": 2305,
+      "lower": 2167,
+      "upper": 2443
+    },
+    {
+      "day": 14,
+      "date": "2026-12-03",
+      "forecast": 2325,
+      "lower": 2181,
+      "upper": 2469
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "crop": "Cotton",
+  "yard": "Warangal Gurramguda",
+  "horizon": 7,
+  "asOf": "2026-11-19",
+  "currentPrice": 8467,
+  "forecastPrice": 8525,
+  "expectedChangePct": 0.7,
+  "rangeMin": 8475,
+  "rangeMax": 8525,
+  "confidence": 0.95,
+  "model": "Random Forest",
+  "points": [
+    {
+      "day": 1,
+      "date": "2026-11-20",
+      "forecast": 8475,
+      "lower": 8334,
+      "upper": 8616
+    },
+    {
+      "day": 2,
+      "date": "2026-11-21",
+      "forecast": 8483,
+      "lower": 8284,
+      "upper": 8682
+    },
+    {
+      "day": 3,
+      "date": "2026-11-22",
+      "forecast": 8491,
+      "lower": 8247,
+      "upper": 8735
+    },
+    {
+      "day": 4,
+      "date": "2026-11-23",
+      "forecast": 8499,
+      "lower": 8217,
+      "upper": 8781
+    },
+    {
+      "day": 5,
+      "date": "2026-11-24",
+      "forecast": 8507,
+      "lower": 8191,
+      "upper": 8823
+    },
+    {
+      "day": 6,
+      "date": "2026-11-25",
+      "forecast": 8516,
+      "lower": 8170,
+      "upper": 8862
+    },
+    {
+      "day": 7,
+      "date": "2026-11-26",
+      "forecast": 8525,
+      "lower": 8151,
+      "upper": 8899
+    }
+  ]
+}

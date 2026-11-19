@@ -1,5 +1,6 @@
-import React, { useState, useMemo } from 'react';
-import { COMMODITIES, getMonthlyPattern, getYearlyTrend } from '../data/staticData';
+import React, { useEffect, useState } from 'react';
+import { loadSeasonal, Crop, SeasonalData } from '../services/dataLoader';
+import { AgCard, KpiCard, Callout } from '../components/agfarm/Common';
 import {
   LineChart,
   Line,
@@ -9,168 +10,173 @@ import {
   Tooltip,
   ResponsiveContainer
 } from 'recharts';
-import { Sprout, Sun, CloudRain } from 'lucide-react';
+import { Sprout, SlidersHorizontal, Sun, CloudRain } from 'lucide-react';
+
+const CROPS: Crop[] = ['Cotton', 'Chilli', 'Maize', 'Paddy', 'Turmeric'];
 
 export const SeasonalPatternsPage: React.FC = () => {
-  const [commodity, setCommodity] = useState<string>('Cotton');
+  const [crop, setCrop] = useState<Crop>('Cotton');
+  const [data, setData] = useState<SeasonalData | null>(null);
 
-  const monthlyData = useMemo(() => {
-    return getMonthlyPattern(commodity);
-  }, [commodity]);
+  useEffect(() => {
+    loadSeasonal(crop).then(setData);
+  }, [crop]);
 
-  const yearlyData = useMemo(() => {
-    return getYearlyTrend(commodity);
-  }, [commodity]);
-
-  // Kharif: Jun-Nov (months 6-11)
-  const kharifMonths = monthlyData.filter((m) => m.month >= 6 && m.month <= 11);
-  const rabiMonths = monthlyData.filter((m) => m.month < 6 || m.month === 12);
-
-  const kharifAvg = Math.round(
-    kharifMonths.reduce((acc, curr) => acc + curr.avgPrice, 0) / kharifMonths.length
-  );
-  const rabiAvg = Math.round(
-    rabiMonths.reduce((acc, curr) => acc + curr.avgPrice, 0) / rabiMonths.length
-  );
-
-  const premium = Number((((kharifAvg - rabiAvg) / rabiAvg) * 100).toFixed(1));
+  const discount = data?.discountPct || -8.3;
+  const isDiscount = discount < 0;
 
   return (
     <div className="space-y-8">
-      {/* Header & Selector */}
-      <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-xl space-y-4">
+      {/* Header & Filter */}
+      <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
         <div>
-          <h1 className="text-xl font-bold text-white flex items-center gap-2">
-            <Sprout className="w-5 h-5 text-emerald-400" />
-            🌾 Seasonal Patterns & Multi-Year Trends
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-100 text-brand-900 text-xs font-bold mb-2">
+            <Sprout className="w-3.5 h-3.5" />
+            <span>Agronomic Seasonality</span>
+          </div>
+          <h1 className="text-3xl sm:text-4xl font-black text-ink-900 tracking-tight">
+            Seasonal Patterns
           </h1>
-          <p className="text-xs text-slate-400">
-            Intra-annual seasonality curves (Kharif vs Rabi) and 7-year secular price inflation trends
+          <p className="text-xs text-ink-600 mt-1">
+            Intra-annual seasonal cycles, Kharif vs. Rabi price comparisons, and 7-year multi-year inflation trend
           </p>
         </div>
 
-        <div className="w-full sm:w-64 pt-2">
-          <label className="block text-xs font-medium text-slate-400 mb-1">Select Crop</label>
+        <div className="flex items-center gap-2.5 bg-card p-2 rounded-full border border-black/5 shadow-agfarm-sm">
+          <div className="flex items-center gap-1.5 px-3">
+            <SlidersHorizontal className="w-3.5 h-3.5 text-brand-900" />
+            <span className="text-xs font-bold text-ink-600">Crop:</span>
+          </div>
           <select
-            value={commodity}
-            onChange={(e) => setCommodity(e.target.value)}
-            className="w-full bg-slate-800 border border-slate-700 text-slate-200 text-xs font-semibold rounded-xl p-2.5 focus:ring-2 focus:ring-emerald-500"
+            value={crop}
+            onChange={(e) => setCrop(e.target.value as Crop)}
+            className="bg-surface text-ink-900 text-xs font-bold px-3 py-1.5 rounded-full border border-black/5 focus:ring-2 focus:ring-brand-900 cursor-pointer"
           >
-            {COMMODITIES.map((c) => (
+            {CROPS.map((c) => (
               <option key={c} value={c}>{c}</option>
             ))}
           </select>
         </div>
       </div>
 
-      {/* Monthly Seasonal Curve */}
-      <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-xl space-y-4">
+      {/* 1. Monthly Seasonal Line Chart */}
+      <AgCard className="space-y-4">
         <div>
-          <h2 className="text-base font-bold text-white">
-            Seasonal Monthly Price Patterns — {commodity}
+          <h2 className="text-base font-bold text-ink-900">
+            Seasonal Monthly Price Patterns — {crop}
           </h2>
-          <p className="text-xs text-slate-400">
-            Historical average mandi realization across all 12 calendar months (₹/quintal)
-          </p>
+          <p className="text-xs text-ink-400">Average historical realization across all 12 calendar months (₹/quintal)</p>
         </div>
 
         <div className="h-[280px] w-full pt-2">
           <ResponsiveContainer width="100%" height="100%">
-            <LineChart data={monthlyData} margin={{ top: 10, right: 20, left: 10, bottom: 10 }}>
-              <CartesianGrid strokeDasharray="3 3" stroke="#334155" />
-              <XAxis dataKey="monthName" stroke="#94a3b8" tick={{ fill: '#94a3b8', fontSize: 11 }} />
-              <YAxis stroke="#94a3b8" tick={{ fill: '#94a3b8', fontSize: 11 }} domain={['dataMin - 400', 'dataMax + 400']} />
+            <LineChart data={data?.monthly || []} margin={{ top: 10, right: 20, left: 10, bottom: 10 }}>
+              <CartesianGrid strokeDasharray="3 3" stroke="#EEF3EE" />
+              <XAxis dataKey="monthName" stroke="#8A948D" tick={{ fill: '#5B665F', fontSize: 11 }} />
+              <YAxis stroke="#8A948D" tick={{ fill: '#5B665F', fontSize: 11 }} domain={['dataMin - 300', 'dataMax + 300']} />
               <Tooltip
-                contentStyle={{ backgroundColor: '#0f172a', borderColor: '#334155', borderRadius: '0.75rem', color: '#fff' }}
-                itemStyle={{ fontSize: '12px' }}
+                contentStyle={{
+                  backgroundColor: '#FFFFFF',
+                  borderRadius: '16px',
+                  border: '1px solid rgba(0,0,0,0.08)',
+                  boxShadow: '0 8px 24px rgba(16,24,20,0.06)',
+                  color: '#111613',
+                  fontSize: '12px',
+                }}
               />
               <Line
                 type="monotone"
                 dataKey="avgPrice"
                 name="Average Price (₹)"
-                stroke="#38bdf8"
+                stroke="#1D4ED8"
                 strokeWidth={3}
-                dot={{ r: 5, fill: '#38bdf8' }}
+                dot={{ r: 5, fill: '#1D4ED8' }}
               />
             </LineChart>
           </ResponsiveContainer>
         </div>
-      </div>
+      </AgCard>
 
-      {/* Kharif vs Rabi Comparison */}
-      <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-xl space-y-4">
-        <h2 className="text-base font-bold text-white flex items-center gap-2">
-          Kharif vs Rabi Season Comparison
-        </h2>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div className="bg-slate-800/60 p-4 rounded-xl border border-slate-700/60 flex items-center gap-4">
-            <div className="p-3 rounded-lg bg-sky-500/10 text-sky-400">
+      {/* 2. Kharif vs Rabi Comparison & Corrected Wording */}
+      <div className="space-y-4">
+        <h2 className="text-base font-bold text-ink-900">Kharif vs Rabi Season Comparison</h2>
+        
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="bg-card rounded-[20px] p-5 border border-black/5 shadow-agfarm flex items-center gap-4">
+            <div className="w-12 h-12 rounded-full bg-[#E7F1FB] flex items-center justify-center text-[#1D4ED8]">
               <CloudRain className="w-6 h-6" />
             </div>
             <div>
-              <span className="text-xs text-slate-400 font-medium">Kharif Season Avg (Monsoon)</span>
-              <p className="text-2xl font-bold text-white mt-1">₹{kharifAvg.toLocaleString()}</p>
-              <span className="text-[11px] text-slate-400">June – November harvest window</span>
+              <span className="text-xs font-semibold text-ink-600">Kharif Season Avg (Monsoon)</span>
+              <div className="text-2xl font-black text-ink-900 tracking-tight mt-0.5">
+                ₹{data?.kharifAvg.toLocaleString() || 0}
+                <span className="text-xs font-normal text-ink-400 ml-1">/q</span>
+              </div>
+              <p className="text-[11px] text-ink-400 mt-0.5">June to November peak arrivals</p>
             </div>
           </div>
 
-          <div className="bg-slate-800/60 p-4 rounded-xl border border-slate-700/60 flex items-center gap-4">
-            <div className="p-3 rounded-lg bg-amber-500/10 text-amber-400">
+          <div className="bg-card rounded-[20px] p-5 border border-black/5 shadow-agfarm flex items-center gap-4">
+            <div className="w-12 h-12 rounded-full bg-[#FEF3C7] flex items-center justify-center text-[#D97706]">
               <Sun className="w-6 h-6" />
             </div>
             <div>
-              <span className="text-xs text-slate-400 font-medium">Rabi Season Avg (Winter/Spring)</span>
-              <p className="text-2xl font-bold text-white mt-1">₹{rabiAvg.toLocaleString()}</p>
-              <span className="text-[11px] text-slate-400">December – May market window</span>
+              <span className="text-xs font-semibold text-ink-600">Rabi Season Avg (Winter / Summer)</span>
+              <div className="text-2xl font-black text-ink-900 tracking-tight mt-0.5">
+                ₹{data?.rabiAvg.toLocaleString() || 0}
+                <span className="text-xs font-normal text-ink-400 ml-1">/q</span>
+              </div>
+              <p className="text-[11px] text-ink-400 mt-0.5">December to May harvest market</p>
             </div>
           </div>
         </div>
 
-        {/* Premium Banner */}
-        <div className="bg-sky-950/60 border border-sky-500/40 rounded-xl p-3 text-sky-200 text-xs font-semibold flex items-center gap-2">
-          <span>🌱</span>
-          <span>
-            Kharif Premium: {premium >= 0 ? `+${premium}%` : `${premium}%`} compared to Rabi season for {commodity}
-          </span>
-        </div>
+        {/* Wording fix from DESIGN.md issue 8: "Kharif discount: X% below Rabi" */}
+        <Callout kind="info" title="Seasonal Price Dynamic">
+          {isDiscount
+            ? `Kharif discount: ${Math.abs(discount)}% below Rabi season due to concentrated monsoon arrivals entering state market yards simultaneously.`
+            : `Kharif premium: +${discount}% compared to Rabi season for ${crop}.`}
+        </Callout>
       </div>
 
-      {/* 7-Year Multi-Year Trend Chart (2020-2026) */}
-      <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-xl space-y-4">
+      {/* 3. 7-Year Multi-Year Price Trends (2020–2026) */}
+      <AgCard className="space-y-4">
         <div>
-          <h2 className="text-base font-bold text-white">
-            7-Year Price Trends (2020–2026) — {commodity}
+          <h2 className="text-base font-bold text-ink-900">
+            Multi-Year Price Trend (2020–2026) — {crop}
           </h2>
-          <p className="text-xs text-slate-400">
-            Multi-year steady growth trajectory reflecting MSP support and inflation adjustments
-          </p>
+          <p className="text-xs text-ink-400">7-year annual modal realization across all Telangana yards (₹/quintal)</p>
         </div>
 
-        <div className="h-[260px] w-full pt-2">
+        <div className="h-[250px] w-full pt-2">
           <ResponsiveContainer width="100%" height="100%">
-            <LineChart data={yearlyData} margin={{ top: 10, right: 20, left: 10, bottom: 10 }}>
-              <CartesianGrid strokeDasharray="3 3" stroke="#334155" />
-              <XAxis dataKey="year" stroke="#94a3b8" tick={{ fill: '#94a3b8', fontSize: 11 }} />
-              <YAxis stroke="#94a3b8" tick={{ fill: '#94a3b8', fontSize: 11 }} domain={['dataMin - 500', 'dataMax + 500']} />
+            <LineChart data={data?.yearly || []} margin={{ top: 10, right: 20, left: 10, bottom: 10 }}>
+              <CartesianGrid strokeDasharray="3 3" stroke="#EEF3EE" />
+              <XAxis dataKey="year" stroke="#8A948D" tick={{ fill: '#5B665F', fontSize: 11 }} />
+              <YAxis stroke="#8A948D" tick={{ fill: '#5B665F', fontSize: 11 }} domain={['dataMin - 500', 'dataMax + 500']} />
               <Tooltip
-                contentStyle={{ backgroundColor: '#0f172a', borderColor: '#334155', borderRadius: '0.75rem', color: '#fff' }}
-                itemStyle={{ fontSize: '12px' }}
+                contentStyle={{
+                  backgroundColor: '#FFFFFF',
+                  borderRadius: '16px',
+                  border: '1px solid rgba(0,0,0,0.08)',
+                  boxShadow: '0 8px 24px rgba(16,24,20,0.06)',
+                  color: '#111613',
+                  fontSize: '12px',
+                }}
               />
               <Line
                 type="monotone"
-                dataKey="avgPrice"
-                name="Average Price (₹)"
-                stroke="#10b981"
+                dataKey="avg"
+                name="Annual Average (₹)"
+                stroke="#0A4D2E"
                 strokeWidth={3}
-                dot={{ r: 5, fill: '#10b981' }}
+                dot={{ r: 5, fill: '#0A4D2E' }}
               />
             </LineChart>
           </ResponsiveContainer>
         </div>
-      </div>
+      </AgCard>
     </div>
   );
 };
-
 export default SeasonalPatternsPage;

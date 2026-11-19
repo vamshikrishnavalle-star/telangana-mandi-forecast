@@ -1,0 +1,64 @@
+{
+  "crop": "Maize",
+  "yard": "Hyderabad RCI Market",
+  "horizon": 7,
+  "asOf": "2026-11-19",
+  "currentPrice": 2350,
+  "forecastPrice": 2322,
+  "expectedChangePct": -1.1,
+  "rangeMin": 2322,
+  "rangeMax": 2346,
+  "confidence": 0.95,
+  "model": "Random Forest",
+  "points": [
+    {
+      "day": 1,
+      "date": "2026-11-20",
+      "forecast": 2346,
+      "lower": 2307,
+      "upper": 2385
+    },
+    {
+      "day": 2,
+      "date": "2026-11-21",
+      "forecast": 2342,
+      "lower": 2287,
+      "upper": 2397
+    },
+    {
+      "day": 3,
+      "date": "2026-11-22",
+      "forecast": 2338,
+      "lower": 2271,
+      "upper": 2405
+    },
+    {
+      "day": 4,
+      "date": "2026-11-23",
+      "forecast": 2334,
+      "lower": 2257,
+      "upper": 2411
+    },
+    {
+      "day": 5,
+      "date": "2026-11-24",
+      "forecast": 2330,
+      "lower": 2244,
+      "upper": 2416
+    },
+    {
+      "day": 6,
+      "date": "2026-11-25",
+      "forecast": 2326,
+      "lower": 2231,
+      "upper": 2421
+    },
+    {
+      "day": 7,
+      "date": "2026-11-26",
+      "forecast": 2322,
+      "lower": 2220,
+      "upper": 2424
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "crop": "Turmeric",
+  "yard": "Karimnagar BCCL Market",
+  "horizon": 7,
+  "asOf": "2026-11-19",
+  "currentPrice": 9754,
+  "forecastPrice": 10060,
+  "expectedChangePct": 3.1,
+  "rangeMin": 9797,
+  "rangeMax": 10060,
+  "confidence": 0.95,
+  "model": "Random Forest",
+  "points": [
+    {
+      "day": 1,
+      "date": "2026-11-20",
+      "forecast": 9797,
+      "lower": 9634,
+      "upper": 9960
+    },
+    {
+      "day": 2,
+      "date": "2026-11-21",
+      "forecast": 9840,
+      "lower": 9609,
+      "upper": 10071
+    },
+    {
+      "day": 3,
+      "date": "2026-11-22",
+      "forecast": 9884,
+      "lower": 9600,
+      "upper": 10168
+    },
+    {
+      "day": 4,
+      "date": "2026-11-23",
+      "forecast": 9928,
+      "lower": 9598,
+      "upper": 10258
+    },
+    {
+      "day": 5,
+      "date": "2026-11-24",
+      "forecast": 9972,
+      "lower": 9602,
+      "upper": 10342
+    },
+    {
+      "day": 6,
+      "date": "2026-11-25",
+      "forecast": 10016,
+      "lower": 9609,
+      "upper": 10423
+    },
+    {
+      "day": 7,
+      "date": "2026-11-26",
+      "forecast": 10060,
+      "lower": 9618,
+      "upper": 10502
+    }
+  ]
+}

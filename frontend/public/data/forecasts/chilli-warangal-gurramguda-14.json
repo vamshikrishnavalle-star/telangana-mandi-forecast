@@ -1,0 +1,113 @@
+{
+  "crop": "Chilli",
+  "yard": "Warangal Gurramguda",
+  "horizon": 14,
+  "asOf": "2026-11-19",
+  "currentPrice": 12838,
+  "forecastPrice": 13020,
+  "expectedChangePct": 1.0,
+  "rangeMin": 12851,
+  "rangeMax": 13020,
+  "confidence": 0.88,
+  "model": "Random Forest",
+  "points": [
+    {
+      "day": 1,
+      "date": "2026-11-20",
+      "forecast": 12851,
+      "lower": 12638,
+      "upper": 13064
+    },
+    {
+      "day": 2,
+      "date": "2026-11-21",
+      "forecast": 12864,
+      "lower": 12562,
+      "upper": 13166
+    },
+    {
+      "day": 3,
+      "date": "2026-11-22",
+      "forecast": 12877,
+      "lower": 12507,
+      "upper": 13247
+    },
+    {
+      "day": 4,
+      "date": "2026-11-23",
+      "forecast": 12890,
+      "lower": 12462,
+      "upper": 13318
+    },
+    {
+      "day": 5,
+      "date": "2026-11-24",
+      "forecast": 12903,
+      "lower": 12424,
+      "upper": 13382
+    },
+    {
+      "day": 6,
+      "date": "2026-11-25",
+      "forecast": 12916,
+      "lower": 12391,
+      "upper": 13441
+    },
+    {
+      "day": 7,
+      "date": "2026-11-26",
+      "forecast": 12929,
+      "lower": 12361,
+      "upper": 13497
+    },
+    {
+      "day": 8,
+      "date": "2026-11-27",
+      "forecast": 12942,
+      "lower": 12334,
+      "upper": 13550
+    },
+    {
+      "day": 9,
+      "date": "2026-11-28",
+      "forecast": 12955,
+      "lower": 12310,
+      "upper": 13600
+    },
+    {
+      "day": 10,
+      "date": "2026-11-29",
+      "forecast": 12968,
+      "lower": 12287,
+      "upper": 13649
+    },
+    {
+      "day": 11,
+      "date": "2026-11-30",
+      "forecast": 12981,
+      "lower": 12266,
+      "upper": 13696
+    },
+    {
+      "day": 12,
+      "date": "2026-12-01",
+      "forecast": 12994,
+      "lower": 12247,
+      "upper": 13741
+    },
+    {
+      "day": 13,
+      "date": "2026-12-02",
+      "forecast": 13007,
+      "lower": 12229,
+      "upper": 13785
+    },
+    {
+      "day": 14,
+      "date": "2026-12-03",
+      "forecast": 13020,
+      "lower": 12211,
+      "upper": 13829
+    }
+  ]
+}

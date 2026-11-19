@@ -1,0 +1,64 @@
+{
+  "crop": "Cotton",
+  "yard": "Adilabad",
+  "horizon": 7,
+  "asOf": "2026-11-19",
+  "currentPrice": 8039,
+  "forecastPrice": 8543,
+  "expectedChangePct": 6.1,
+  "rangeMin": 8109,
+  "rangeMax": 8543,
+  "confidence": 0.95,
+  "model": "Random Forest",
+  "points": [
+    {
+      "day": 1,
+      "date": "2026-11-20",
+      "forecast": 8109,
+      "lower": 7974,
+      "upper": 8244
+    },
+    {
+      "day": 2,
+      "date": "2026-11-21",
+      "forecast": 8180,
+      "lower": 7988,
+      "upper": 8372
+    },
+    {
+      "day": 3,
+      "date": "2026-11-22",
+      "forecast": 8251,
+      "lower": 8014,
+      "upper": 8488
+    },
+    {
+      "day": 4,
+      "date": "2026-11-23",
+      "forecast": 8323,
+      "lower": 8047,
+      "upper": 8599
+    },
+    {
+      "day": 5,
+      "date": "2026-11-24",
+      "forecast": 8396,
+      "lower": 8084,
+      "upper": 8708
+    },
+    {
+      "day": 6,
+      "date": "2026-11-25",
+      "forecast": 8469,
+      "lower": 8125,
+      "upper": 8813
+    },
+    {
+      "day": 7,
+      "date": "2026-11-26",
+      "forecast": 8543,
+      "lower": 8168,
+      "upper": 8918
+    }
+  ]
+}

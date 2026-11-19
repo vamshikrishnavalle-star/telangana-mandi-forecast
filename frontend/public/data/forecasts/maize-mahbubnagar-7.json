@@ -1,0 +1,64 @@
+{
+  "crop": "Maize",
+  "yard": "Mahbubnagar",
+  "horizon": 7,
+  "asOf": "2026-11-19",
+  "currentPrice": 2134,
+  "forecastPrice": 2080,
+  "expectedChangePct": -2.5,
+  "rangeMin": 2080,
+  "rangeMax": 2126,
+  "confidence": 0.95,
+  "model": "Random Forest",
+  "points": [
+    {
+      "day": 1,
+      "date": "2026-11-20",
+      "forecast": 2126,
+      "lower": 2091,
+      "upper": 2161
+    },
+    {
+      "day": 2,
+      "date": "2026-11-21",
+      "forecast": 2118,
+      "lower": 2068,
+      "upper": 2168
+    },
+    {
+      "day": 3,
+      "date": "2026-11-22",
+      "forecast": 2110,
+      "lower": 2049,
+      "upper": 2171
+    },
+    {
+      "day": 4,
+      "date": "2026-11-23",
+      "forecast": 2102,
+      "lower": 2032,
+      "upper": 2172
+    },
+    {
+      "day": 5,
+      "date": "2026-11-24",
+      "forecast": 2094,
+      "lower": 2016,
+      "upper": 2172
+    },
+    {
+      "day": 6,
+      "date": "2026-11-25",
+      "forecast": 2087,
+      "lower": 2002,
+      "upper": 2172
+    },
+    {
+      "day": 7,
+      "date": "2026-11-26",
+      "forecast": 2080,
+      "lower": 1989,
+      "upper": 2171
+    }
+  ]
+}

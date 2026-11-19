@@ -1,0 +1,64 @@
+{
+  "crop": "Chilli",
+  "yard": "Warangal Gurramguda",
+  "horizon": 7,
+  "asOf": "2026-11-19",
+  "currentPrice": 12838,
+  "forecastPrice": 12929,
+  "expectedChangePct": 0.7,
+  "rangeMin": 12851,
+  "rangeMax": 12929,
+  "confidence": 0.95,
+  "model": "Random Forest",
+  "points": [
+    {
+      "day": 1,
+      "date": "2026-11-20",
+      "forecast": 12851,
+      "lower": 12638,
+      "upper": 13064
+    },
+    {
+      "day": 2,
+      "date": "2026-11-21",
+      "forecast": 12864,
+      "lower": 12562,
+      "upper": 13166
+    },
+    {
+      "day": 3,
+      "date": "2026-11-22",
+      "forecast": 12877,
+      "lower": 12507,
+      "upper": 13247
+    },
+    {
+      "day": 4,
+      "date": "2026-11-23",
+      "forecast": 12890,
+      "lower": 12462,
+      "upper": 13318
+    },
+    {
+      "day": 5,
+      "date": "2026-11-24",
+      "forecast": 12903,
+      "lower": 12424,
+      "upper": 13382
+    },
+    {
+      "day": 6,
+      "date": "2026-11-25",
+      "forecast": 12916,
+      "lower": 12391,
+      "upper": 13441
+    },
+    {
+      "day": 7,
+      "date": "2026-11-26",
+      "forecast": 12929,
+      "lower": 12361,
+      "upper": 13497
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "crop": "Turmeric",
+  "yard": "Adilabad",
+  "horizon": 14,
+  "asOf": "2026-11-19",
+  "currentPrice": 9482,
+  "forecastPrice": 10708,
+  "expectedChangePct": 8.5,
+  "rangeMin": 9565,
+  "rangeMax": 10708,
+  "confidence": 0.88,
+  "model": "Random Forest",
+  "points": [
+    {
+      "day": 1,
+      "date": "2026-11-20",
+      "forecast": 9565,
+      "lower": 9406,
+      "upper": 9724
+    },
+    {
+      "day": 2,
+      "date": "2026-11-21",
+      "forecast": 9648,
+      "lower": 9422,
+      "upper": 9874
+    },
+    {
+      "day": 3,
+      "date": "2026-11-22",
+      "forecast": 9732,
+      "lower": 9452,
+      "upper": 10012
+    },
+    {
+      "day": 4,
+      "date": "2026-11-23",
+      "forecast": 9817,
+      "lower": 9491,
+      "upper": 10143
+    },
+    {
+      "day": 5,
+      "date": "2026-11-24",
+      "forecast": 9903,
+      "lower": 9535,
+      "upper": 10271
+    },
+    {
+      "day": 6,
+      "date": "2026-11-25",
+      "forecast": 9989,
+      "lower": 9583,
+      "upper": 10395
+    },
+    {
+      "day": 7,
+      "date": "2026-11-26",
+      "forecast": 10076,
+      "lower": 9633,
+      "upper": 10519
+    },
+    {
+      "day": 8,
+      "date": "2026-11-27",
+      "forecast": 10164,
+      "lower": 9687,
+      "upper": 10641
+    },
+    {
+      "day": 9,
+      "date": "2026-11-28",
+      "forecast": 10253,
+      "lower": 9742,
+      "upper": 10764
+    },
+    {
+      "day": 10,
+      "date": "2026-11-29",
+      "forecast": 10342,
+      "lower": 9799,
+      "upper": 10885
+    },
+    {
+      "day": 11,
+      "date": "2026-11-30",
+      "forecast": 10432,
+      "lower": 9858,
+      "upper": 11006
+    },
+    {
+      "day": 12,
+      "date": "2026-12-01",
+      "forecast": 10523,
+      "lower": 9918,
+      "upper": 11128
+    },
+    {
+      "day": 13,
+      "date": "2026-12-02",
+      "forecast": 10615,
+      "lower": 9980,
+      "upper": 11250
+    },
+    {
+      "day": 14,
+      "date": "2026-12-03",
+      "forecast": 10708,
+      "lower": 10043,
+      "upper": 11373
+    }
+  ]
+}

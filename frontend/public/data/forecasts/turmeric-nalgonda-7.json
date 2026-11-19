@@ -1,0 +1,64 @@
+{
+  "crop": "Turmeric",
+  "yard": "Nalgonda",
+  "horizon": 7,
+  "asOf": "2026-11-19",
+  "currentPrice": 8967,
+  "forecastPrice": 9230,
+  "expectedChangePct": 2.9,
+  "rangeMin": 9004,
+  "rangeMax": 9230,
+  "confidence": 0.95,
+  "model": "Random Forest",
+  "points": [
+    {
+      "day": 1,
+      "date": "2026-11-20",
+      "forecast": 9004,
+      "lower": 8855,
+      "upper": 9153
+    },
+    {
+      "day": 2,
+      "date": "2026-11-21",
+      "forecast": 9041,
+      "lower": 8829,
+      "upper": 9253
+    },
+    {
+      "day": 3,
+      "date": "2026-11-22",
+      "forecast": 9078,
+      "lower": 8817,
+      "upper": 9339
+    },
+    {
+      "day": 4,
+      "date": "2026-11-23",
+      "forecast": 9116,
+      "lower": 8813,
+      "upper": 9419
+    },
+    {
+      "day": 5,
+      "date": "2026-11-24",
+      "forecast": 9154,
+      "lower": 8814,
+      "upper": 9494
+    },
+    {
+      "day": 6,
+      "date": "2026-11-25",
+      "forecast": 9192,
+      "lower": 8818,
+      "upper": 9566
+    },
+    {
+      "day": 7,
+      "date": "2026-11-26",
+      "forecast": 9230,
+      "lower": 8825,
+      "upper": 9635
+    }
+  ]
+}

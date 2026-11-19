@@ -1,0 +1,72 @@
+[
+  {
+    "yard": "Hyderabad RCI Market",
+    "price": 10500,
+    "change7d": -1.1,
+    "arrivals": 2587,
+    "advice": "Sell Now"
+  },
+  {
+    "yard": "Khammam",
+    "price": 10101,
+    "change7d": 0.2,
+    "arrivals": 1052,
+    "advice": "Sell Now"
+  },
+  {
+    "yard": "Medak",
+    "price": 10090,
+    "change7d": 2.0,
+    "arrivals": 2585,
+    "advice": "Sell Now"
+  },
+  {
+    "yard": "Suryapet",
+    "price": 10028,
+    "change7d": -2.6,
+    "arrivals": 1187,
+    "advice": "Sell Now"
+  },
+  {
+    "yard": "Nizamabad",
+    "price": 9996,
+    "change7d": 4.9,
+    "arrivals": 3315,
+    "advice": "Wait"
+  },
+  {
+    "yard": "Warangal Gurramguda",
+    "price": 9986,
+    "change7d": 0.7,
+    "arrivals": 393,
+    "advice": "Sell Now"
+  },
+  {
+    "yard": "Karimnagar BCCL Market",
+    "price": 9754,
+    "change7d": 3.1,
+    "arrivals": 1254,
+    "advice": "Wait"
+  },
+  {
+    "yard": "Mahbubnagar",
+    "price": 9534,
+    "change7d": -2.5,
+    "arrivals": 3623,
+    "advice": "Sell Now"
+  },
+  {
+    "yard": "Adilabad",
+    "price": 9482,
+    "change7d": 6.1,
+    "arrivals": 4749,
+    "advice": "Wait"
+  },
+  {
+    "yard": "Nalgonda",
+    "price": 8967,
+    "change7d": 2.9,
+    "arrivals": 4212,
+    "advice": "Sell Now"
+  }
+]

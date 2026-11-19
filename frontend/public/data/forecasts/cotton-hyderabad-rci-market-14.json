@@ -1,0 +1,113 @@
+{
+  "crop": "Cotton",
+  "yard": "Hyderabad RCI Market",
+  "horizon": 14,
+  "asOf": "2026-11-19",
+  "currentPrice": 8903,
+  "forecastPrice": 8707,
+  "expectedChangePct": -1.5,
+  "rangeMin": 8707,
+  "rangeMax": 8889,
+  "confidence": 0.88,
+  "model": "Random Forest",
+  "points": [
+    {
+      "day": 1,
+      "date": "2026-11-20",
+      "forecast": 8889,
+      "lower": 8741,
+      "upper": 9037
+    },
+    {
+      "day": 2,
+      "date": "2026-11-21",
+      "forecast": 8875,
+      "lower": 8667,
+      "upper": 9083
+    },
+    {
+      "day": 3,
+      "date": "2026-11-22",
+      "forecast": 8861,
+      "lower": 8606,
+      "upper": 9116
+    },
+    {
+      "day": 4,
+      "date": "2026-11-23",
+      "forecast": 8847,
+      "lower": 8553,
+      "upper": 9141
+    },
+    {
+      "day": 5,
+      "date": "2026-11-24",
+      "forecast": 8833,
+      "lower": 8505,
+      "upper": 9161
+    },
+    {
+      "day": 6,
+      "date": "2026-11-25",
+      "forecast": 8819,
+      "lower": 8460,
+      "upper": 9178
+    },
+    {
+      "day": 7,
+      "date": "2026-11-26",
+      "forecast": 8805,
+      "lower": 8418,
+      "upper": 9192
+    },
+    {
+      "day": 8,
+      "date": "2026-11-27",
+      "forecast": 8791,
+      "lower": 8378,
+      "upper": 9204
+    },
+    {
+      "day": 9,
+      "date": "2026-11-28",
+      "forecast": 8777,
+      "lower": 8340,
+      "upper": 9214
+    },
+    {
+      "day": 10,
+      "date": "2026-11-29",
+      "forecast": 8763,
+      "lower": 8303,
+      "upper": 9223
+    },
+    {
+      "day": 11,
+      "date": "2026-11-30",
+      "forecast": 8749,
+      "lower": 8267,
+      "upper": 9231
+    },
+    {
+      "day": 12,
+      "date": "2026-12-01",
+      "forecast": 8735,
+      "lower": 8233,
+      "upper": 9237
+    },
+    {
+      "day": 13,
+      "date": "2026-12-02",
+      "forecast": 8721,
+      "lower": 8199,
+      "upper": 9243
+    },
+    {
+      "day": 14,
+      "date": "2026-12-03",
+      "forecast": 8707,
+      "lower": 8166,
+      "upper": 9248
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "crop": "Turmeric",
+  "yard": "Mahbubnagar",
+  "horizon": 14,
+  "asOf": "2026-11-19",
+  "currentPrice": 9534,
+  "forecastPrice": 9068,
+  "expectedChangePct": -3.5,
+  "rangeMin": 9068,
+  "rangeMax": 9500,
+  "confidence": 0.88,
+  "model": "Random Forest",
+  "points": [
+    {
+      "day": 1,
+      "date": "2026-11-20",
+      "forecast": 9500,
+      "lower": 9342,
+      "upper": 9658
+    },
+    {
+      "day": 2,
+      "date": "2026-11-21",
+      "forecast": 9466,
+      "lower": 9244,
+      "upper": 9688
+    },
+    {
+      "day": 3,
+      "date": "2026-11-22",
+      "forecast": 9432,
+      "lower": 9161,
+      "upper": 9703
+    },
+    {
+      "day": 4,
+      "date": "2026-11-23",
+      "forecast": 9398,
+      "lower": 9086,
+      "upper": 9710
+    },
+    {
+      "day": 5,
+      "date": "2026-11-24",
+      "forecast": 9364,
+      "lower": 9016,
+      "upper": 9712
+    },
+    {
+      "day": 6,
+      "date": "2026-11-25",
+      "forecast": 9331,
+      "lower": 8952,
+      "upper": 9710
+    },
+    {
+      "day": 7,
+      "date": "2026-11-26",
+      "forecast": 9298,
+      "lower": 8890,
+      "upper": 9706
+    },
+    {
+      "day": 8,
+      "date": "2026-11-27",
+      "forecast": 9265,
+      "lower": 8830,
+      "upper": 9700
+    },
+    {
+      "day": 9,
+      "date": "2026-11-28",
+      "forecast": 9232,
+      "lower": 8772,
+      "upper": 9692
+    },
+    {
+      "day": 10,
+      "date": "2026-11-29",
+      "forecast": 9199,
+      "lower": 8716,
+      "upper": 9682
+    },
+    {
+      "day": 11,
+      "date": "2026-11-30",
+      "forecast": 9166,
+      "lower": 8661,
+      "upper": 9671
+    },
+    {
+      "day": 12,
+      "date": "2026-12-01",
+      "forecast": 9133,
+      "lower": 8608,
+      "upper": 9658
+    },
+    {
+      "day": 13,
+      "date": "2026-12-02",
+      "forecast": 9100,
+      "lower": 8555,
+      "upper": 9645
+    },
+    {
+      "day": 14,
+      "date": "2026-12-03",
+      "forecast": 9068,
+      "lower": 8505,
+      "upper": 9631
+    }
+  ]
+}

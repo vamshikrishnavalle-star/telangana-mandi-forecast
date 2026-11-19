@@ -1,0 +1,64 @@
+{
+  "crop": "Paddy",
+  "yard": "Medak",
+  "horizon": 7,
+  "asOf": "2026-11-19",
+  "currentPrice": 2191,
+  "forecastPrice": 2233,
+  "expectedChangePct": 2.0,
+  "rangeMin": 2197,
+  "rangeMax": 2233,
+  "confidence": 0.95,
+  "model": "Random Forest",
+  "points": [
+    {
+      "day": 1,
+      "date": "2026-11-20",
+      "forecast": 2197,
+      "lower": 2161,
+      "upper": 2233
+    },
+    {
+      "day": 2,
+      "date": "2026-11-21",
+      "forecast": 2203,
+      "lower": 2151,
+      "upper": 2255
+    },
+    {
+      "day": 3,
+      "date": "2026-11-22",
+      "forecast": 2209,
+      "lower": 2145,
+      "upper": 2273
+    },
+    {
+      "day": 4,
+      "date": "2026-11-23",
+      "forecast": 2215,
+      "lower": 2141,
+      "upper": 2289
+    },
+    {
+      "day": 5,
+      "date": "2026-11-24",
+      "forecast": 2221,
+      "lower": 2139,
+      "upper": 2303
+    },
+    {
+      "day": 6,
+      "date": "2026-11-25",
+      "forecast": 2227,
+      "lower": 2136,
+      "upper": 2318
+    },
+    {
+      "day": 7,
+      "date": "2026-11-26",
+      "forecast": 2233,
+      "lower": 2135,
+      "upper": 2331
+    }
+  ]
+}

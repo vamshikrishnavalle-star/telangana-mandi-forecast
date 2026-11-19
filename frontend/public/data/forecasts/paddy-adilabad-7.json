@@ -1,0 +1,64 @@
+{
+  "crop": "Paddy",
+  "yard": "Adilabad",
+  "horizon": 7,
+  "asOf": "2026-11-19",
+  "currentPrice": 2059,
+  "forecastPrice": 2188,
+  "expectedChangePct": 6.1,
+  "rangeMin": 2077,
+  "rangeMax": 2188,
+  "confidence": 0.95,
+  "model": "Random Forest",
+  "points": [
+    {
+      "day": 1,
+      "date": "2026-11-20",
+      "forecast": 2077,
+      "lower": 2043,
+      "upper": 2111
+    },
+    {
+      "day": 2,
+      "date": "2026-11-21",
+      "forecast": 2095,
+      "lower": 2046,
+      "upper": 2144
+    },
+    {
+      "day": 3,
+      "date": "2026-11-22",
+      "forecast": 2113,
+      "lower": 2052,
+      "upper": 2174
+    },
+    {
+      "day": 4,
+      "date": "2026-11-23",
+      "forecast": 2131,
+      "lower": 2060,
+      "upper": 2202
+    },
+    {
+      "day": 5,
+      "date": "2026-11-24",
+      "forecast": 2150,
+      "lower": 2070,
+      "upper": 2230
+    },
+    {
+      "day": 6,
+      "date": "2026-11-25",
+      "forecast": 2169,
+      "lower": 2081,
+      "upper": 2257
+    },
+    {
+      "day": 7,
+      "date": "2026-11-26",
+      "forecast": 2188,
+      "lower": 2092,
+      "upper": 2284
+    }
+  ]
+}

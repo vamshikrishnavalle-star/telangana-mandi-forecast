@@ -1,0 +1,64 @@
+{
+  "crop": "Chilli",
+  "yard": "Nalgonda",
+  "horizon": 7,
+  "asOf": "2026-11-19",
+  "currentPrice": 11529,
+  "forecastPrice": 11868,
+  "expectedChangePct": 2.9,
+  "rangeMin": 11577,
+  "rangeMax": 11868,
+  "confidence": 0.95,
+  "model": "Random Forest",
+  "points": [
+    {
+      "day": 1,
+      "date": "2026-11-20",
+      "forecast": 11577,
+      "lower": 11385,
+      "upper": 11769
+    },
+    {
+      "day": 2,
+      "date": "2026-11-21",
+      "forecast": 11625,
+      "lower": 11352,
+      "upper": 11898
+    },
+    {
+      "day": 3,
+      "date": "2026-11-22",
+      "forecast": 11673,
+      "lower": 11337,
+      "upper": 12009
+    },
+    {
+      "day": 4,
+      "date": "2026-11-23",
+      "forecast": 11721,
+      "lower": 11332,
+      "upper": 12110
+    },
+    {
+      "day": 5,
+      "date": "2026-11-24",
+      "forecast": 11770,
+      "lower": 11333,
+      "upper": 12207
+    },
+    {
+      "day": 6,
+      "date": "2026-11-25",
+      "forecast": 11819,
+      "lower": 11338,
+      "upper": 12300
+    },
+    {
+      "day": 7,
+      "date": "2026-11-26",
+      "forecast": 11868,
+      "lower": 11347,
+      "upper": 12389
+    }
+  ]
+}

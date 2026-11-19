@@ -1,0 +1,113 @@
+{
+  "crop": "Turmeric",
+  "yard": "Hyderabad RCI Market",
+  "horizon": 14,
+  "asOf": "2026-11-19",
+  "currentPrice": 10500,
+  "forecastPrice": 10276,
+  "expectedChangePct": -1.5,
+  "rangeMin": 10276,
+  "rangeMax": 10484,
+  "confidence": 0.88,
+  "model": "Random Forest",
+  "points": [
+    {
+      "day": 1,
+      "date": "2026-11-20",
+      "forecast": 10484,
+      "lower": 10310,
+      "upper": 10658
+    },
+    {
+      "day": 2,
+      "date": "2026-11-21",
+      "forecast": 10468,
+      "lower": 10222,
+      "upper": 10714
+    },
+    {
+      "day": 3,
+      "date": "2026-11-22",
+      "forecast": 10452,
+      "lower": 10151,
+      "upper": 10753
+    },
+    {
+      "day": 4,
+      "date": "2026-11-23",
+      "forecast": 10436,
+      "lower": 10090,
+      "upper": 10782
+    },
+    {
+      "day": 5,
+      "date": "2026-11-24",
+      "forecast": 10420,
+      "lower": 10033,
+      "upper": 10807
+    },
+    {
+      "day": 6,
+      "date": "2026-11-25",
+      "forecast": 10404,
+      "lower": 9981,
+      "upper": 10827
+    },
+    {
+      "day": 7,
+      "date": "2026-11-26",
+      "forecast": 10388,
+      "lower": 9932,
+      "upper": 10844
+    },
+    {
+      "day": 8,
+      "date": "2026-11-27",
+      "forecast": 10372,
+      "lower": 9885,
+      "upper": 10859
+    },
+    {
+      "day": 9,
+      "date": "2026-11-28",
+      "forecast": 10356,
+      "lower": 9840,
+      "upper": 10872
+    },
+    {
+      "day": 10,
+      "date": "2026-11-29",
+      "forecast": 10340,
+      "lower": 9797,
+      "upper": 10883
+    },
+    {
+      "day": 11,
+      "date": "2026-11-30",
+      "forecast": 10324,
+      "lower": 9756,
+      "upper": 10892
+    },
+    {
+      "day": 12,
+      "date": "2026-12-01",
+      "forecast": 10308,
+      "lower": 9715,
+      "upper": 10901
+    },
+    {
+      "day": 13,
+      "date": "2026-12-02",
+      "forecast": 10292,
+      "lower": 9676,
+      "upper": 10908
+    },
+    {
+      "day": 14,
+      "date": "2026-12-03",
+      "forecast": 10276,
+      "lower": 9638,
+      "upper": 10914
+    }
+  ]
+}

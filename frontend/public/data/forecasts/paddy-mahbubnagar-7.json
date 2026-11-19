@@ -1,0 +1,64 @@
+{
+  "crop": "Paddy",
+  "yard": "Mahbubnagar",
+  "horizon": 7,
+  "asOf": "2026-11-19",
+  "currentPrice": 2070,
+  "forecastPrice": 2021,
+  "expectedChangePct": -2.5,
+  "rangeMin": 2021,
+  "rangeMax": 2063,
+  "confidence": 0.95,
+  "model": "Random Forest",
+  "points": [
+    {
+      "day": 1,
+      "date": "2026-11-20",
+      "forecast": 2063,
+      "lower": 2029,
+      "upper": 2097
+    },
+    {
+      "day": 2,
+      "date": "2026-11-21",
+      "forecast": 2056,
+      "lower": 2008,
+      "upper": 2104
+    },
+    {
+      "day": 3,
+      "date": "2026-11-22",
+      "forecast": 2049,
+      "lower": 1990,
+      "upper": 2108
+    },
+    {
+      "day": 4,
+      "date": "2026-11-23",
+      "forecast": 2042,
+      "lower": 1974,
+      "upper": 2110
+    },
+    {
+      "day": 5,
+      "date": "2026-11-24",
+      "forecast": 2035,
+      "lower": 1959,
+      "upper": 2111
+    },
+    {
+      "day": 6,
+      "date": "2026-11-25",
+      "forecast": 2028,
+      "lower": 1946,
+      "upper": 2110
+    },
+    {
+      "day": 7,
+      "date": "2026-11-26",
+      "forecast": 2021,
+      "lower": 1932,
+      "upper": 2110
+    }
+  ]
+}

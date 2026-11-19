@@ -1,0 +1,64 @@
+{
+  "crop": "Cotton",
+  "yard": "Hyderabad RCI Market",
+  "horizon": 7,
+  "asOf": "2026-11-19",
+  "currentPrice": 8903,
+  "forecastPrice": 8805,
+  "expectedChangePct": -1.1,
+  "rangeMin": 8805,
+  "rangeMax": 8889,
+  "confidence": 0.95,
+  "model": "Random Forest",
+  "points": [
+    {
+      "day": 1,
+      "date": "2026-11-20",
+      "forecast": 8889,
+      "lower": 8741,
+      "upper": 9037
+    },
+    {
+      "day": 2,
+      "date": "2026-11-21",
+      "forecast": 8875,
+      "lower": 8667,
+      "upper": 9083
+    },
+    {
+      "day": 3,
+      "date": "2026-11-22",
+      "forecast": 8861,
+      "lower": 8606,
+      "upper": 9116
+    },
+    {
+      "day": 4,
+      "date": "2026-11-23",
+      "forecast": 8847,
+      "lower": 8553,
+      "upper": 9141
+    },
+    {
+      "day": 5,
+      "date": "2026-11-24",
+      "forecast": 8833,
+      "lower": 8505,
+      "upper": 9161
+    },
+    {
+      "day": 6,
+      "date": "2026-11-25",
+      "forecast": 8819,
+      "lower": 8460,
+      "upper": 9178
+    },
+    {
+      "day": 7,
+      "date": "2026-11-26",
+      "forecast": 8805,
+      "lower": 8418,
+      "upper": 9192
+    }
+  ]
+}

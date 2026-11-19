@@ -1,0 +1,64 @@
+{
+  "crop": "Turmeric",
+  "yard": "Medak",
+  "horizon": 7,
+  "asOf": "2026-11-19",
+  "currentPrice": 10090,
+  "forecastPrice": 10293,
+  "expectedChangePct": 2.0,
+  "rangeMin": 10119,
+  "rangeMax": 10293,
+  "confidence": 0.95,
+  "model": "Random Forest",
+  "points": [
+    {
+      "day": 1,
+      "date": "2026-11-20",
+      "forecast": 10119,
+      "lower": 9951,
+      "upper": 10287
+    },
+    {
+      "day": 2,
+      "date": "2026-11-21",
+      "forecast": 10148,
+      "lower": 9910,
+      "upper": 10386
+    },
+    {
+      "day": 3,
+      "date": "2026-11-22",
+      "forecast": 10177,
+      "lower": 9884,
+      "upper": 10470
+    },
+    {
+      "day": 4,
+      "date": "2026-11-23",
+      "forecast": 10206,
+      "lower": 9867,
+      "upper": 10545
+    },
+    {
+      "day": 5,
+      "date": "2026-11-24",
+      "forecast": 10235,
+      "lower": 9855,
+      "upper": 10615
+    },
+    {
+      "day": 6,
+      "date": "2026-11-25",
+      "forecast": 10264,
+      "lower": 9847,
+      "upper": 10681
+    },
+    {
+      "day": 7,
+      "date": "2026-11-26",
+      "forecast": 10293,
+      "lower": 9841,
+      "upper": 10745
+    }
+  ]
+}

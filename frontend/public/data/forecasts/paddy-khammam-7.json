@@ -1,0 +1,64 @@
+{
+  "crop": "Paddy",
+  "yard": "Khammam",
+  "horizon": 7,
+  "asOf": "2026-11-19",
+  "currentPrice": 2193,
+  "forecastPrice": 2200,
+  "expectedChangePct": 0.2,
+  "rangeMin": 2194,
+  "rangeMax": 2200,
+  "confidence": 0.95,
+  "model": "Random Forest",
+  "points": [
+    {
+      "day": 1,
+      "date": "2026-11-20",
+      "forecast": 2194,
+      "lower": 2158,
+      "upper": 2230
+    },
+    {
+      "day": 2,
+      "date": "2026-11-21",
+      "forecast": 2195,
+      "lower": 2143,
+      "upper": 2247
+    },
+    {
+      "day": 3,
+      "date": "2026-11-22",
+      "forecast": 2196,
+      "lower": 2133,
+      "upper": 2259
+    },
+    {
+      "day": 4,
+      "date": "2026-11-23",
+      "forecast": 2197,
+      "lower": 2124,
+      "upper": 2270
+    },
+    {
+      "day": 5,
+      "date": "2026-11-24",
+      "forecast": 2198,
+      "lower": 2116,
+      "upper": 2280
+    },
+    {
+      "day": 6,
+      "date": "2026-11-25",
+      "forecast": 2199,
+      "lower": 2110,
+      "upper": 2288
+    },
+    {
+      "day": 7,
+      "date": "2026-11-26",
+      "forecast": 2200,
+      "lower": 2103,
+      "upper": 2297
+    }
+  ]
+}

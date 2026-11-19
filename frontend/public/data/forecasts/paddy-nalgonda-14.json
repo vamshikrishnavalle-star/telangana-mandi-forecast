@@ -1,0 +1,113 @@
+{
+  "crop": "Paddy",
+  "yard": "Nalgonda",
+  "horizon": 14,
+  "asOf": "2026-11-19",
+  "currentPrice": 1947,
+  "forecastPrice": 2059,
+  "expectedChangePct": 4.1,
+  "rangeMin": 1955,
+  "rangeMax": 2059,
+  "confidence": 0.88,
+  "model": "Random Forest",
+  "points": [
+    {
+      "day": 1,
+      "date": "2026-11-20",
+      "forecast": 1955,
+      "lower": 1923,
+      "upper": 1987
+    },
+    {
+      "day": 2,
+      "date": "2026-11-21",
+      "forecast": 1963,
+      "lower": 1917,
+      "upper": 2009
+    },
+    {
+      "day": 3,
+      "date": "2026-11-22",
+      "forecast": 1971,
+      "lower": 1914,
+      "upper": 2028
+    },
+    {
+      "day": 4,
+      "date": "2026-11-23",
+      "forecast": 1979,
+      "lower": 1913,
+      "upper": 2045
+    },
+    {
+      "day": 5,
+      "date": "2026-11-24",
+      "forecast": 1987,
+      "lower": 1913,
+      "upper": 2061
+    },
+    {
+      "day": 6,
+      "date": "2026-11-25",
+      "forecast": 1995,
+      "lower": 1914,
+      "upper": 2076
+    },
+    {
+      "day": 7,
+      "date": "2026-11-26",
+      "forecast": 2003,
+      "lower": 1915,
+      "upper": 2091
+    },
+    {
+      "day": 8,
+      "date": "2026-11-27",
+      "forecast": 2011,
+      "lower": 1917,
+      "upper": 2105
+    },
+    {
+      "day": 9,
+      "date": "2026-11-28",
+      "forecast": 2019,
+      "lower": 1918,
+      "upper": 2120
+    },
+    {
+      "day": 10,
+      "date": "2026-11-29",
+      "forecast": 2027,
+      "lower": 1921,
+      "upper": 2133
+    },
+    {
+      "day": 11,
+      "date": "2026-11-30",
+      "forecast": 2035,
+      "lower": 1923,
+      "upper": 2147
+    },
+    {
+      "day": 12,
+      "date": "2026-12-01",
+      "forecast": 2043,
+      "lower": 1926,
+      "upper": 2160
+    },
+    {
+      "day": 13,
+      "date": "2026-12-02",
+      "forecast": 2051,
+      "lower": 1928,
+      "upper": 2174
+    },
+    {
+      "day": 14,
+      "date": "2026-12-03",
+      "forecast": 2059,
+      "lower": 1931,
+      "upper": 2187
+    }
+  ]
+}

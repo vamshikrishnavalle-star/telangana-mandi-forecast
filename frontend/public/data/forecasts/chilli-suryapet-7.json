@@ -1,0 +1,64 @@
+{
+  "crop": "Chilli",
+  "yard": "Suryapet",
+  "horizon": 7,
+  "asOf": "2026-11-19",
+  "currentPrice": 12892,
+  "forecastPrice": 12560,
+  "expectedChangePct": -2.6,
+  "rangeMin": 12560,
+  "rangeMax": 12844,
+  "confidence": 0.95,
+  "model": "Random Forest",
+  "points": [
+    {
+      "day": 1,
+      "date": "2026-11-20",
+      "forecast": 12844,
+      "lower": 12631,
+      "upper": 13057
+    },
+    {
+      "day": 2,
+      "date": "2026-11-21",
+      "forecast": 12796,
+      "lower": 12496,
+      "upper": 13096
+    },
+    {
+      "day": 3,
+      "date": "2026-11-22",
+      "forecast": 12748,
+      "lower": 12381,
+      "upper": 13115
+    },
+    {
+      "day": 4,
+      "date": "2026-11-23",
+      "forecast": 12701,
+      "lower": 12279,
+      "upper": 13123
+    },
+    {
+      "day": 5,
+      "date": "2026-11-24",
+      "forecast": 12654,
+      "lower": 12184,
+      "upper": 13124
+    },
+    {
+      "day": 6,
+      "date": "2026-11-25",
+      "forecast": 12607,
+      "lower": 12094,
+      "upper": 13120
+    },
+    {
+      "day": 7,
+      "date": "2026-11-26",
+      "forecast": 12560,
+      "lower": 12008,
+      "upper": 13112
+    }
+  ]
+}

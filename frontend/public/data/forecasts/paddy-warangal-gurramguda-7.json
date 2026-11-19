@@ -1,0 +1,64 @@
+{
+  "crop": "Paddy",
+  "yard": "Warangal Gurramguda",
+  "horizon": 7,
+  "asOf": "2026-11-19",
+  "currentPrice": 2168,
+  "forecastPrice": 2182,
+  "expectedChangePct": 0.7,
+  "rangeMin": 2170,
+  "rangeMax": 2182,
+  "confidence": 0.95,
+  "model": "Random Forest",
+  "points": [
+    {
+      "day": 1,
+      "date": "2026-11-20",
+      "forecast": 2170,
+      "lower": 2134,
+      "upper": 2206
+    },
+    {
+      "day": 2,
+      "date": "2026-11-21",
+      "forecast": 2172,
+      "lower": 2121,
+      "upper": 2223
+    },
+    {
+      "day": 3,
+      "date": "2026-11-22",
+      "forecast": 2174,
+      "lower": 2111,
+      "upper": 2237
+    },
+    {
+      "day": 4,
+      "date": "2026-11-23",
+      "forecast": 2176,
+      "lower": 2104,
+      "upper": 2248
+    },
+    {
+      "day": 5,
+      "date": "2026-11-24",
+      "forecast": 2178,
+      "lower": 2097,
+      "upper": 2259
+    },
+    {
+      "day": 6,
+      "date": "2026-11-25",
+      "forecast": 2180,
+      "lower": 2091,
+      "upper": 2269
+    },
+    {
+      "day": 7,
+      "date": "2026-11-26",
+      "forecast": 2182,
+      "lower": 2086,
+      "upper": 2278
+    }
+  ]
+}

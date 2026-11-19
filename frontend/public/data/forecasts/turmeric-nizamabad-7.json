@@ -1,0 +1,64 @@
+{
+  "crop": "Turmeric",
+  "yard": "Nizamabad",
+  "horizon": 7,
+  "asOf": "2026-11-19",
+  "currentPrice": 9996,
+  "forecastPrice": 10495,
+  "expectedChangePct": 4.9,
+  "rangeMin": 10066,
+  "rangeMax": 10495,
+  "confidence": 0.95,
+  "model": "Random Forest",
+  "points": [
+    {
+      "day": 1,
+      "date": "2026-11-20",
+      "forecast": 10066,
+      "lower": 9899,
+      "upper": 10233
+    },
+    {
+      "day": 2,
+      "date": "2026-11-21",
+      "forecast": 10136,
+      "lower": 9898,
+      "upper": 10374
+    },
+    {
+      "day": 3,
+      "date": "2026-11-22",
+      "forecast": 10207,
+      "lower": 9914,
+      "upper": 10500
+    },
+    {
+      "day": 4,
+      "date": "2026-11-23",
+      "forecast": 10278,
+      "lower": 9937,
+      "upper": 10619
+    },
+    {
+      "day": 5,
+      "date": "2026-11-24",
+      "forecast": 10350,
+      "lower": 9966,
+      "upper": 10734
+    },
+    {
+      "day": 6,
+      "date": "2026-11-25",
+      "forecast": 10422,
+      "lower": 9998,
+      "upper": 10846
+    },
+    {
+      "day": 7,
+      "date": "2026-11-26",
+      "forecast": 10495,
+      "lower": 10034,
+      "upper": 10956
+    }
+  ]
+}

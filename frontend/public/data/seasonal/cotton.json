@@ -1,0 +1,98 @@
+{
+  "crop": "Cotton",
+  "monthly": [
+    {
+      "month": 1,
+      "monthName": "Jan",
+      "avgPrice": 8636
+    },
+    {
+      "month": 2,
+      "monthName": "Feb",
+      "avgPrice": 8992
+    },
+    {
+      "month": 3,
+      "monthName": "Mar",
+      "avgPrice": 9170
+    },
+    {
+      "month": 4,
+      "monthName": "Apr",
+      "avgPrice": 9081
+    },
+    {
+      "month": 5,
+      "monthName": "May",
+      "avgPrice": 8814
+    },
+    {
+      "month": 6,
+      "monthName": "Jun",
+      "avgPrice": 8547
+    },
+    {
+      "month": 7,
+      "monthName": "Jul",
+      "avgPrice": 8280
+    },
+    {
+      "month": 8,
+      "monthName": "Aug",
+      "avgPrice": 8013
+    },
+    {
+      "month": 9,
+      "monthName": "Sep",
+      "avgPrice": 7924
+    },
+    {
+      "month": 10,
+      "monthName": "Oct",
+      "avgPrice": 8102
+    },
+    {
+      "month": 11,
+      "monthName": "Nov",
+      "avgPrice": 8369
+    },
+    {
+      "month": 12,
+      "monthName": "Dec",
+      "avgPrice": 8725
+    }
+  ],
+  "kharifAvg": 8206,
+  "rabiAvg": 8903,
+  "discountPct": -7.8,
+  "yearly": [
+    {
+      "year": 2020,
+      "avg": 7389
+    },
+    {
+      "year": 2021,
+      "avg": 7835
+    },
+    {
+      "year": 2022,
+      "avg": 8191
+    },
+    {
+      "year": 2023,
+      "avg": 8547
+    },
+    {
+      "year": 2024,
+      "avg": 8903
+    },
+    {
+      "year": 2025,
+      "avg": 9170
+    },
+    {
+      "year": 2026,
+      "avg": 9437
+    }
+  ]
+}

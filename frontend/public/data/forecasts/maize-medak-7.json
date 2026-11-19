@@ -1,0 +1,64 @@
+{
+  "crop": "Maize",
+  "yard": "Medak",
+  "horizon": 7,
+  "asOf": "2026-11-19",
+  "currentPrice": 2258,
+  "forecastPrice": 2304,
+  "expectedChangePct": 2.0,
+  "rangeMin": 2264,
+  "rangeMax": 2304,
+  "confidence": 0.95,
+  "model": "Random Forest",
+  "points": [
+    {
+      "day": 1,
+      "date": "2026-11-20",
+      "forecast": 2264,
+      "lower": 2226,
+      "upper": 2302
+    },
+    {
+      "day": 2,
+      "date": "2026-11-21",
+      "forecast": 2270,
+      "lower": 2217,
+      "upper": 2323
+    },
+    {
+      "day": 3,
+      "date": "2026-11-22",
+      "forecast": 2276,
+      "lower": 2211,
+      "upper": 2341
+    },
+    {
+      "day": 4,
+      "date": "2026-11-23",
+      "forecast": 2283,
+      "lower": 2207,
+      "upper": 2359
+    },
+    {
+      "day": 5,
+      "date": "2026-11-24",
+      "forecast": 2290,
+      "lower": 2205,
+      "upper": 2375
+    },
+    {
+      "day": 6,
+      "date": "2026-11-25",
+      "forecast": 2297,
+      "lower": 2204,
+      "upper": 2390
+    },
+    {
+      "day": 7,
+      "date": "2026-11-26",
+      "forecast": 2304,
+      "lower": 2203,
+      "upper": 2405
+    }
+  ]
+}

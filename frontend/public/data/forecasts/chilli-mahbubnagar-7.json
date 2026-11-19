@@ -1,0 +1,64 @@
+{
+  "crop": "Chilli",
+  "yard": "Mahbubnagar",
+  "horizon": 7,
+  "asOf": "2026-11-19",
+  "currentPrice": 12258,
+  "forecastPrice": 11955,
+  "expectedChangePct": -2.5,
+  "rangeMin": 11955,
+  "rangeMax": 12214,
+  "confidence": 0.95,
+  "model": "Random Forest",
+  "points": [
+    {
+      "day": 1,
+      "date": "2026-11-20",
+      "forecast": 12214,
+      "lower": 12011,
+      "upper": 12417
+    },
+    {
+      "day": 2,
+      "date": "2026-11-21",
+      "forecast": 12170,
+      "lower": 11884,
+      "upper": 12456
+    },
+    {
+      "day": 3,
+      "date": "2026-11-22",
+      "forecast": 12127,
+      "lower": 11778,
+      "upper": 12476
+    },
+    {
+      "day": 4,
+      "date": "2026-11-23",
+      "forecast": 12084,
+      "lower": 11683,
+      "upper": 12485
+    },
+    {
+      "day": 5,
+      "date": "2026-11-24",
+      "forecast": 12041,
+      "lower": 11594,
+      "upper": 12488
+    },
+    {
+      "day": 6,
+      "date": "2026-11-25",
+      "forecast": 11998,
+      "lower": 11510,
+      "upper": 12486
+    },
+    {
+      "day": 7,
+      "date": "2026-11-26",
+      "forecast": 11955,
+      "lower": 11430,
+      "upper": 12480
+    }
+  ]
+}

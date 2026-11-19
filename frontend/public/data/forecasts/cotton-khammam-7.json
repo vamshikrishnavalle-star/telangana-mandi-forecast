@@ -1,0 +1,64 @@
+{
+  "crop": "Cotton",
+  "yard": "Khammam",
+  "horizon": 7,
+  "asOf": "2026-11-19",
+  "currentPrice": 8565,
+  "forecastPrice": 8579,
+  "expectedChangePct": 0.2,
+  "rangeMin": 8567,
+  "rangeMax": 8579,
+  "confidence": 0.95,
+  "model": "Random Forest",
+  "points": [
+    {
+      "day": 1,
+      "date": "2026-11-20",
+      "forecast": 8567,
+      "lower": 8425,
+      "upper": 8709
+    },
+    {
+      "day": 2,
+      "date": "2026-11-21",
+      "forecast": 8569,
+      "lower": 8368,
+      "upper": 8770
+    },
+    {
+      "day": 3,
+      "date": "2026-11-22",
+      "forecast": 8571,
+      "lower": 8325,
+      "upper": 8817
+    },
+    {
+      "day": 4,
+      "date": "2026-11-23",
+      "forecast": 8573,
+      "lower": 8288,
+      "upper": 8858
+    },
+    {
+      "day": 5,
+      "date": "2026-11-24",
+      "forecast": 8575,
+      "lower": 8257,
+      "upper": 8893
+    },
+    {
+      "day": 6,
+      "date": "2026-11-25",
+      "forecast": 8577,
+      "lower": 8228,
+      "upper": 8926
+    },
+    {
+      "day": 7,
+      "date": "2026-11-26",
+      "forecast": 8579,
+      "lower": 8202,
+      "upper": 8956
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "crop": "Chilli",
+  "yard": "Nizamabad",
+  "horizon": 7,
+  "asOf": "2026-11-19",
+  "currentPrice": 12852,
+  "forecastPrice": 13496,
+  "expectedChangePct": 4.9,
+  "rangeMin": 12942,
+  "rangeMax": 13496,
+  "confidence": 0.95,
+  "model": "Random Forest",
+  "points": [
+    {
+      "day": 1,
+      "date": "2026-11-20",
+      "forecast": 12942,
+      "lower": 12727,
+      "upper": 13157
+    },
+    {
+      "day": 2,
+      "date": "2026-11-21",
+      "forecast": 13033,
+      "lower": 12727,
+      "upper": 13339
+    },
+    {
+      "day": 3,
+      "date": "2026-11-22",
+      "forecast": 13124,
+      "lower": 12747,
+      "upper": 13501
+    },
+    {
+      "day": 4,
+      "date": "2026-11-23",
+      "forecast": 13216,
+      "lower": 12777,
+      "upper": 13655
+    },
+    {
+      "day": 5,
+      "date": "2026-11-24",
+      "forecast": 13309,
+      "lower": 12815,
+      "upper": 13803
+    },
+    {
+      "day": 6,
+      "date": "2026-11-25",
+      "forecast": 13402,
+      "lower": 12857,
+      "upper": 13947
+    },
+    {
+      "day": 7,
+      "date": "2026-11-26",
+      "forecast": 13496,
+      "lower": 12903,
+      "upper": 14089
+    }
+  ]
+}

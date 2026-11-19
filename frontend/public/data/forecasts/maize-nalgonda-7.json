@@ -1,0 +1,64 @@
+{
+  "crop": "Maize",
+  "yard": "Nalgonda",
+  "horizon": 7,
+  "asOf": "2026-11-19",
+  "currentPrice": 2007,
+  "forecastPrice": 2064,
+  "expectedChangePct": 2.9,
+  "rangeMin": 2015,
+  "rangeMax": 2064,
+  "confidence": 0.95,
+  "model": "Random Forest",
+  "points": [
+    {
+      "day": 1,
+      "date": "2026-11-20",
+      "forecast": 2015,
+      "lower": 1982,
+      "upper": 2048
+    },
+    {
+      "day": 2,
+      "date": "2026-11-21",
+      "forecast": 2023,
+      "lower": 1976,
+      "upper": 2070
+    },
+    {
+      "day": 3,
+      "date": "2026-11-22",
+      "forecast": 2031,
+      "lower": 1973,
+      "upper": 2089
+    },
+    {
+      "day": 4,
+      "date": "2026-11-23",
+      "forecast": 2039,
+      "lower": 1971,
+      "upper": 2107
+    },
+    {
+      "day": 5,
+      "date": "2026-11-24",
+      "forecast": 2047,
+      "lower": 1971,
+      "upper": 2123
+    },
+    {
+      "day": 6,
+      "date": "2026-11-25",
+      "forecast": 2055,
+      "lower": 1971,
+      "upper": 2139
+    },
+    {
+      "day": 7,
+      "date": "2026-11-26",
+      "forecast": 2064,
+      "lower": 1973,
+      "upper": 2155
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "crop": "Chilli",
+  "yard": "Nalgonda",
+  "horizon": 14,
+  "asOf": "2026-11-19",
+  "currentPrice": 11529,
+  "forecastPrice": 12216,
+  "expectedChangePct": 4.1,
+  "rangeMin": 11577,
+  "rangeMax": 12216,
+  "confidence": 0.88,
+  "model": "Random Forest",
+  "points": [
+    {
+      "day": 1,
+      "date": "2026-11-20",
+      "forecast": 11577,
+      "lower": 11385,
+      "upper": 11769
+    },
+    {
+      "day": 2,
+      "date": "2026-11-21",
+      "forecast": 11625,
+      "lower": 11352,
+      "upper": 11898
+    },
+    {
+      "day": 3,
+      "date": "2026-11-22",
+      "forecast": 11673,
+      "lower": 11337,
+      "upper": 12009
+    },
+    {
+      "day": 4,
+      "date": "2026-11-23",
+      "forecast": 11721,
+      "lower": 11332,
+      "upper": 12110
+    },
+    {
+      "day": 5,
+      "date": "2026-11-24",
+      "forecast": 11770,
+      "lower": 11333,
+      "upper": 12207
+    },
+    {
+      "day": 6,
+      "date": "2026-11-25",
+      "forecast": 11819,
+      "lower": 11338,
+      "upper": 12300
+    },
+    {
+      "day": 7,
+      "date": "2026-11-26",
+      "forecast": 11868,
+      "lower": 11347,
+      "upper": 12389
+    },
+    {
+      "day": 8,
+      "date": "2026-11-27",
+      "forecast": 11917,
+      "lower": 11357,
+      "upper": 12477
+    },
+    {
+      "day": 9,
+      "date": "2026-11-28",
+      "forecast": 11966,
+      "lower": 11370,
+      "upper": 12562
+    },
+    {
+      "day": 10,
+      "date": "2026-11-29",
+      "forecast": 12016,
+      "lower": 11385,
+      "upper": 12647
+    },
+    {
+      "day": 11,
+      "date": "2026-11-30",
+      "forecast": 12066,
+      "lower": 11402,
+      "upper": 12730
+    },
+    {
+      "day": 12,
+      "date": "2026-12-01",
+      "forecast": 12116,
+      "lower": 11419,
+      "upper": 12813
+    },
+    {
+      "day": 13,
+      "date": "2026-12-02",
+      "forecast": 12166,
+      "lower": 11438,
+      "upper": 12894
+    },
+    {
+      "day": 14,
+      "date": "2026-12-03",
+      "forecast": 12216,
+      "lower": 11457,
+      "upper": 12975
+    }
+  ]
+}

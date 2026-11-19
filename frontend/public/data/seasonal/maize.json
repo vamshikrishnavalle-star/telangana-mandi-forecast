@@ -1,0 +1,98 @@
+{
+  "crop": "Maize",
+  "monthly": [
+    {
+      "month": 1,
+      "monthName": "Jan",
+      "avgPrice": 2280
+    },
+    {
+      "month": 2,
+      "monthName": "Feb",
+      "avgPrice": 2374
+    },
+    {
+      "month": 3,
+      "monthName": "Mar",
+      "avgPrice": 2420
+    },
+    {
+      "month": 4,
+      "monthName": "Apr",
+      "avgPrice": 2397
+    },
+    {
+      "month": 5,
+      "monthName": "May",
+      "avgPrice": 2326
+    },
+    {
+      "month": 6,
+      "monthName": "Jun",
+      "avgPrice": 2256
+    },
+    {
+      "month": 7,
+      "monthName": "Jul",
+      "avgPrice": 2186
+    },
+    {
+      "month": 8,
+      "monthName": "Aug",
+      "avgPrice": 2115
+    },
+    {
+      "month": 9,
+      "monthName": "Sep",
+      "avgPrice": 2092
+    },
+    {
+      "month": 10,
+      "monthName": "Oct",
+      "avgPrice": 2138
+    },
+    {
+      "month": 11,
+      "monthName": "Nov",
+      "avgPrice": 2209
+    },
+    {
+      "month": 12,
+      "monthName": "Dec",
+      "avgPrice": 2303
+    }
+  ],
+  "kharifAvg": 2166,
+  "rabiAvg": 2350,
+  "discountPct": -7.8,
+  "yearly": [
+    {
+      "year": 2020,
+      "avg": 1950
+    },
+    {
+      "year": 2021,
+      "avg": 2068
+    },
+    {
+      "year": 2022,
+      "avg": 2162
+    },
+    {
+      "year": 2023,
+      "avg": 2256
+    },
+    {
+      "year": 2024,
+      "avg": 2350
+    },
+    {
+      "year": 2025,
+      "avg": 2420
+    },
+    {
+      "year": 2026,
+      "avg": 2491
+    }
+  ]
+}

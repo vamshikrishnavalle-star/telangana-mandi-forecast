@@ -1,0 +1,98 @@
+{
+  "crop": "Paddy",
+  "monthly": [
+    {
+      "month": 1,
+      "monthName": "Jan",
+      "avgPrice": 2212
+    },
+    {
+      "month": 2,
+      "monthName": "Feb",
+      "avgPrice": 2303
+    },
+    {
+      "month": 3,
+      "monthName": "Mar",
+      "avgPrice": 2348
+    },
+    {
+      "month": 4,
+      "monthName": "Apr",
+      "avgPrice": 2326
+    },
+    {
+      "month": 5,
+      "monthName": "May",
+      "avgPrice": 2257
+    },
+    {
+      "month": 6,
+      "monthName": "Jun",
+      "avgPrice": 2189
+    },
+    {
+      "month": 7,
+      "monthName": "Jul",
+      "avgPrice": 2120
+    },
+    {
+      "month": 8,
+      "monthName": "Aug",
+      "avgPrice": 2052
+    },
+    {
+      "month": 9,
+      "monthName": "Sep",
+      "avgPrice": 2029
+    },
+    {
+      "month": 10,
+      "monthName": "Oct",
+      "avgPrice": 2075
+    },
+    {
+      "month": 11,
+      "monthName": "Nov",
+      "avgPrice": 2143
+    },
+    {
+      "month": 12,
+      "monthName": "Dec",
+      "avgPrice": 2234
+    }
+  ],
+  "kharifAvg": 2101,
+  "rabiAvg": 2280,
+  "discountPct": -7.9,
+  "yearly": [
+    {
+      "year": 2020,
+      "avg": 1892
+    },
+    {
+      "year": 2021,
+      "avg": 2006
+    },
+    {
+      "year": 2022,
+      "avg": 2098
+    },
+    {
+      "year": 2023,
+      "avg": 2189
+    },
+    {
+      "year": 2024,
+      "avg": 2280
+    },
+    {
+      "year": 2025,
+      "avg": 2348
+    },
+    {
+      "year": 2026,
+      "avg": 2417
+    }
+  ]
+}

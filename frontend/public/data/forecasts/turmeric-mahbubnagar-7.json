@@ -1,0 +1,64 @@
+{
+  "crop": "Turmeric",
+  "yard": "Mahbubnagar",
+  "horizon": 7,
+  "asOf": "2026-11-19",
+  "currentPrice": 9534,
+  "forecastPrice": 9298,
+  "expectedChangePct": -2.5,
+  "rangeMin": 9298,
+  "rangeMax": 9500,
+  "confidence": 0.95,
+  "model": "Random Forest",
+  "points": [
+    {
+      "day": 1,
+      "date": "2026-11-20",
+      "forecast": 9500,
+      "lower": 9342,
+      "upper": 9658
+    },
+    {
+      "day": 2,
+      "date": "2026-11-21",
+      "forecast": 9466,
+      "lower": 9244,
+      "upper": 9688
+    },
+    {
+      "day": 3,
+      "date": "2026-11-22",
+      "forecast": 9432,
+      "lower": 9161,
+      "upper": 9703
+    },
+    {
+      "day": 4,
+      "date": "2026-11-23",
+      "forecast": 9398,
+      "lower": 9086,
+      "upper": 9710
+    },
+    {
+      "day": 5,
+      "date": "2026-11-24",
+      "forecast": 9364,
+      "lower": 9016,
+      "upper": 9712
+    },
+    {
+      "day": 6,
+      "date": "2026-11-25",
+      "forecast": 9331,
+      "lower": 8952,
+      "upper": 9710
+    },
+    {
+      "day": 7,
+      "date": "2026-11-26",
+      "forecast": 9298,
+      "lower": 8890,
+      "upper": 9706
+    }
+  ]
+}

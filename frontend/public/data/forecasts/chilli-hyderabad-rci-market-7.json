@@ -1,0 +1,64 @@
+{
+  "crop": "Chilli",
+  "yard": "Hyderabad RCI Market",
+  "horizon": 7,
+  "asOf": "2026-11-19",
+  "currentPrice": 13500,
+  "forecastPrice": 13353,
+  "expectedChangePct": -1.1,
+  "rangeMin": 13353,
+  "rangeMax": 13479,
+  "confidence": 0.95,
+  "model": "Random Forest",
+  "points": [
+    {
+      "day": 1,
+      "date": "2026-11-20",
+      "forecast": 13479,
+      "lower": 13255,
+      "upper": 13703
+    },
+    {
+      "day": 2,
+      "date": "2026-11-21",
+      "forecast": 13458,
+      "lower": 13142,
+      "upper": 13774
+    },
+    {
+      "day": 3,
+      "date": "2026-11-22",
+      "forecast": 13437,
+      "lower": 13051,
+      "upper": 13823
+    },
+    {
+      "day": 4,
+      "date": "2026-11-23",
+      "forecast": 13416,
+      "lower": 12971,
+      "upper": 13861
+    },
+    {
+      "day": 5,
+      "date": "2026-11-24",
+      "forecast": 13395,
+      "lower": 12898,
+      "upper": 13892
+    },
+    {
+      "day": 6,
+      "date": "2026-11-25",
+      "forecast": 13374,
+      "lower": 12830,
+      "upper": 13918
+    },
+    {
+      "day": 7,
+      "date": "2026-11-26",
+      "forecast": 13353,
+      "lower": 12767,
+      "upper": 13939
+    }
+  ]
+}

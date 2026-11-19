@@ -1,0 +1,64 @@
+{
+  "crop": "Cotton",
+  "yard": "Nizamabad",
+  "horizon": 7,
+  "asOf": "2026-11-19",
+  "currentPrice": 8476,
+  "forecastPrice": 8900,
+  "expectedChangePct": 4.9,
+  "rangeMin": 8535,
+  "rangeMax": 8900,
+  "confidence": 0.95,
+  "model": "Random Forest",
+  "points": [
+    {
+      "day": 1,
+      "date": "2026-11-20",
+      "forecast": 8535,
+      "lower": 8393,
+      "upper": 8677
+    },
+    {
+      "day": 2,
+      "date": "2026-11-21",
+      "forecast": 8595,
+      "lower": 8393,
+      "upper": 8797
+    },
+    {
+      "day": 3,
+      "date": "2026-11-22",
+      "forecast": 8655,
+      "lower": 8406,
+      "upper": 8904
+    },
+    {
+      "day": 4,
+      "date": "2026-11-23",
+      "forecast": 8716,
+      "lower": 8427,
+      "upper": 9005
+    },
+    {
+      "day": 5,
+      "date": "2026-11-24",
+      "forecast": 8777,
+      "lower": 8451,
+      "upper": 9103
+    },
+    {
+      "day": 6,
+      "date": "2026-11-25",
+      "forecast": 8838,
+      "lower": 8479,
+      "upper": 9197
+    },
+    {
+      "day": 7,
+      "date": "2026-11-26",
+      "forecast": 8900,
+      "lower": 8509,
+      "upper": 9291
+    }
+  ]
+}

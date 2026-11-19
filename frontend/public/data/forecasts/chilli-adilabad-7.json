@@ -1,0 +1,64 @@
+{
+  "crop": "Chilli",
+  "yard": "Adilabad",
+  "horizon": 7,
+  "asOf": "2026-11-19",
+  "currentPrice": 12190,
+  "forecastPrice": 12953,
+  "expectedChangePct": 6.1,
+  "rangeMin": 12296,
+  "rangeMax": 12953,
+  "confidence": 0.95,
+  "model": "Random Forest",
+  "points": [
+    {
+      "day": 1,
+      "date": "2026-11-20",
+      "forecast": 12296,
+      "lower": 12092,
+      "upper": 12500
+    },
+    {
+      "day": 2,
+      "date": "2026-11-21",
+      "forecast": 12403,
+      "lower": 12112,
+      "upper": 12694
+    },
+    {
+      "day": 3,
+      "date": "2026-11-22",
+      "forecast": 12511,
+      "lower": 12151,
+      "upper": 12871
+    },
+    {
+      "day": 4,
+      "date": "2026-11-23",
+      "forecast": 12620,
+      "lower": 12201,
+      "upper": 13039
+    },
+    {
+      "day": 5,
+      "date": "2026-11-24",
+      "forecast": 12730,
+      "lower": 12257,
+      "upper": 13203
+    },
+    {
+      "day": 6,
+      "date": "2026-11-25",
+      "forecast": 12841,
+      "lower": 12319,
+      "upper": 13363
+    },
+    {
+      "day": 7,
+      "date": "2026-11-26",
+      "forecast": 12953,
+      "lower": 12384,
+      "upper": 13522
+    }
+  ]
+}

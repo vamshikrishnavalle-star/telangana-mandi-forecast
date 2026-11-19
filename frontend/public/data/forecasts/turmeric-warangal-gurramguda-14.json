@@ -1,0 +1,113 @@
+{
+  "crop": "Turmeric",
+  "yard": "Warangal Gurramguda",
+  "horizon": 14,
+  "asOf": "2026-11-19",
+  "currentPrice": 9986,
+  "forecastPrice": 10126,
+  "expectedChangePct": 1.0,
+  "rangeMin": 9996,
+  "rangeMax": 10126,
+  "confidence": 0.88,
+  "model": "Random Forest",
+  "points": [
+    {
+      "day": 1,
+      "date": "2026-11-20",
+      "forecast": 9996,
+      "lower": 9830,
+      "upper": 10162
+    },
+    {
+      "day": 2,
+      "date": "2026-11-21",
+      "forecast": 10006,
+      "lower": 9771,
+      "upper": 10241
+    },
+    {
+      "day": 3,
+      "date": "2026-11-22",
+      "forecast": 10016,
+      "lower": 9728,
+      "upper": 10304
+    },
+    {
+      "day": 4,
+      "date": "2026-11-23",
+      "forecast": 10026,
+      "lower": 9693,
+      "upper": 10359
+    },
+    {
+      "day": 5,
+      "date": "2026-11-24",
+      "forecast": 10036,
+      "lower": 9663,
+      "upper": 10409
+    },
+    {
+      "day": 6,
+      "date": "2026-11-25",
+      "forecast": 10046,
+      "lower": 9638,
+      "upper": 10454
+    },
+    {
+      "day": 7,
+      "date": "2026-11-26",
+      "forecast": 10056,
+      "lower": 9614,
+      "upper": 10498
+    },
+    {
+      "day": 8,
+      "date": "2026-11-27",
+      "forecast": 10066,
+      "lower": 9593,
+      "upper": 10539
+    },
+    {
+      "day": 9,
+      "date": "2026-11-28",
+      "forecast": 10076,
+      "lower": 9574,
+      "upper": 10578
+    },
+    {
+      "day": 10,
+      "date": "2026-11-29",
+      "forecast": 10086,
+      "lower": 9557,
+      "upper": 10615
+    },
+    {
+      "day": 11,
+      "date": "2026-11-30",
+      "forecast": 10096,
+      "lower": 9540,
+      "upper": 10652
+    },
+    {
+      "day": 12,
+      "date": "2026-12-01",
+      "forecast": 10106,
+      "lower": 9525,
+      "upper": 10687
+    },
+    {
+      "day": 13,
+      "date": "2026-12-02",
+      "forecast": 10116,
+      "lower": 9511,
+      "upper": 10721
+    },
+    {
+      "day": 14,
+      "date": "2026-12-03",
+      "forecast": 10126,
+      "lower": 9497,
+      "upper": 10755
+    }
+  ]
+}

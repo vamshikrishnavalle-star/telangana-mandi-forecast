@@ -1,0 +1,64 @@
+{
+  "crop": "Maize",
+  "yard": "Nizamabad",
+  "horizon": 7,
+  "asOf": "2026-11-19",
+  "currentPrice": 2237,
+  "forecastPrice": 2349,
+  "expectedChangePct": 4.9,
+  "rangeMin": 2253,
+  "rangeMax": 2349,
+  "confidence": 0.95,
+  "model": "Random Forest",
+  "points": [
+    {
+      "day": 1,
+      "date": "2026-11-20",
+      "forecast": 2253,
+      "lower": 2216,
+      "upper": 2290
+    },
+    {
+      "day": 2,
+      "date": "2026-11-21",
+      "forecast": 2269,
+      "lower": 2216,
+      "upper": 2322
+    },
+    {
+      "day": 3,
+      "date": "2026-11-22",
+      "forecast": 2285,
+      "lower": 2219,
+      "upper": 2351
+    },
+    {
+      "day": 4,
+      "date": "2026-11-23",
+      "forecast": 2301,
+      "lower": 2225,
+      "upper": 2377
+    },
+    {
+      "day": 5,
+      "date": "2026-11-24",
+      "forecast": 2317,
+      "lower": 2231,
+      "upper": 2403
+    },
+    {
+      "day": 6,
+      "date": "2026-11-25",
+      "forecast": 2333,
+      "lower": 2238,
+      "upper": 2428
+    },
+    {
+      "day": 7,
+      "date": "2026-11-26",
+      "forecast": 2349,
+      "lower": 2246,
+      "upper": 2452
+    }
+  ]
+}

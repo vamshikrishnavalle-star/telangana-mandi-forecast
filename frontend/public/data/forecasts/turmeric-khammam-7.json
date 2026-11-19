@@ -1,0 +1,64 @@
+{
+  "crop": "Turmeric",
+  "yard": "Khammam",
+  "horizon": 7,
+  "asOf": "2026-11-19",
+  "currentPrice": 10101,
+  "forecastPrice": 10122,
+  "expectedChangePct": 0.2,
+  "rangeMin": 10104,
+  "rangeMax": 10122,
+  "confidence": 0.95,
+  "model": "Random Forest",
+  "points": [
+    {
+      "day": 1,
+      "date": "2026-11-20",
+      "forecast": 10104,
+      "lower": 9936,
+      "upper": 10272
+    },
+    {
+      "day": 2,
+      "date": "2026-11-21",
+      "forecast": 10107,
+      "lower": 9870,
+      "upper": 10344
+    },
+    {
+      "day": 3,
+      "date": "2026-11-22",
+      "forecast": 10110,
+      "lower": 9819,
+      "upper": 10401
+    },
+    {
+      "day": 4,
+      "date": "2026-11-23",
+      "forecast": 10113,
+      "lower": 9777,
+      "upper": 10449
+    },
+    {
+      "day": 5,
+      "date": "2026-11-24",
+      "forecast": 10116,
+      "lower": 9741,
+      "upper": 10491
+    },
+    {
+      "day": 6,
+      "date": "2026-11-25",
+      "forecast": 10119,
+      "lower": 9708,
+      "upper": 10530
+    },
+    {
+      "day": 7,
+      "date": "2026-11-26",
+      "forecast": 10122,
+      "lower": 9677,
+      "upper": 10567
+    }
+  ]
+}

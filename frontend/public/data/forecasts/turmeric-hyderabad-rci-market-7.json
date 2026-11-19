@@ -1,0 +1,64 @@
+{
+  "crop": "Turmeric",
+  "yard": "Hyderabad RCI Market",
+  "horizon": 7,
+  "asOf": "2026-11-19",
+  "currentPrice": 10500,
+  "forecastPrice": 10388,
+  "expectedChangePct": -1.1,
+  "rangeMin": 10388,
+  "rangeMax": 10484,
+  "confidence": 0.95,
+  "model": "Random Forest",
+  "points": [
+    {
+      "day": 1,
+      "date": "2026-11-20",
+      "forecast": 10484,
+      "lower": 10310,
+      "upper": 10658
+    },
+    {
+      "day": 2,
+      "date": "2026-11-21",
+      "forecast": 10468,
+      "lower": 10222,
+      "upper": 10714
+    },
+    {
+      "day": 3,
+      "date": "2026-11-22",
+      "forecast": 10452,
+      "lower": 10151,
+      "upper": 10753
+    },
+    {
+      "day": 4,
+      "date": "2026-11-23",
+      "forecast": 10436,
+      "lower": 10090,
+      "upper": 10782
+    },
+    {
+      "day": 5,
+      "date": "2026-11-24",
+      "forecast": 10420,
+      "lower": 10033,
+      "upper": 10807
+    },
+    {
+      "day": 6,
+      "date": "2026-11-25",
+      "forecast": 10404,
+      "lower": 9981,
+      "upper": 10827
+    },
+    {
+      "day": 7,
+      "date": "2026-11-26",
+      "forecast": 10388,
+      "lower": 9932,
+      "upper": 10844
+    }
+  ]
+}

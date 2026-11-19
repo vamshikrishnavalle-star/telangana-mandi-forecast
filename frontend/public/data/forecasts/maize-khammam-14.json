@@ -1,0 +1,113 @@
+{
+  "crop": "Maize",
+  "yard": "Khammam",
+  "horizon": 14,
+  "asOf": "2026-11-19",
+  "currentPrice": 2261,
+  "forecastPrice": 2275,
+  "expectedChangePct": 0.3,
+  "rangeMin": 2262,
+  "rangeMax": 2275,
+  "confidence": 0.88,
+  "model": "Random Forest",
+  "points": [
+    {
+      "day": 1,
+      "date": "2026-11-20",
+      "forecast": 2262,
+      "lower": 2224,
+      "upper": 2300
+    },
+    {
+      "day": 2,
+      "date": "2026-11-21",
+      "forecast": 2263,
+      "lower": 2210,
+      "upper": 2316
+    },
+    {
+      "day": 3,
+      "date": "2026-11-22",
+      "forecast": 2264,
+      "lower": 2199,
+      "upper": 2329
+    },
+    {
+      "day": 4,
+      "date": "2026-11-23",
+      "forecast": 2265,
+      "lower": 2190,
+      "upper": 2340
+    },
+    {
+      "day": 5,
+      "date": "2026-11-24",
+      "forecast": 2266,
+      "lower": 2182,
+      "upper": 2350
+    },
+    {
+      "day": 6,
+      "date": "2026-11-25",
+      "forecast": 2267,
+      "lower": 2175,
+      "upper": 2359
+    },
+    {
+      "day": 7,
+      "date": "2026-11-26",
+      "forecast": 2268,
+      "lower": 2168,
+      "upper": 2368
+    },
+    {
+      "day": 8,
+      "date": "2026-11-27",
+      "forecast": 2269,
+      "lower": 2162,
+      "upper": 2376
+    },
+    {
+      "day": 9,
+      "date": "2026-11-28",
+      "forecast": 2270,
+      "lower": 2157,
+      "upper": 2383
+    },
+    {
+      "day": 10,
+      "date": "2026-11-29",
+      "forecast": 2271,
+      "lower": 2152,
+      "upper": 2390
+    },
+    {
+      "day": 11,
+      "date": "2026-11-30",
+      "forecast": 2272,
+      "lower": 2147,
+      "upper": 2397
+    },
+    {
+      "day": 12,
+      "date": "2026-12-01",
+      "forecast": 2273,
+      "lower": 2142,
+      "upper": 2404
+    },
+    {
+      "day": 13,
+      "date": "2026-12-02",
+      "forecast": 2274,
+      "lower": 2138,
+      "upper": 2410
+    },
+    {
+      "day": 14,
+      "date": "2026-12-03",
+      "forecast": 2275,
+      "lower": 2134,
+      "upper": 2416
+    }
+  ]
+}

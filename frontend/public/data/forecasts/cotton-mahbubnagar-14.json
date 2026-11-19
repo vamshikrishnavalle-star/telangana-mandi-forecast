@@ -1,0 +1,113 @@
+{
+  "crop": "Cotton",
+  "yard": "Mahbubnagar",
+  "horizon": 14,
+  "asOf": "2026-11-19",
+  "currentPrice": 8084,
+  "forecastPrice": 7688,
+  "expectedChangePct": -3.5,
+  "rangeMin": 7688,
+  "rangeMax": 8055,
+  "confidence": 0.88,
+  "model": "Random Forest",
+  "points": [
+    {
+      "day": 1,
+      "date": "2026-11-20",
+      "forecast": 8055,
+      "lower": 7921,
+      "upper": 8189
+    },
+    {
+      "day": 2,
+      "date": "2026-11-21",
+      "forecast": 8026,
+      "lower": 7838,
+      "upper": 8214
+    },
+    {
+      "day": 3,
+      "date": "2026-11-22",
+      "forecast": 7997,
+      "lower": 7767,
+      "upper": 8227
+    },
+    {
+      "day": 4,
+      "date": "2026-11-23",
+      "forecast": 7968,
+      "lower": 7703,
+      "upper": 8233
+    },
+    {
+      "day": 5,
+      "date": "2026-11-24",
+      "forecast": 7940,
+      "lower": 7645,
+      "upper": 8235
+    },
+    {
+      "day": 6,
+      "date": "2026-11-25",
+      "forecast": 7912,
+      "lower": 7590,
+      "upper": 8234
+    },
+    {
+      "day": 7,
+      "date": "2026-11-26",
+      "forecast": 7884,
+      "lower": 7538,
+      "upper": 8230
+    },
+    {
+      "day": 8,
+      "date": "2026-11-27",
+      "forecast": 7856,
+      "lower": 7487,
+      "upper": 8225
+    },
+    {
+      "day": 9,
+      "date": "2026-11-28",
+      "forecast": 7828,
+      "lower": 7438,
+      "upper": 8218
+    },
+    {
+      "day": 10,
+      "date": "2026-11-29",
+      "forecast": 7800,
+      "lower": 7391,
+      "upper": 8209
+    },
+    {
+      "day": 11,
+      "date": "2026-11-30",
+      "forecast": 7772,
+      "lower": 7344,
+      "upper": 8200
+    },
+    {
+      "day": 12,
+      "date": "2026-12-01",
+      "forecast": 7744,
+      "lower": 7299,
+      "upper": 8189
+    },
+    {
+      "day": 13,
+      "date": "2026-12-02",
+      "forecast": 7716,
+      "lower": 7254,
+      "upper": 8178
+    },
+    {
+      "day": 14,
+      "date": "2026-12-03",
+      "forecast": 7688,
+      "lower": 7210,
+      "upper": 8166
+    }
+  ]
+}

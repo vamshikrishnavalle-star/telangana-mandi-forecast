@@ -1,0 +1,113 @@
+{
+  "crop": "Cotton",
+  "yard": "Adilabad",
+  "horizon": 14,
+  "asOf": "2026-11-19",
+  "currentPrice": 8039,
+  "forecastPrice": 9077,
+  "expectedChangePct": 8.5,
+  "rangeMin": 8109,
+  "rangeMax": 9077,
+  "confidence": 0.88,
+  "model": "Random Forest",
+  "points": [
+    {
+      "day": 1,
+      "date": "2026-11-20",
+      "forecast": 8109,
+      "lower": 7974,
+      "upper": 8244
+    },
+    {
+      "day": 2,
+      "date": "2026-11-21",
+      "forecast": 8180,
+      "lower": 7988,
+      "upper": 8372
+    },
+    {
+      "day": 3,
+      "date": "2026-11-22",
+      "forecast": 8251,
+      "lower": 8014,
+      "upper": 8488
+    },
+    {
+      "day": 4,
+      "date": "2026-11-23",
+      "forecast": 8323,
+      "lower": 8047,
+      "upper": 8599
+    },
+    {
+      "day": 5,
+      "date": "2026-11-24",
+      "forecast": 8396,
+      "lower": 8084,
+      "upper": 8708
+    },
+    {
+      "day": 6,
+      "date": "2026-11-25",
+      "forecast": 8469,
+      "lower": 8125,
+      "upper": 8813
+    },
+    {
+      "day": 7,
+      "date": "2026-11-26",
+      "forecast": 8543,
+      "lower": 8168,
+      "upper": 8918
+    },
+    {
+      "day": 8,
+      "date": "2026-11-27",
+      "forecast": 8617,
+      "lower": 8212,
+      "upper": 9022
+    },
+    {
+      "day": 9,
+      "date": "2026-11-28",
+      "forecast": 8692,
+      "lower": 8259,
+      "upper": 9125
+    },
+    {
+      "day": 10,
+      "date": "2026-11-29",
+      "forecast": 8768,
+      "lower": 8308,
+      "upper": 9228
+    },
+    {
+      "day": 11,
+      "date": "2026-11-30",
+      "forecast": 8844,
+      "lower": 8357,
+      "upper": 9331
+    },
+    {
+      "day": 12,
+      "date": "2026-12-01",
+      "forecast": 8921,
+      "lower": 8408,
+      "upper": 9434
+    },
+    {
+      "day": 13,
+      "date": "2026-12-02",
+      "forecast": 8999,
+      "lower": 8460,
+      "upper": 9538
+    },
+    {
+      "day": 14,
+      "date": "2026-12-03",
+      "forecast": 9077,
+      "lower": 8513,
+      "upper": 9641
+    }
+  ]
+}

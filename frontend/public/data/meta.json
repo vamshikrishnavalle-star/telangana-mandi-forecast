@@ -1,0 +1,26 @@
+{
+  "product": "Smart Mandi Advisory | Telangana",
+  "asOf": "2026-11-19",
+  "source": "Government of Telangana Agricultural Market Committee (AMC) & Agmarknet",
+  "crops": [
+    "Cotton",
+    "Chilli",
+    "Maize",
+    "Paddy",
+    "Turmeric"
+  ],
+  "yards": [
+    "Hyderabad RCI Market",
+    "Warangal Gurramguda",
+    "Karimnagar BCCL Market",
+    "Nizamabad",
+    "Khammam",
+    "Adilabad",
+    "Medak",
+    "Suryapet",
+    "Mahbubnagar",
+    "Nalgonda"
+  ],
+  "totalRecords": 76710,
+  "period": "2020-2026"
+}

@@ -1,0 +1,64 @@
+{
+  "crop": "Cotton",
+  "yard": "Karimnagar BCCL Market",
+  "horizon": 7,
+  "asOf": "2026-11-19",
+  "currentPrice": 8271,
+  "forecastPrice": 8531,
+  "expectedChangePct": 3.1,
+  "rangeMin": 8308,
+  "rangeMax": 8531,
+  "confidence": 0.95,
+  "model": "Random Forest",
+  "points": [
+    {
+      "day": 1,
+      "date": "2026-11-20",
+      "forecast": 8308,
+      "lower": 8170,
+      "upper": 8446
+    },
+    {
+      "day": 2,
+      "date": "2026-11-21",
+      "forecast": 8345,
+      "lower": 8149,
+      "upper": 8541
+    },
+    {
+      "day": 3,
+      "date": "2026-11-22",
+      "forecast": 8382,
+      "lower": 8141,
+      "upper": 8623
+    },
+    {
+      "day": 4,
+      "date": "2026-11-23",
+      "forecast": 8419,
+      "lower": 8139,
+      "upper": 8699
+    },
+    {
+      "day": 5,
+      "date": "2026-11-24",
+      "forecast": 8456,
+      "lower": 8142,
+      "upper": 8770
+    },
+    {
+      "day": 6,
+      "date": "2026-11-25",
+      "forecast": 8493,
+      "lower": 8148,
+      "upper": 8838
+    },
+    {
+      "day": 7,
+      "date": "2026-11-26",
+      "forecast": 8531,
+      "lower": 8156,
+      "upper": 8906
+    }
+  ]
+}

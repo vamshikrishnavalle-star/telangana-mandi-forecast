@@ -1,0 +1,42 @@
+[
+  {
+    "model": "Random Forest",
+    "mae": 155.71,
+    "rmse": 194.95,
+    "mape": 1.66,
+    "mase": 0.632,
+    "directionalAccuracy": 74.75
+  },
+  {
+    "model": "XGBoost",
+    "mae": 179.63,
+    "rmse": 222.57,
+    "mape": 1.93,
+    "mase": 0.729,
+    "directionalAccuracy": 62.63
+  },
+  {
+    "model": "Moving Average",
+    "mae": 189.05,
+    "rmse": 237.29,
+    "mape": 2.03,
+    "mase": 0.767,
+    "directionalAccuracy": 77.78
+  },
+  {
+    "model": "ARIMA",
+    "mae": 196.42,
+    "rmse": 248.58,
+    "mape": 2.1,
+    "mase": 0.797,
+    "directionalAccuracy": 77.78
+  },
+  {
+    "model": "Naive",
+    "mae": 216.84,
+    "rmse": 272.87,
+    "mape": 2.32,
+    "mase": 0.88,
+    "directionalAccuracy": 76.77
+  }
+]

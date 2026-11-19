@@ -1,0 +1,64 @@
+{
+  "crop": "Cotton",
+  "yard": "Mahbubnagar",
+  "horizon": 7,
+  "asOf": "2026-11-19",
+  "currentPrice": 8084,
+  "forecastPrice": 7884,
+  "expectedChangePct": -2.5,
+  "rangeMin": 7884,
+  "rangeMax": 8055,
+  "confidence": 0.95,
+  "model": "Random Forest",
+  "points": [
+    {
+      "day": 1,
+      "date": "2026-11-20",
+      "forecast": 8055,
+      "lower": 7921,
+      "upper": 8189
+    },
+    {
+      "day": 2,
+      "date": "2026-11-21",
+      "forecast": 8026,
+      "lower": 7838,
+      "upper": 8214
+    },
+    {
+      "day": 3,
+      "date": "2026-11-22",
+      "forecast": 7997,
+      "lower": 7767,
+      "upper": 8227
+    },
+    {
+      "day": 4,
+      "date": "2026-11-23",
+      "forecast": 7968,
+      "lower": 7703,
+      "upper": 8233
+    },
+    {
+      "day": 5,
+      "date": "2026-11-24",
+      "forecast": 7940,
+      "lower": 7645,
+      "upper": 8235
+    },
+    {
+      "day": 6,
+      "date": "2026-11-25",
+      "forecast": 7912,
+      "lower": 7590,
+      "upper": 8234
+    },
+    {
+      "day": 7,
+      "date": "2026-11-26",
+      "forecast": 7884,
+      "lower": 7538,
+      "upper": 8230
+    }
+  ]
+}

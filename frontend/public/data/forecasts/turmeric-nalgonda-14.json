@@ -1,0 +1,113 @@
+{
+  "crop": "Turmeric",
+  "yard": "Nalgonda",
+  "horizon": 14,
+  "asOf": "2026-11-19",
+  "currentPrice": 8967,
+  "forecastPrice": 9501,
+  "expectedChangePct": 4.1,
+  "rangeMin": 9004,
+  "rangeMax": 9501,
+  "confidence": 0.88,
+  "model": "Random Forest",
+  "points": [
+    {
+      "day": 1,
+      "date": "2026-11-20",
+      "forecast": 9004,
+      "lower": 8855,
+      "upper": 9153
+    },
+    {
+      "day": 2,
+      "date": "2026-11-21",
+      "forecast": 9041,
+      "lower": 8829,
+      "upper": 9253
+    },
+    {
+      "day": 3,
+      "date": "2026-11-22",
+      "forecast": 9078,
+      "lower": 8817,
+      "upper": 9339
+    },
+    {
+      "day": 4,
+      "date": "2026-11-23",
+      "forecast": 9116,
+      "lower": 8813,
+      "upper": 9419
+    },
+    {
+      "day": 5,
+      "date": "2026-11-24",
+      "forecast": 9154,
+      "lower": 8814,
+      "upper": 9494
+    },
+    {
+      "day": 6,
+      "date": "2026-11-25",
+      "forecast": 9192,
+      "lower": 8818,
+      "upper": 9566
+    },
+    {
+      "day": 7,
+      "date": "2026-11-26",
+      "forecast": 9230,
+      "lower": 8825,
+      "upper": 9635
+    },
+    {
+      "day": 8,
+      "date": "2026-11-27",
+      "forecast": 9268,
+      "lower": 8833,
+      "upper": 9703
+    },
+    {
+      "day": 9,
+      "date": "2026-11-28",
+      "forecast": 9306,
+      "lower": 8843,
+      "upper": 9769
+    },
+    {
+      "day": 10,
+      "date": "2026-11-29",
+      "forecast": 9345,
+      "lower": 8854,
+      "upper": 9836
+    },
+    {
+      "day": 11,
+      "date": "2026-11-30",
+      "forecast": 9384,
+      "lower": 8867,
+      "upper": 9901
+    },
+    {
+      "day": 12,
+      "date": "2026-12-01",
+      "forecast": 9423,
+      "lower": 8881,
+      "upper": 9965
+    },
+    {
+      "day": 13,
+      "date": "2026-12-02",
+      "forecast": 9462,
+      "lower": 8896,
+      "upper": 10028
+    },
+    {
+      "day": 14,
+      "date": "2026-12-03",
+      "forecast": 9501,
+      "lower": 8911,
+      "upper": 10091
+    }
+  ]
+}

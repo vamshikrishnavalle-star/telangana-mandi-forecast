@@ -1,0 +1,64 @@
+{
+  "crop": "Paddy",
+  "yard": "Suryapet",
+  "horizon": 7,
+  "asOf": "2026-11-19",
+  "currentPrice": 2177,
+  "forecastPrice": 2121,
+  "expectedChangePct": -2.6,
+  "rangeMin": 2121,
+  "rangeMax": 2169,
+  "confidence": 0.95,
+  "model": "Random Forest",
+  "points": [
+    {
+      "day": 1,
+      "date": "2026-11-20",
+      "forecast": 2169,
+      "lower": 2133,
+      "upper": 2205
+    },
+    {
+      "day": 2,
+      "date": "2026-11-21",
+      "forecast": 2161,
+      "lower": 2110,
+      "upper": 2212
+    },
+    {
+      "day": 3,
+      "date": "2026-11-22",
+      "forecast": 2153,
+      "lower": 2091,
+      "upper": 2215
+    },
+    {
+      "day": 4,
+      "date": "2026-11-23",
+      "forecast": 2145,
+      "lower": 2074,
+      "upper": 2216
+    },
+    {
+      "day": 5,
+      "date": "2026-11-24",
+      "forecast": 2137,
+      "lower": 2058,
+      "upper": 2216
+    },
+    {
+      "day": 6,
+      "date": "2026-11-25",
+      "forecast": 2129,
+      "lower": 2042,
+      "upper": 2216
+    },
+    {
+      "day": 7,
+      "date": "2026-11-26",
+      "forecast": 2121,
+      "lower": 2028,
+      "upper": 2214
+    }
+  ]
+}

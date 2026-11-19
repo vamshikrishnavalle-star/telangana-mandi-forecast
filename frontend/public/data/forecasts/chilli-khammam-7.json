@@ -1,0 +1,64 @@
+{
+  "crop": "Chilli",
+  "yard": "Khammam",
+  "horizon": 7,
+  "asOf": "2026-11-19",
+  "currentPrice": 12987,
+  "forecastPrice": 13015,
+  "expectedChangePct": 0.2,
+  "rangeMin": 12991,
+  "rangeMax": 13015,
+  "confidence": 0.95,
+  "model": "Random Forest",
+  "points": [
+    {
+      "day": 1,
+      "date": "2026-11-20",
+      "forecast": 12991,
+      "lower": 12775,
+      "upper": 13207
+    },
+    {
+      "day": 2,
+      "date": "2026-11-21",
+      "forecast": 12995,
+      "lower": 12690,
+      "upper": 13300
+    },
+    {
+      "day": 3,
+      "date": "2026-11-22",
+      "forecast": 12999,
+      "lower": 12625,
+      "upper": 13373
+    },
+    {
+      "day": 4,
+      "date": "2026-11-23",
+      "forecast": 13003,
+      "lower": 12571,
+      "upper": 13435
+    },
+    {
+      "day": 5,
+      "date": "2026-11-24",
+      "forecast": 13007,
+      "lower": 12524,
+      "upper": 13490
+    },
+    {
+      "day": 6,
+      "date": "2026-11-25",
+      "forecast": 13011,
+      "lower": 12482,
+      "upper": 13540
+    },
+    {
+      "day": 7,
+      "date": "2026-11-26",
+      "forecast": 13015,
+      "lower": 12443,
+      "upper": 13587
+    }
+  ]
+}

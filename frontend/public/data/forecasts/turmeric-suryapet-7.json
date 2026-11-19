@@ -1,0 +1,64 @@
+{
+  "crop": "Turmeric",
+  "yard": "Suryapet",
+  "horizon": 7,
+  "asOf": "2026-11-19",
+  "currentPrice": 10028,
+  "forecastPrice": 9770,
+  "expectedChangePct": -2.6,
+  "rangeMin": 9770,
+  "rangeMax": 9991,
+  "confidence": 0.95,
+  "model": "Random Forest",
+  "points": [
+    {
+      "day": 1,
+      "date": "2026-11-20",
+      "forecast": 9991,
+      "lower": 9825,
+      "upper": 10157
+    },
+    {
+      "day": 2,
+      "date": "2026-11-21",
+      "forecast": 9954,
+      "lower": 9720,
+      "upper": 10188
+    },
+    {
+      "day": 3,
+      "date": "2026-11-22",
+      "forecast": 9917,
+      "lower": 9632,
+      "upper": 10202
+    },
+    {
+      "day": 4,
+      "date": "2026-11-23",
+      "forecast": 9880,
+      "lower": 9552,
+      "upper": 10208
+    },
+    {
+      "day": 5,
+      "date": "2026-11-24",
+      "forecast": 9843,
+      "lower": 9478,
+      "upper": 10208
+    },
+    {
+      "day": 6,
+      "date": "2026-11-25",
+      "forecast": 9806,
+      "lower": 9407,
+      "upper": 10205
+    },
+    {
+      "day": 7,
+      "date": "2026-11-26",
+      "forecast": 9770,
+      "lower": 9341,
+      "upper": 10199
+    }
+  ]
+}

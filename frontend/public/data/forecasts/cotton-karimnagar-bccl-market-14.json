@@ -1,0 +1,113 @@
+{
+  "crop": "Cotton",
+  "yard": "Karimnagar BCCL Market",
+  "horizon": 14,
+  "asOf": "2026-11-19",
+  "currentPrice": 8271,
+  "forecastPrice": 8799,
+  "expectedChangePct": 4.3,
+  "rangeMin": 8308,
+  "rangeMax": 8799,
+  "confidence": 0.88,
+  "model": "Random Forest",
+  "points": [
+    {
+      "day": 1,
+      "date": "2026-11-20",
+      "forecast": 8308,
+      "lower": 8170,
+      "upper": 8446
+    },
+    {
+      "day": 2,
+      "date": "2026-11-21",
+      "forecast": 8345,
+      "lower": 8149,
+      "upper": 8541
+    },
+    {
+      "day": 3,
+      "date": "2026-11-22",
+      "forecast": 8382,
+      "lower": 8141,
+      "upper": 8623
+    },
+    {
+      "day": 4,
+      "date": "2026-11-23",
+      "forecast": 8419,
+      "lower": 8139,
+      "upper": 8699
+    },
+    {
+      "day": 5,
+      "date": "2026-11-24",
+      "forecast": 8456,
+      "lower": 8142,
+      "upper": 8770
+    },
+    {
+      "day": 6,
+      "date": "2026-11-25",
+      "forecast": 8493,
+      "lower": 8148,
+      "upper": 8838
+    },
+    {
+      "day": 7,
+      "date": "2026-11-26",
+      "forecast": 8531,
+      "lower": 8156,
+      "upper": 8906
+    },
+    {
+      "day": 8,
+      "date": "2026-11-27",
+      "forecast": 8569,
+      "lower": 8167,
+      "upper": 8971
+    },
+    {
+      "day": 9,
+      "date": "2026-11-28",
+      "forecast": 8607,
+      "lower": 8178,
+      "upper": 9036
+    },
+    {
+      "day": 10,
+      "date": "2026-11-29",
+      "forecast": 8645,
+      "lower": 8191,
+      "upper": 9099
+    },
+    {
+      "day": 11,
+      "date": "2026-11-30",
+      "forecast": 8683,
+      "lower": 8205,
+      "upper": 9161
+    },
+    {
+      "day": 12,
+      "date": "2026-12-01",
+      "forecast": 8721,
+      "lower": 8220,
+      "upper": 9222
+    },
+    {
+      "day": 13,
+      "date": "2026-12-02",
+      "forecast": 8760,
+      "lower": 8236,
+      "upper": 9284
+    },
+    {
+      "day": 14,
+      "date": "2026-12-03",
+      "forecast": 8799,
+      "lower": 8252,
+      "upper": 9346
+    }
+  ]
+}

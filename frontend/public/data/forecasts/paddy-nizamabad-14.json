@@ -1,0 +1,113 @@
+{
+  "crop": "Paddy",
+  "yard": "Nizamabad",
+  "horizon": 14,
+  "asOf": "2026-11-19",
+  "currentPrice": 2171,
+  "forecastPrice": 2394,
+  "expectedChangePct": 6.9,
+  "rangeMin": 2186,
+  "rangeMax": 2394,
+  "confidence": 0.88,
+  "model": "Random Forest",
+  "points": [
+    {
+      "day": 1,
+      "date": "2026-11-20",
+      "forecast": 2186,
+      "lower": 2150,
+      "upper": 2222
+    },
+    {
+      "day": 2,
+      "date": "2026-11-21",
+      "forecast": 2201,
+      "lower": 2149,
+      "upper": 2253
+    },
+    {
+      "day": 3,
+      "date": "2026-11-22",
+      "forecast": 2216,
+      "lower": 2152,
+      "upper": 2280
+    },
+    {
+      "day": 4,
+      "date": "2026-11-23",
+      "forecast": 2232,
+      "lower": 2158,
+      "upper": 2306
+    },
+    {
+      "day": 5,
+      "date": "2026-11-24",
+      "forecast": 2248,
+      "lower": 2165,
+      "upper": 2331
+    },
+    {
+      "day": 6,
+      "date": "2026-11-25",
+      "forecast": 2264,
+      "lower": 2172,
+      "upper": 2356
+    },
+    {
+      "day": 7,
+      "date": "2026-11-26",
+      "forecast": 2280,
+      "lower": 2180,
+      "upper": 2380
+    },
+    {
+      "day": 8,
+      "date": "2026-11-27",
+      "forecast": 2296,
+      "lower": 2188,
+      "upper": 2404
+    },
+    {
+      "day": 9,
+      "date": "2026-11-28",
+      "forecast": 2312,
+      "lower": 2197,
+      "upper": 2427
+    },
+    {
+      "day": 10,
+      "date": "2026-11-29",
+      "forecast": 2328,
+      "lower": 2206,
+      "upper": 2450
+    },
+    {
+      "day": 11,
+      "date": "2026-11-30",
+      "forecast": 2344,
+      "lower": 2215,
+      "upper": 2473
+    },
+    {
+      "day": 12,
+      "date": "2026-12-01",
+      "forecast": 2360,
+      "lower": 2224,
+      "upper": 2496
+    },
+    {
+      "day": 13,
+      "date": "2026-12-02",
+      "forecast": 2377,
+      "lower": 2235,
+      "upper": 2519
+    },
+    {
+      "day": 14,
+      "date": "2026-12-03",
+      "forecast": 2394,
+      "lower": 2245,
+      "upper": 2543
+    }
+  ]
+}

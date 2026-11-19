@@ -1,0 +1,64 @@
+{
+  "crop": "Paddy",
+  "yard": "Hyderabad RCI Market",
+  "horizon": 7,
+  "asOf": "2026-11-19",
+  "currentPrice": 2280,
+  "forecastPrice": 2252,
+  "expectedChangePct": -1.1,
+  "rangeMin": 2252,
+  "rangeMax": 2276,
+  "confidence": 0.95,
+  "model": "Random Forest",
+  "points": [
+    {
+      "day": 1,
+      "date": "2026-11-20",
+      "forecast": 2276,
+      "lower": 2238,
+      "upper": 2314
+    },
+    {
+      "day": 2,
+      "date": "2026-11-21",
+      "forecast": 2272,
+      "lower": 2219,
+      "upper": 2325
+    },
+    {
+      "day": 3,
+      "date": "2026-11-22",
+      "forecast": 2268,
+      "lower": 2203,
+      "upper": 2333
+    },
+    {
+      "day": 4,
+      "date": "2026-11-23",
+      "forecast": 2264,
+      "lower": 2189,
+      "upper": 2339
+    },
+    {
+      "day": 5,
+      "date": "2026-11-24",
+      "forecast": 2260,
+      "lower": 2176,
+      "upper": 2344
+    },
+    {
+      "day": 6,
+      "date": "2026-11-25",
+      "forecast": 2256,
+      "lower": 2164,
+      "upper": 2348
+    },
+    {
+      "day": 7,
+      "date": "2026-11-26",
+      "forecast": 2252,
+      "lower": 2153,
+      "upper": 2351
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "crop": "Turmeric",
+  "yard": "Warangal Gurramguda",
+  "horizon": 7,
+  "asOf": "2026-11-19",
+  "currentPrice": 9986,
+  "forecastPrice": 10056,
+  "expectedChangePct": 0.7,
+  "rangeMin": 9996,
+  "rangeMax": 10056,
+  "confidence": 0.95,
+  "model": "Random Forest",
+  "points": [
+    {
+      "day": 1,
+      "date": "2026-11-20",
+      "forecast": 9996,
+      "lower": 9830,
+      "upper": 10162
+    },
+    {
+      "day": 2,
+      "date": "2026-11-21",
+      "forecast": 10006,
+      "lower": 9771,
+      "upper": 10241
+    },
+    {
+      "day": 3,
+      "date": "2026-11-22",
+      "forecast": 10016,
+      "lower": 9728,
+      "upper": 10304
+    },
+    {
+      "day": 4,
+      "date": "2026-11-23",
+      "forecast": 10026,
+      "lower": 9693,
+      "upper": 10359
+    },
+    {
+      "day": 5,
+      "date": "2026-11-24",
+      "forecast": 10036,
+      "lower": 9663,
+      "upper": 10409
+    },
+    {
+      "day": 6,
+      "date": "2026-11-25",
+      "forecast": 10046,
+      "lower": 9638,
+      "upper": 10454
+    },
+    {
+      "day": 7,
+      "date": "2026-11-26",
+      "forecast": 10056,
+      "lower": 9614,
+      "upper": 10498
+    }
+  ]
+}

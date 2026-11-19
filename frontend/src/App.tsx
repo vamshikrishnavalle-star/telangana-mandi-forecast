@@ -1,29 +1,36 @@
 import { HashRouter, Routes, Route } from 'react-router-dom';
-import { ThemeProvider } from './context/ThemeContext';
-import GlassyDashboard from './components/ui/GlassyDashboard';
+import { Navbar } from './components/agfarm/Navbar';
+import { Footer } from './components/agfarm/Footer';
 import HomePage from './pages/HomePage';
 import ForecastPage from './pages/ForecastPage';
-import RecommendationPage from './pages/RecommendationPage';
 import MarketComparisonPage from './pages/MarketComparisonPage';
 import ModelPerformancePage from './pages/ModelPerformancePage';
 import SeasonalPatternsPage from './pages/SeasonalPatternsPage';
+import RecommendationPage from './pages/RecommendationPage';
 
 export function App() {
   return (
-    <ThemeProvider>
-      <HashRouter>
-        <GlassyDashboard>
+    <HashRouter>
+      <div className="min-h-screen bg-surface flex flex-col font-sans selection:bg-brand-900 selection:text-white">
+        {/* AgFarm Navbar */}
+        <Navbar />
+
+        {/* Content Container */}
+        <main className="flex-1 max-w-[1240px] w-full mx-auto px-4 sm:px-8 py-8 md:py-12">
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/forecast" element={<ForecastPage />} />
-            <Route path="/recommendation" element={<RecommendationPage />} />
             <Route path="/market-comparison" element={<MarketComparisonPage />} />
-            <Route path="/model-performance" element={<ModelPerformancePage />} />
-            <Route path="/seasonal-patterns" element={<SeasonalPatternsPage />} />
+            <Route path="/models" element={<ModelPerformancePage />} />
+            <Route path="/seasonal" element={<SeasonalPatternsPage />} />
+            <Route path="/recommendation" element={<RecommendationPage />} />
           </Routes>
-        </GlassyDashboard>
-      </HashRouter>
-    </ThemeProvider>
+        </main>
+
+        {/* AgFarm Footer */}
+        <Footer />
+      </div>
+    </HashRouter>
   );
 }
 

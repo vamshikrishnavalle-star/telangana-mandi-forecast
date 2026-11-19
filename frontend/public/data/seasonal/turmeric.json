@@ -1,0 +1,98 @@
+{
+  "crop": "Turmeric",
+  "monthly": [
+    {
+      "month": 1,
+      "monthName": "Jan",
+      "avgPrice": 10185
+    },
+    {
+      "month": 2,
+      "monthName": "Feb",
+      "avgPrice": 10605
+    },
+    {
+      "month": 3,
+      "monthName": "Mar",
+      "avgPrice": 10815
+    },
+    {
+      "month": 4,
+      "monthName": "Apr",
+      "avgPrice": 10710
+    },
+    {
+      "month": 5,
+      "monthName": "May",
+      "avgPrice": 10395
+    },
+    {
+      "month": 6,
+      "monthName": "Jun",
+      "avgPrice": 10080
+    },
+    {
+      "month": 7,
+      "monthName": "Jul",
+      "avgPrice": 9765
+    },
+    {
+      "month": 8,
+      "monthName": "Aug",
+      "avgPrice": 9450
+    },
+    {
+      "month": 9,
+      "monthName": "Sep",
+      "avgPrice": 9345
+    },
+    {
+      "month": 10,
+      "monthName": "Oct",
+      "avgPrice": 9555
+    },
+    {
+      "month": 11,
+      "monthName": "Nov",
+      "avgPrice": 9870
+    },
+    {
+      "month": 12,
+      "monthName": "Dec",
+      "avgPrice": 10290
+    }
+  ],
+  "kharifAvg": 9678,
+  "rabiAvg": 10500,
+  "discountPct": -7.8,
+  "yearly": [
+    {
+      "year": 2020,
+      "avg": 8715
+    },
+    {
+      "year": 2021,
+      "avg": 9240
+    },
+    {
+      "year": 2022,
+      "avg": 9660
+    },
+    {
+      "year": 2023,
+      "avg": 10080
+    },
+    {
+      "year": 2024,
+      "avg": 10500
+    },
+    {
+      "year": 2025,
+      "avg": 10815
+    },
+    {
+      "year": 2026,
+      "avg": 11130
+    }
+  ]
+}

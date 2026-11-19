@@ -1,0 +1,64 @@
+{
+  "crop": "Maize",
+  "yard": "Karimnagar BCCL Market",
+  "horizon": 7,
+  "asOf": "2026-11-19",
+  "currentPrice": 2183,
+  "forecastPrice": 2253,
+  "expectedChangePct": 3.1,
+  "rangeMin": 2193,
+  "rangeMax": 2253,
+  "confidence": 0.95,
+  "model": "Random Forest",
+  "points": [
+    {
+      "day": 1,
+      "date": "2026-11-20",
+      "forecast": 2193,
+      "lower": 2157,
+      "upper": 2229
+    },
+    {
+      "day": 2,
+      "date": "2026-11-21",
+      "forecast": 2203,
+      "lower": 2151,
+      "upper": 2255
+    },
+    {
+      "day": 3,
+      "date": "2026-11-22",
+      "forecast": 2213,
+      "lower": 2149,
+      "upper": 2277
+    },
+    {
+      "day": 4,
+      "date": "2026-11-23",
+      "forecast": 2223,
+      "lower": 2149,
+      "upper": 2297
+    },
+    {
+      "day": 5,
+      "date": "2026-11-24",
+      "forecast": 2233,
+      "lower": 2150,
+      "upper": 2316
+    },
+    {
+      "day": 6,
+      "date": "2026-11-25",
+      "forecast": 2243,
+      "lower": 2152,
+      "upper": 2334
+    },
+    {
+      "day": 7,
+      "date": "2026-11-26",
+      "forecast": 2253,
+      "lower": 2154,
+      "upper": 2352
+    }
+  ]
+}

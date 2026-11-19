@@ -1,0 +1,113 @@
+{
+  "crop": "Paddy",
+  "yard": "Karimnagar BCCL Market",
+  "horizon": 14,
+  "asOf": "2026-11-19",
+  "currentPrice": 2118,
+  "forecastPrice": 2254,
+  "expectedChangePct": 4.3,
+  "rangeMin": 2127,
+  "rangeMax": 2254,
+  "confidence": 0.88,
+  "model": "Random Forest",
+  "points": [
+    {
+      "day": 1,
+      "date": "2026-11-20",
+      "forecast": 2127,
+      "lower": 2092,
+      "upper": 2162
+    },
+    {
+      "day": 2,
+      "date": "2026-11-21",
+      "forecast": 2136,
+      "lower": 2086,
+      "upper": 2186
+    },
+    {
+      "day": 3,
+      "date": "2026-11-22",
+      "forecast": 2145,
+      "lower": 2083,
+      "upper": 2207
+    },
+    {
+      "day": 4,
+      "date": "2026-11-23",
+      "forecast": 2154,
+      "lower": 2082,
+      "upper": 2226
+    },
+    {
+      "day": 5,
+      "date": "2026-11-24",
+      "forecast": 2164,
+      "lower": 2084,
+      "upper": 2244
+    },
+    {
+      "day": 6,
+      "date": "2026-11-25",
+      "forecast": 2174,
+      "lower": 2086,
+      "upper": 2262
+    },
+    {
+      "day": 7,
+      "date": "2026-11-26",
+      "forecast": 2184,
+      "lower": 2088,
+      "upper": 2280
+    },
+    {
+      "day": 8,
+      "date": "2026-11-27",
+      "forecast": 2194,
+      "lower": 2091,
+      "upper": 2297
+    },
+    {
+      "day": 9,
+      "date": "2026-11-28",
+      "forecast": 2204,
+      "lower": 2094,
+      "upper": 2314
+    },
+    {
+      "day": 10,
+      "date": "2026-11-29",
+      "forecast": 2214,
+      "lower": 2098,
+      "upper": 2330
+    },
+    {
+      "day": 11,
+      "date": "2026-11-30",
+      "forecast": 2224,
+      "lower": 2102,
+      "upper": 2346
+    },
+    {
+      "day": 12,
+      "date": "2026-12-01",
+      "forecast": 2234,
+      "lower": 2106,
+      "upper": 2362
+    },
+    {
+      "day": 13,
+      "date": "2026-12-02",
+      "forecast": 2244,
+      "lower": 2110,
+      "upper": 2378
+    },
+    {
+      "day": 14,
+      "date": "2026-12-03",
+      "forecast": 2254,
+      "lower": 2114,
+      "upper": 2394
+    }
+  ]
+}

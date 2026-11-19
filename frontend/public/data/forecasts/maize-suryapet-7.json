@@ -1,0 +1,64 @@
+{
+  "crop": "Maize",
+  "yard": "Suryapet",
+  "horizon": 7,
+  "asOf": "2026-11-19",
+  "currentPrice": 2244,
+  "forecastPrice": 2188,
+  "expectedChangePct": -2.6,
+  "rangeMin": 2188,
+  "rangeMax": 2236,
+  "confidence": 0.95,
+  "model": "Random Forest",
+  "points": [
+    {
+      "day": 1,
+      "date": "2026-11-20",
+      "forecast": 2236,
+      "lower": 2199,
+      "upper": 2273
+    },
+    {
+      "day": 2,
+      "date": "2026-11-21",
+      "forecast": 2228,
+      "lower": 2176,
+      "upper": 2280
+    },
+    {
+      "day": 3,
+      "date": "2026-11-22",
+      "forecast": 2220,
+      "lower": 2156,
+      "upper": 2284
+    },
+    {
+      "day": 4,
+      "date": "2026-11-23",
+      "forecast": 2212,
+      "lower": 2139,
+      "upper": 2285
+    },
+    {
+      "day": 5,
+      "date": "2026-11-24",
+      "forecast": 2204,
+      "lower": 2122,
+      "upper": 2286
+    },
+    {
+      "day": 6,
+      "date": "2026-11-25",
+      "forecast": 2196,
+      "lower": 2107,
+      "upper": 2285
+    },
+    {
+      "day": 7,
+      "date": "2026-11-26",
+      "forecast": 2188,
+      "lower": 2092,
+      "upper": 2284
+    }
+  ]
+}
