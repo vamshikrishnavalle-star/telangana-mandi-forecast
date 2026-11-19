@@ -2,7 +2,7 @@ import React from 'react';
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="mt-20 border-t border-black/5 bg-surface py-12 px-4 sm:px-8 text-center text-sm text-ink-600">
+    <footer className="mt-4 border-t border-black/5 bg-surface py-6 px-4 sm:px-8 text-center text-sm text-ink-600">
       <div className="max-w-[1240px] mx-auto space-y-3.5">
         <div className="flex items-center justify-center gap-2 text-brand-900 font-bold text-base">
           <span>🌾 Smart Mandi Advisory</span>
