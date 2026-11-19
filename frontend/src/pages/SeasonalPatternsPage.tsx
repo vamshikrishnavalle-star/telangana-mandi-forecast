@@ -34,8 +34,8 @@ export const SeasonalPatternsPage: React.FC = () => {
             <Sprout className="w-3.5 h-3.5" />
             <span>Agronomic Seasonality</span>
           </div>
-          <h1 className="text-3xl sm:text-4xl font-black text-ink-900 tracking-tight">
-            Seasonal Patterns
+          <h1 className="text-3xl sm:text-4xl font-extrabold text-ink-900 tracking-tight">
+            Seasonal Patterns & <span className="font-serif italic font-normal text-brand-700">Multi-Year Cycles</span>
           </h1>
           <p className="text-xs text-ink-600 mt-1">
             Intra-annual seasonal cycles, Kharif vs. Rabi price comparisons, and 7-year multi-year inflation trend

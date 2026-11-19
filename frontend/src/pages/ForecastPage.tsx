@@ -52,8 +52,8 @@ export const ForecastPage: React.FC = () => {
             <TrendingUp className="w-3.5 h-3.5" />
             <span>Time-Series Engine</span>
           </div>
-          <h1 className="text-3xl sm:text-4xl font-black text-ink-900 tracking-tight">
-            Price Forecast
+          <h1 className="text-3xl sm:text-4xl font-extrabold text-ink-900 tracking-tight">
+            Price Forecast & <span className="font-serif italic font-normal text-brand-700">Predictive Intelligence</span>
           </h1>
           <p className="text-xs text-ink-600 mt-1">
             180-day modal price history combined with model-derived 95% Confidence Interval band

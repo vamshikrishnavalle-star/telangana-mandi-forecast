@@ -31,8 +31,8 @@ export const ModelPerformancePage: React.FC = () => {
           <BarChart3 className="w-3.5 h-3.5" />
           <span>Evaluation Benchmark</span>
         </div>
-        <h1 className="text-3xl sm:text-4xl font-black text-ink-900 tracking-tight">
-          Model Performance
+        <h1 className="text-3xl sm:text-4xl font-extrabold text-ink-900 tracking-tight">
+          Model Performance & <span className="font-serif italic font-normal text-brand-700">Validation Benchmark</span>
         </h1>
         <p className="text-xs text-ink-600 mt-1">
           Rigorous out-of-sample backtesting against 7 years of Telangana daily mandi arrivals (2020–2026)

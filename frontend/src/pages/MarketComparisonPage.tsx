@@ -39,8 +39,8 @@ export const MarketComparisonPage: React.FC = () => {
             <Building2 className="w-3.5 h-3.5" />
             <span>Statewide Terminal Network</span>
           </div>
-          <h1 className="text-3xl sm:text-4xl font-black text-ink-900 tracking-tight">
-            Market Yard Comparison
+          <h1 className="text-3xl sm:text-4xl font-extrabold text-ink-900 tracking-tight">
+            Market Yard Comparison & <span className="font-serif italic font-normal text-brand-700">Arbitrage Spreads</span>
           </h1>
           <p className="text-xs text-ink-600 mt-1">
             Real-time price spread across 10 Telangana mandis with actionable Sell/Wait guidance

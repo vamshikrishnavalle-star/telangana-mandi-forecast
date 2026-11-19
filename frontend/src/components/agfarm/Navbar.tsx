@@ -23,7 +23,9 @@ export const Navbar: React.FC = () => {
             🌾
           </div>
           <div>
-            <span className="text-xl font-black tracking-tight text-brand-900">Smart Mandi</span>
+            <span className="text-xl font-extrabold tracking-tight text-brand-900">
+              Smart <span className="font-serif italic font-normal text-brand-700">Mandi</span>
+            </span>
             <span className="text-[10px] font-bold uppercase tracking-wider block text-ink-600">Telangana Advisory</span>
           </div>
         </Link>

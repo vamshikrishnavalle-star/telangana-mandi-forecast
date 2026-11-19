@@ -46,17 +46,18 @@ export const HomePage: React.FC = () => {
 
         {/* Hero content */}
         <div className="relative z-10 max-w-2xl space-y-6">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs font-semibold text-brand-100">
-            <Sparkles className="w-3.5 h-3.5 text-amber-300" />
-            <span>Telangana Mandi Price Intelligence</span>
+          <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-emerald-950/70 backdrop-blur-md border border-emerald-500/30 text-xs font-semibold text-emerald-200 shadow-sm">
+            <span className="px-2 py-0.5 rounded-full bg-emerald-400 text-slate-950 text-[10px] font-black uppercase tracking-wider">NEW</span>
+            <span className="tracking-wider text-[11px] font-bold">AI-POWERED AGRICULTURE PLATFORM</span>
           </div>
 
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.08] text-white">
-            Sell at the right mandi, at the right time
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1] text-white">
+            Driving the Future of Agriculture <br />
+            with <span className="font-serif italic font-normal text-emerald-200">Smart Innovation</span>
           </h1>
 
           <p className="text-sm sm:text-base text-brand-100/90 font-medium max-w-xl leading-relaxed">
-            Data-backed 7-day and 14-day crop price forecasting and intelligent Sell/Wait decision support for Telangana farmers across primary and secondary market yards.
+            Data-backed 7-day and 14-day crop price forecasting and intelligent Sell/Wait decision support for Telangana farmers across 10 state market yards.
           </p>
 
           <div className="flex flex-wrap items-center gap-3 pt-2">
@@ -156,8 +157,8 @@ export const HomePage: React.FC = () => {
       <AgCard className="space-y-6">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
-            <h2 className="text-lg font-black text-ink-900 tracking-tight">
-              Quick Market Overview — Latest Prices ({meta?.asOf || '2026-11-19'})
+            <h2 className="text-xl font-extrabold text-ink-900 tracking-tight">
+              Quick Market Overview — Latest Prices with <span className="font-serif italic font-normal text-brand-700">Live Telemetry</span>
             </h2>
             <p className="text-xs text-ink-600 mt-0.5">
               Comparative modal price (₹/quintal) across 10 Telangana market yards
@@ -220,9 +221,9 @@ export const HomePage: React.FC = () => {
       <AgCard className="space-y-6">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
-            <h2 className="text-lg font-black text-ink-900 flex items-center gap-2">
+            <h2 className="text-xl font-extrabold text-ink-900 flex items-center gap-2">
               <MapPin className="w-5 h-5 text-brand-900" />
-              Telangana Market Yards Geospatial Map
+              Telangana Market Yards & <span className="font-serif italic font-normal text-brand-700">Geospatial Haul</span>
             </h2>
             <p className="text-xs text-ink-600 mt-0.5">
               Locate primary terminal yards and evaluate haul distances to calculate net arbitrage returns

@@ -55,8 +55,8 @@ export const RecommendationPage: React.FC = () => {
             <ShieldCheck className="w-3.5 h-3.5" />
             <span>Decision Support Engine</span>
           </div>
-          <h1 className="text-3xl sm:text-4xl font-black text-ink-900 tracking-tight">
-            Sell or Wait Advisory
+          <h1 className="text-3xl sm:text-4xl font-extrabold text-ink-900 tracking-tight">
+            Sell or Wait Advisory with <span className="font-serif italic font-normal text-brand-700">Intelligent Scoring</span>
           </h1>
           <p className="text-xs text-ink-600 mt-1">
             Algorithmic recommendation balancing projected gains, godown storage, and haulage costs
@@ -121,8 +121,16 @@ export const RecommendationPage: React.FC = () => {
                 </span>
                 <AgBadge advice={activeYard.advice} />
               </div>
-              <h2 className="text-3xl sm:text-4xl font-black text-ink-900 tracking-tight mt-1">
-                {isWait ? 'Wait 7 to 14 Days Before Selling' : 'Sell Today at Local Mandi'}
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-ink-900 tracking-tight mt-1">
+                {isWait ? (
+                  <>
+                    Wait 7 to 14 Days <span className="font-serif italic font-normal text-brand-700">Before Selling</span>
+                  </>
+                ) : (
+                  <>
+                    Sell Today at <span className="font-serif italic font-normal text-brand-700">Local Mandi</span>
+                  </>
+                )}
               </h2>
             </div>
           </div>

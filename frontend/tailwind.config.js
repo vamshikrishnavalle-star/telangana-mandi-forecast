@@ -7,6 +7,11 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['"Plus Jakarta Sans"', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+        serif: ['"Playfair Display"', 'Georgia', 'Cambria', 'serif'],
+        editorial: ['"Playfair Display"', 'Georgia', 'serif'],
+      },
       colors: {
         canvas: '#6B8266',       // Sage outer frame
         surface: '#EEF3EE',      // Mint page background
