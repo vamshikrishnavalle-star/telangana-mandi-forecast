@@ -183,7 +183,7 @@ export const TelanganaMap: React.FC<Props> = ({
 
       <div className="relative">
         {/* Leaflet Map */}
-        <div className="map-view-container h-[520px] w-full">
+        <div className="map-view-container h-[520px] w-full" style={{ isolation: 'isolate', overflow: 'hidden', position: 'relative' }}>
           <MapContainer
             center={[18.1124, 79.0193]} // Geographical center of Telangana
             zoom={7}

@@ -19,3 +19,37 @@
   font-family: inherit;
   z-index: 10;
 }
+
+/* Suppress broken tile / error overlay icons that appear when tiles fail to load */
+.telangana-map-wrapper .leaflet-tile-container img.leaflet-tile {
+  /* keep tiles; this rule applies error state below */
+}
+
+/* Hide the "plugged in" / external overlay that Leaflet injects on tile errors */
+.telangana-map-wrapper .leaflet-overlay-pane,
+.telangana-map-wrapper .leaflet-shadow-pane {
+  z-index: 400;
+}
+
+/* Ensure the distance panel card always sits above the map canvas */
+.telangana-map-wrapper .distance-panel {
+  z-index: 1000;
+  position: absolute;
+}
+
+/* Hide any img that failed to load within the map (broken tile error images) */
+.telangana-map-wrapper img.leaflet-tile[src=""] {
+  display: none;
+}
+
+/* Fix: prevent any overlaying div/img injected by browser extensions or tile errors */
+.map-view-container {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+/* Block rogue overlays – any absolutely-positioned non-Leaflet child */
+.map-view-container > *:not(.leaflet-container) {
+  display: none !important;
+}

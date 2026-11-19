@@ -53,3 +53,18 @@ body {
   background: #B8C4BA;
   border-radius: 9999px;
 }
+
+/* ----------------------------------------------------------------
+   Leaflet map containment — prevent any external overlay or tile-
+   error placeholder ("Plugged In" icon) from escaping the map div
+   ---------------------------------------------------------------- */
+.leaflet-container {
+  /* Create a new stacking context so nothing leaks out */
+  isolation: isolate;
+}
+
+/* Hide broken tile images (empty src or load failure) */
+.leaflet-tile-container img[src=""],
+.leaflet-tile-container img:not([src]) {
+  visibility: hidden;
+}
