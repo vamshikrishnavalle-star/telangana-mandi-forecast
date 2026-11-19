@@ -86,7 +86,11 @@ export const MarketComparisonPage: React.FC = () => {
       </div>
 
       {/* Best Price Callout Banner */}
-      <Callout kind="success" title={`Best Price: ${highest.yard} at ₹${highest.price.toLocaleString()}/quintal (${highest.advice})`}>
+      <Callout
+        kind="success"
+        title={`Best Price: ${highest.yard} at ₹${highest.price.toLocaleString()}/quintal`}
+        action={<AgBadge advice={highest.advice} />}
+      >
         Offers ₹{spread.toLocaleString()} premium (+{spreadPct}%) over lowest reporting terminal ({lowest.yard}).
       </Callout>
 
