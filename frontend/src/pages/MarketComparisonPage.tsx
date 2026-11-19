@@ -35,14 +35,14 @@ export const MarketComparisonPage: React.FC = () => {
       {/* Header & Tabs */}
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
         <div>
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-100 text-brand-900 text-xs font-bold mb-2">
-            <Building2 className="w-3.5 h-3.5" />
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-100 text-brand-900 text-sm font-bold mb-2">
+            <Building2 className="w-4 h-4" />
             <span>Statewide Terminal Network</span>
           </div>
           <h1 className="text-3xl sm:text-4xl font-extrabold text-ink-900 tracking-tight">
             Market Yard Comparison & <span className="font-serif italic font-normal text-brand-700">Arbitrage Spreads</span>
           </h1>
-          <p className="text-xs text-ink-600 mt-1">
+          <p className="text-sm text-ink-600 mt-1.5">
             Real-time price spread across 10 Telangana mandis with actionable Sell/Wait guidance
           </p>
         </div>
@@ -50,14 +50,14 @@ export const MarketComparisonPage: React.FC = () => {
         {/* Crop Select & View Tabs */}
         <div className="flex flex-wrap items-center gap-2.5 bg-card p-2 rounded-full border border-black/5 shadow-agfarm-sm">
           <div className="flex items-center gap-1.5 px-3">
-            <SlidersHorizontal className="w-3.5 h-3.5 text-brand-900" />
-            <span className="text-xs font-bold text-ink-600">Crop:</span>
+            <SlidersHorizontal className="w-4 h-4 text-brand-900" />
+            <span className="text-sm font-bold text-ink-600">Crop:</span>
           </div>
 
           <select
             value={crop}
             onChange={(e) => setCrop(e.target.value as Crop)}
-            className="bg-surface text-ink-900 text-xs font-bold px-3 py-1.5 rounded-full border border-black/5 focus:ring-2 focus:ring-brand-900 cursor-pointer"
+            className="bg-surface text-ink-900 text-sm font-bold px-4 py-2 rounded-full border border-black/5 focus:ring-2 focus:ring-brand-900 cursor-pointer"
           >
             {CROPS.map((c) => (
               <option key={c} value={c}>{c}</option>
@@ -67,7 +67,7 @@ export const MarketComparisonPage: React.FC = () => {
           <div className="flex items-center gap-1 bg-surface p-1 rounded-full border border-black/5">
             <button
               onClick={() => setActiveTab('today')}
-              className={`px-3 py-1 rounded-full text-xs font-bold transition-all ${
+              className={`px-4 py-1.5 rounded-full text-sm font-bold transition-all ${
                 activeTab === 'today' ? 'bg-brand-900 text-white' : 'text-ink-600 hover:text-brand-900'
               }`}
             >
@@ -75,7 +75,7 @@ export const MarketComparisonPage: React.FC = () => {
             </button>
             <button
               onClick={() => setActiveTab('ranking')}
-              className={`px-3 py-1 rounded-full text-xs font-bold transition-all ${
+              className={`px-4 py-1.5 rounded-full text-sm font-bold transition-all ${
                 activeTab === 'ranking' ? 'bg-brand-900 text-white' : 'text-ink-600 hover:text-brand-900'
               }`}
             >
@@ -96,12 +96,12 @@ export const MarketComparisonPage: React.FC = () => {
           <AgCard className="space-y-4">
             <div className="flex items-center justify-between">
               <div>
-                <h2 className="text-base font-bold text-ink-900">
+                <h2 className="text-lg font-bold text-ink-900">
                   {crop} Prices Across Market Yards
                 </h2>
-                <p className="text-xs text-ink-400">Green = Sell Now, Amber = Wait (sorted descending)</p>
+                <p className="text-sm text-ink-600">Green = Sell Now, Amber = Wait (sorted descending)</p>
               </div>
-              <div className="flex items-center gap-4 text-xs font-bold text-ink-600">
+              <div className="flex items-center gap-4 text-sm font-bold text-ink-600">
                 <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-full bg-[#0A7A3B]" /> Sell Now</span>
                 <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-full bg-[#F59E0B]" /> Wait</span>
               </div>
@@ -135,31 +135,31 @@ export const MarketComparisonPage: React.FC = () => {
 
           {/* Detailed Comparison Table (10 Yards) */}
           <AgCard className="space-y-4">
-            <h2 className="text-base font-bold text-ink-900">Detailed Comparison Table</h2>
+            <h2 className="text-lg font-bold text-ink-900">Detailed Comparison Table</h2>
             <div className="overflow-x-auto">
-              <table className="w-full text-left text-xs">
-                <thead className="bg-surface text-ink-600 uppercase font-bold text-[10px] tracking-wider border-b border-black/5">
+              <table className="w-full text-left text-sm">
+                <thead className="bg-surface text-ink-700 uppercase font-bold text-xs tracking-wider border-b border-black/5">
                   <tr>
-                    <th className="py-3 px-4">Market Yard</th>
-                    <th className="py-3 px-4">Current Price (₹/q)</th>
-                    <th className="py-3 px-4">7d Change (%)</th>
-                    <th className="py-3 px-4">Arrivals (q)</th>
-                    <th className="py-3 px-4 text-right">Recommendation</th>
+                    <th className="py-3.5 px-4">Market Yard</th>
+                    <th className="py-3.5 px-4">Current Price (₹/q)</th>
+                    <th className="py-3.5 px-4">7d Change (%)</th>
+                    <th className="py-3.5 px-4">Arrivals (q)</th>
+                    <th className="py-3.5 px-4 text-right">Recommendation</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-black/5 font-medium text-ink-900">
                   {sorted.map((row, idx) => (
                     <tr key={row.yard} className={`hover:bg-brand-100/30 transition-colors ${idx === 0 ? 'bg-brand-100/20 font-bold' : ''}`}>
-                      <td className="py-3.5 px-4 font-bold flex items-center gap-2">
+                      <td className="py-4 px-4 font-bold flex items-center gap-2">
                         {idx === 0 && <span className="text-amber-500">🏆</span>}
                         <span>{row.yard}</span>
                       </td>
-                      <td className="py-3.5 px-4 font-black text-brand-900">₹{row.price.toLocaleString()}</td>
-                      <td className={`py-3.5 px-4 font-bold ${row.change7d >= 0 ? 'text-emerald-700' : 'text-red-600'}`}>
+                      <td className="py-4 px-4 font-black text-brand-900 text-base">₹{row.price.toLocaleString()}</td>
+                      <td className={`py-4 px-4 font-bold ${row.change7d >= 0 ? 'text-emerald-700' : 'text-red-600'}`}>
                         {row.change7d >= 0 ? `+${row.change7d}%` : `${row.change7d}%`}
                       </td>
-                      <td className="py-3.5 px-4 text-ink-600">{row.arrivals.toLocaleString()}</td>
-                      <td className="py-3.5 px-4 text-right">
+                      <td className="py-4 px-4 text-ink-700">{row.arrivals.toLocaleString()}</td>
+                      <td className="py-4 px-4 text-right">
                         <AgBadge advice={row.advice} />
                       </td>
                     </tr>
@@ -202,15 +202,15 @@ export const MarketComparisonPage: React.FC = () => {
           </div>
 
           <div className="overflow-x-auto">
-            <table className="w-full text-left text-xs">
-              <thead className="bg-surface text-ink-600 uppercase font-bold text-[10px] tracking-wider border-b border-black/5">
+            <table className="w-full text-left text-sm">
+              <thead className="bg-surface text-ink-700 uppercase font-bold text-xs tracking-wider border-b border-black/5">
                 <tr>
-                  <th className="py-3 px-4">Rank</th>
-                  <th className="py-3 px-4">Market Yard</th>
-                  <th className="py-3 px-4">Average Price (₹)</th>
-                  <th className="py-3 px-4">Total Arrivals (q)</th>
-                  <th className="py-3 px-4">Difference from Min (₹)</th>
-                  <th className="py-3 px-4 text-right">Premium (%)</th>
+                  <th className="py-3.5 px-4">Rank</th>
+                  <th className="py-3.5 px-4">Market Yard</th>
+                  <th className="py-3.5 px-4">Average Price (₹)</th>
+                  <th className="py-3.5 px-4">Total Arrivals (q)</th>
+                  <th className="py-3.5 px-4">Difference from Min (₹)</th>
+                  <th className="py-3.5 px-4 text-right">Premium (%)</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-black/5 font-medium text-ink-900">
@@ -219,12 +219,12 @@ export const MarketComparisonPage: React.FC = () => {
                   const prem = lowest.price > 0 ? ((diff / lowest.price) * 100).toFixed(1) : '0.0';
                   return (
                     <tr key={r.yard} className={idx === 0 ? 'bg-brand-100/30 font-bold' : ''}>
-                      <td className="py-3 px-4 text-ink-400">#{idx + 1}</td>
-                      <td className="py-3 px-4 font-bold">{r.yard}</td>
-                      <td className="py-3 px-4 text-brand-900 font-bold">₹{r.price.toLocaleString()}</td>
-                      <td className="py-3 px-4 text-ink-600">{r.arrivals.toLocaleString()}</td>
-                      <td className="py-3 px-4">{diff === 0 ? '—' : `+₹${diff.toLocaleString()}`}</td>
-                      <td className="py-3 px-4 text-right font-bold text-emerald-800">{diff === 0 ? '0.0%' : `+${prem}%`}</td>
+                      <td className="py-3.5 px-4 text-ink-600 font-bold">#{idx + 1}</td>
+                      <td className="py-3.5 px-4 font-bold">{r.yard}</td>
+                      <td className="py-3.5 px-4 text-brand-900 font-black text-base">₹{r.price.toLocaleString()}</td>
+                      <td className="py-3.5 px-4 text-ink-700">{r.arrivals.toLocaleString()}</td>
+                      <td className="py-3.5 px-4">{diff === 0 ? '—' : `+₹${diff.toLocaleString()}`}</td>
+                      <td className="py-3.5 px-4 text-right font-black text-emerald-800">{diff === 0 ? '0.0%' : `+${prem}%`}</td>
                     </tr>
                   );
                 })}

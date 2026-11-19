@@ -48,14 +48,14 @@ export const ForecastPage: React.FC = () => {
       {/* 1. Header & Accessible Filter Bar */}
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
         <div>
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-100 text-brand-900 text-xs font-bold mb-2">
-            <TrendingUp className="w-3.5 h-3.5" />
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-100 text-brand-900 text-sm font-bold mb-2">
+            <TrendingUp className="w-4 h-4" />
             <span>Time-Series Engine</span>
           </div>
           <h1 className="text-3xl sm:text-4xl font-extrabold text-ink-900 tracking-tight">
             Price Forecast & <span className="font-serif italic font-normal text-brand-700">Predictive Intelligence</span>
           </h1>
-          <p className="text-xs text-ink-600 mt-1">
+          <p className="text-sm text-ink-600 mt-1.5">
             180-day modal price history combined with model-derived 95% Confidence Interval band
           </p>
         </div>
@@ -63,14 +63,14 @@ export const ForecastPage: React.FC = () => {
         {/* Filter Bar */}
         <div className="flex flex-wrap items-center gap-2.5 bg-card p-2 rounded-full border border-black/5 shadow-agfarm-sm">
           <div className="flex items-center gap-1.5 px-3">
-            <SlidersHorizontal className="w-3.5 h-3.5 text-brand-900" />
-            <span className="text-xs font-bold text-ink-600">Filters:</span>
+            <SlidersHorizontal className="w-4 h-4 text-brand-900" />
+            <span className="text-sm font-bold text-ink-600">Filters:</span>
           </div>
 
           <select
             value={crop}
             onChange={(e) => setCrop(e.target.value as Crop)}
-            className="bg-surface text-ink-900 text-xs font-bold px-3 py-1.5 rounded-full border border-black/5 focus:ring-2 focus:ring-brand-900 cursor-pointer"
+            className="bg-surface text-ink-900 text-sm font-bold px-4 py-2 rounded-full border border-black/5 focus:ring-2 focus:ring-brand-900 cursor-pointer"
           >
             {CROPS.map((c) => (
               <option key={c} value={c}>{c}</option>
@@ -80,7 +80,7 @@ export const ForecastPage: React.FC = () => {
           <select
             value={yard}
             onChange={(e) => setYard(e.target.value)}
-            className="bg-surface text-ink-900 text-xs font-bold px-3 py-1.5 rounded-full border border-black/5 focus:ring-2 focus:ring-brand-900 cursor-pointer"
+            className="bg-surface text-ink-900 text-sm font-bold px-4 py-2 rounded-full border border-black/5 focus:ring-2 focus:ring-brand-900 cursor-pointer"
           >
             {YARDS.map((y) => (
               <option key={y} value={y}>{y}</option>
@@ -90,7 +90,7 @@ export const ForecastPage: React.FC = () => {
           <div className="flex items-center gap-1 bg-surface p-1 rounded-full border border-black/5">
             <button
               onClick={() => setHorizon(7)}
-              className={`px-3 py-1 rounded-full text-xs font-bold transition-all ${
+              className={`px-4 py-1.5 rounded-full text-sm font-bold transition-all ${
                 horizon === 7 ? 'bg-brand-900 text-white' : 'text-ink-600 hover:text-brand-900'
               }`}
             >
@@ -98,7 +98,7 @@ export const ForecastPage: React.FC = () => {
             </button>
             <button
               onClick={() => setHorizon(14)}
-              className={`px-3 py-1 rounded-full text-xs font-bold transition-all ${
+              className={`px-4 py-1.5 rounded-full text-sm font-bold transition-all ${
                 horizon === 14 ? 'bg-brand-900 text-white' : 'text-ink-600 hover:text-brand-900'
               }`}
             >
@@ -111,10 +111,10 @@ export const ForecastPage: React.FC = () => {
       {/* 2. 180-Day Price History Chart */}
       <AgCard className="space-y-4">
         <div>
-          <h2 className="text-base font-bold text-ink-900">
+          <h2 className="text-lg font-bold text-ink-900">
             Price History: {crop} at {yard} (Recent 180 Days)
           </h2>
-          <p className="text-xs text-ink-400">Modal price (solid blue) with daily Min and Max trade bands (dashed)</p>
+          <p className="text-sm text-ink-600">Modal price (solid blue) with daily Min and Max trade bands (dashed)</p>
         </div>
 
         <div className="h-[280px] w-full pt-2">
@@ -146,15 +146,15 @@ export const ForecastPage: React.FC = () => {
       <AgCard className="space-y-4">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
           <div>
-            <h2 className="text-base font-bold text-ink-900 flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-red-600" />
+            <h2 className="text-lg font-bold text-ink-900 flex items-center gap-2">
+              <span className="w-2.5 h-2.5 rounded-full bg-red-600" />
               {horizon}-Day Price Forecast with 95% Confidence Interval Band
             </h2>
-            <p className="text-xs text-ink-400">
+            <p className="text-sm text-ink-600">
               Model: {forecast?.model || 'Random Forest'} • Validated test error interval
             </p>
           </div>
-          <span className="text-xs bg-brand-100 text-brand-900 font-bold px-3 py-1 rounded-full border border-brand-900/10">
+          <span className="text-sm bg-brand-100 text-brand-900 font-bold px-3.5 py-1.5 rounded-full border border-brand-900/10">
             As of {forecast?.asOf || '2026-11-19'}
           </span>
         </div>

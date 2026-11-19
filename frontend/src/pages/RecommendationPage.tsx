@@ -51,14 +51,14 @@ export const RecommendationPage: React.FC = () => {
       {/* 1. Header & Crop/Quantity Filter */}
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
         <div>
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-100 text-brand-900 text-xs font-bold mb-2">
-            <ShieldCheck className="w-3.5 h-3.5" />
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-brand-100 text-brand-900 text-sm font-bold mb-2">
+            <ShieldCheck className="w-4 h-4" />
             <span>Decision Support Engine</span>
           </div>
           <h1 className="text-3xl sm:text-4xl font-extrabold text-ink-900 tracking-tight">
             Sell or Wait Advisory with <span className="font-serif italic font-normal text-brand-700">Intelligent Scoring</span>
           </h1>
-          <p className="text-xs text-ink-600 mt-1">
+          <p className="text-sm text-ink-600 mt-1.5">
             Algorithmic recommendation balancing projected gains, godown storage, and haulage costs
           </p>
         </div>
@@ -66,13 +66,13 @@ export const RecommendationPage: React.FC = () => {
         {/* Inputs Bar */}
         <div className="flex flex-wrap items-center gap-3 bg-card p-2.5 rounded-full border border-black/5 shadow-agfarm-sm">
           <div className="flex items-center gap-1.5 px-2">
-            <SlidersHorizontal className="w-3.5 h-3.5 text-brand-900" />
-            <span className="text-xs font-bold text-ink-600">Crop:</span>
+            <SlidersHorizontal className="w-4 h-4 text-brand-900" />
+            <span className="text-sm font-bold text-ink-700">Crop:</span>
           </div>
           <select
             value={crop}
             onChange={(e) => setCrop(e.target.value as Crop)}
-            className="bg-surface text-ink-900 text-xs font-bold px-3.5 py-1.5 rounded-full border border-black/5 focus:ring-2 focus:ring-brand-900 cursor-pointer"
+            className="bg-surface text-ink-900 text-sm font-bold px-4 py-2 rounded-full border border-black/5 focus:ring-2 focus:ring-brand-900 cursor-pointer"
           >
             {CROPS.map((c) => (
               <option key={c} value={c}>{c}</option>
@@ -80,19 +80,19 @@ export const RecommendationPage: React.FC = () => {
           </select>
 
           <div className="flex items-center gap-1.5 px-2 border-l border-black/5">
-            <Calculator className="w-3.5 h-3.5 text-brand-900" />
-            <span className="text-xs font-bold text-ink-600">Quantity:</span>
+            <Calculator className="w-4 h-4 text-brand-900" />
+            <span className="text-sm font-bold text-ink-700">Quantity:</span>
           </div>
-          <div className="flex items-center gap-1">
+          <div className="flex items-center gap-1.5">
             <input
               type="number"
               min={1}
               max={1000}
               value={quantity}
               onChange={(e) => setQuantity(Math.max(1, Number(e.target.value)))}
-              className="w-20 bg-surface text-ink-900 text-xs font-black px-3 py-1.5 rounded-full border border-black/5 focus:ring-2 focus:ring-brand-900"
+              className="w-24 bg-surface text-ink-900 text-sm font-black px-3.5 py-2 rounded-full border border-black/5 focus:ring-2 focus:ring-brand-900"
             />
-            <span className="text-xs font-bold text-ink-400">quintals</span>
+            <span className="text-sm font-bold text-ink-600 pr-2">quintals</span>
           </div>
         </div>
       </div>
@@ -116,7 +116,7 @@ export const RecommendationPage: React.FC = () => {
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <span className="text-xs font-bold text-ink-600 uppercase tracking-wider">
+                <span className="text-sm font-bold text-ink-700 uppercase tracking-wider">
                   Target Mandi: {activeYard.yard}
                 </span>
                 <AgBadge advice={activeYard.advice} />
@@ -136,43 +136,43 @@ export const RecommendationPage: React.FC = () => {
           </div>
 
           <div className="bg-card px-4 py-2.5 rounded-full border border-black/5 shadow-sm text-right">
-            <span className="text-[10px] font-bold text-ink-400 uppercase tracking-wider block">Decision Confidence</span>
-            <span className="text-sm font-black text-brand-900">High (95% validated interval)</span>
+            <span className="text-xs font-bold text-ink-500 uppercase tracking-wider block">Decision Confidence</span>
+            <span className="text-sm sm:text-base font-black text-brand-900">High (95% validated interval)</span>
           </div>
         </div>
 
         {/* Financial Highlights */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-6">
           <div className="bg-card rounded-[20px] p-5 border border-black/5">
-            <span className="text-xs font-semibold text-ink-600">Today's Realization ({quantity} q)</span>
-            <div className="text-2xl font-black text-ink-900 mt-1">
+            <span className="text-sm font-semibold text-ink-700">Today's Realization ({quantity} q)</span>
+            <div className="text-2xl sm:text-3xl font-black text-ink-900 mt-1">
               ₹{totalRevenueToday.toLocaleString()}
             </div>
-            <span className="text-[11px] text-ink-400">₹{price.toLocaleString()}/q spot rate</span>
+            <span className="text-xs sm:text-sm text-ink-600 block mt-0.5">₹{price.toLocaleString()}/q spot rate</span>
           </div>
 
           <div className="bg-card rounded-[20px] p-5 border border-black/5">
-            <span className="text-xs font-semibold text-ink-600">Expected 7d Net Gain (Total)</span>
-            <div className={`text-2xl font-black mt-1 ${isWait ? 'text-emerald-700' : 'text-ink-600'}`}>
+            <span className="text-sm font-semibold text-ink-700">Expected 7d Net Gain (Total)</span>
+            <div className={`text-2xl sm:text-3xl font-black mt-1 ${isWait ? 'text-emerald-700' : 'text-ink-600'}`}>
               {isWait ? `+₹${totalNetGainWait.toLocaleString()}` : '₹0'}
             </div>
-            <span className="text-[11px] text-ink-400">
+            <span className="text-xs sm:text-sm text-ink-600 block mt-0.5">
               {isWait ? `+₹${netGainPerQ}/q after storage & risk` : 'Hold carries negative risk-adjusted margin'}
             </span>
           </div>
 
           <div className="bg-card rounded-[20px] p-5 border border-black/5">
-            <span className="text-xs font-semibold text-ink-600">Projected 7d Price</span>
-            <div className="text-2xl font-black text-brand-900 mt-1">
+            <span className="text-sm font-semibold text-ink-700">Projected 7d Price</span>
+            <div className="text-2xl sm:text-3xl font-black text-brand-900 mt-1">
               ₹{Math.round(price * (1 + expectedGainPct / 100)).toLocaleString()}
             </div>
-            <span className="text-[11px] text-ink-400">+{expectedGainPct}% model trajectory</span>
+            <span className="text-xs sm:text-sm text-ink-600 block mt-0.5">+{expectedGainPct}% model trajectory</span>
           </div>
         </div>
 
         {/* Recommendation Reasoning */}
-        <p className="mt-6 text-xs text-ink-600 leading-relaxed bg-card/70 p-4 rounded-[16px] border border-black/5">
-          <strong>Decision Rationale:</strong>{' '}
+        <p className="mt-6 text-sm text-ink-700 leading-relaxed bg-card/80 p-4 rounded-[16px] border border-black/5">
+          <strong className="text-ink-900 font-bold">Decision Rationale:</strong>{' '}
           {isWait
             ? `Arrivals at ${activeYard.yard} are running below seasonal baseline, creating upward pressure (+${activeYard.change7d}% in 7 days). Gross gains (₹${grossGainPerQ}/q) comfortably exceed warehouse carrying costs (₹${storageCost7dPerQ}/q) and 2% volatility buffer (₹${riskDiscountPerQ}/q).`
             : `Spot price at ${activeYard.yard} (₹${price.toLocaleString()}/q) is currently peaked near local resistance. Holding for 7 days incurs ₹${storageCost7dPerQ}/q in storage without sufficient upside probability.`}
@@ -185,25 +185,25 @@ export const RecommendationPage: React.FC = () => {
         <AgCard className="space-y-4">
           <div className="flex items-center gap-2 text-brand-900">
             <DollarSign className="w-5 h-5" />
-            <h2 className="text-base font-bold text-ink-900">7-Day Cost-Benefit Breakdown (Per Quintal)</h2>
+            <h2 className="text-base sm:text-lg font-bold text-ink-900">7-Day Cost-Benefit Breakdown (Per Quintal)</h2>
           </div>
 
-          <div className="space-y-2.5 text-xs">
-            <div className="flex items-center justify-between p-3 rounded-xl bg-surface">
-              <span className="font-semibold text-ink-600">Projected Gross Price Gain</span>
-              <span className="font-black text-emerald-700">+₹{grossGainPerQ}</span>
+          <div className="space-y-2.5 text-sm">
+            <div className="flex items-center justify-between p-3.5 rounded-xl bg-surface">
+              <span className="font-semibold text-ink-700">Projected Gross Price Gain</span>
+              <span className="font-black text-base text-emerald-700">+₹{grossGainPerQ}</span>
             </div>
-            <div className="flex items-center justify-between p-3 rounded-xl bg-surface">
-              <span className="font-semibold text-ink-600">Warehouse Storage Cost (0.1%/day × 7d)</span>
-              <span className="font-black text-red-600">-₹{storageCost7dPerQ}</span>
+            <div className="flex items-center justify-between p-3.5 rounded-xl bg-surface">
+              <span className="font-semibold text-ink-700">Warehouse Storage Cost (0.1%/day × 7d)</span>
+              <span className="font-black text-base text-red-600">-₹{storageCost7dPerQ}</span>
             </div>
-            <div className="flex items-center justify-between p-3 rounded-xl bg-surface">
-              <span className="font-semibold text-ink-600">Market Volatility Buffer (2.0% Risk Discount)</span>
-              <span className="font-black text-red-600">-₹{riskDiscountPerQ}</span>
+            <div className="flex items-center justify-between p-3.5 rounded-xl bg-surface">
+              <span className="font-semibold text-ink-700">Market Volatility Buffer (2.0% Risk Discount)</span>
+              <span className="font-black text-base text-red-600">-₹{riskDiscountPerQ}</span>
             </div>
-            <div className="flex items-center justify-between p-3.5 rounded-xl bg-brand-100/60 border border-brand-900/10 font-bold">
-              <span className="text-brand-900">Net Risk-Adjusted Gain / Loss</span>
-              <span className={`font-black text-sm ${netGainPerQ > 0 ? 'text-brand-900' : 'text-red-700'}`}>
+            <div className="flex items-center justify-between p-4 rounded-xl bg-brand-100/60 border border-brand-900/10 font-bold">
+              <span className="text-brand-900 text-sm sm:text-base font-bold">Net Risk-Adjusted Gain / Loss</span>
+              <span className={`font-black text-base sm:text-lg ${netGainPerQ > 0 ? 'text-brand-900' : 'text-red-700'}`}>
                 {netGainPerQ > 0 ? `+₹${netGainPerQ}/q` : `-₹${Math.abs(netGainPerQ)}/q`}
               </span>
             </div>
@@ -214,7 +214,7 @@ export const RecommendationPage: React.FC = () => {
         <AgCard className="space-y-4">
           <div className="flex items-center gap-2 text-brand-900">
             <Truck className="w-5 h-5" />
-            <h2 className="text-base font-bold text-ink-900">Regional Inter-Mandi Arbitrage</h2>
+            <h2 className="text-base sm:text-lg font-bold text-ink-900">Regional Inter-Mandi Arbitrage</h2>
           </div>
 
           {bestYard.yard !== activeYard.yard ? (
@@ -223,25 +223,25 @@ export const RecommendationPage: React.FC = () => {
                 Price difference is ₹{priceDiffPerQ}/q. After deducting estimated haul transport (₹50/q), net extra profit is <strong>₹{netArbitragePerQ}/quintal</strong> (₹{(netArbitragePerQ * quantity).toLocaleString()} for {quantity}q).
               </Callout>
 
-              <div className="space-y-2 text-xs pt-1">
-                <div className="flex items-center justify-between p-2.5 rounded-xl bg-surface">
-                  <span className="text-ink-600">Local Price ({activeYard.yard})</span>
+              <div className="space-y-2 text-sm pt-1">
+                <div className="flex items-center justify-between p-3 rounded-xl bg-surface">
+                  <span className="text-ink-700 font-medium">Local Price ({activeYard.yard})</span>
                   <span className="font-bold text-ink-900">₹{activeYard.price.toLocaleString()}/q</span>
                 </div>
-                <div className="flex items-center justify-between p-2.5 rounded-xl bg-surface">
-                  <span className="text-ink-600">Highest Terminal Price ({bestYard.yard})</span>
-                  <span className="font-bold text-brand-900">₹{bestYard.price.toLocaleString()}/q</span>
+                <div className="flex items-center justify-between p-3 rounded-xl bg-surface">
+                  <span className="text-ink-700 font-medium">Highest Terminal Price ({bestYard.yard})</span>
+                  <span className="font-black text-brand-900 text-base">₹{bestYard.price.toLocaleString()}/q</span>
                 </div>
-                <div className="flex items-center justify-between p-2.5 rounded-xl bg-surface">
-                  <span className="text-ink-600">Estimated Road Transport Cost</span>
+                <div className="flex items-center justify-between p-3 rounded-xl bg-surface">
+                  <span className="text-ink-700 font-medium">Estimated Road Transport Cost</span>
                   <span className="font-bold text-red-600">₹{estTransportCostPerQ}/q</span>
                 </div>
               </div>
             </div>
           ) : (
-            <div className="p-4 rounded-xl bg-surface text-center space-y-2 text-xs">
-              <p className="font-bold text-brand-900">Selected Mandi Already Offers Statewide Best Price</p>
-              <p className="text-ink-400">No road haul arbitrage needed. Local sale yields peak Telangana price realization.</p>
+            <div className="p-5 rounded-xl bg-surface text-center space-y-2 text-sm">
+              <p className="font-bold text-brand-900 text-base">Selected Mandi Already Offers Statewide Best Price</p>
+              <p className="text-ink-600">No road haul arbitrage needed. Local sale yields peak Telangana price realization.</p>
             </div>
           )}
         </AgCard>
@@ -249,10 +249,10 @@ export const RecommendationPage: React.FC = () => {
 
       {/* 4. All Mandis Advisory Matrix */}
       <AgCard className="space-y-4">
-        <h2 className="text-base font-bold text-ink-900">All Mandis Advisory Matrix — {crop}</h2>
+        <h2 className="text-base sm:text-lg font-bold text-ink-900">All Mandis Advisory Matrix — {crop}</h2>
         <div className="overflow-x-auto">
-          <table className="w-full text-left text-xs">
-            <thead className="bg-surface text-ink-600 uppercase font-bold text-[10px] tracking-wider border-b border-black/5">
+          <table className="w-full text-left text-sm">
+            <thead className="bg-surface text-ink-700 uppercase font-bold text-xs tracking-wider border-b border-black/5">
               <tr>
                 <th className="py-3 px-4">Market Yard</th>
                 <th className="py-3 px-4">Today's Price</th>
@@ -269,19 +269,19 @@ export const RecommendationPage: React.FC = () => {
                     s.yard === activeYard.yard ? 'bg-brand-100/20 font-bold' : ''
                   }`}
                 >
-                  <td className="py-3 px-4 font-bold">{s.yard}</td>
-                  <td className="py-3 px-4 font-black text-brand-900">₹{s.price.toLocaleString()}</td>
-                  <td className={`py-3 px-4 font-bold ${s.change7d >= 0 ? 'text-emerald-700' : 'text-red-600'}`}>
+                  <td className="py-3.5 px-4 font-bold">{s.yard}</td>
+                  <td className="py-3.5 px-4 font-black text-base text-brand-900">₹{s.price.toLocaleString()}</td>
+                  <td className={`py-3.5 px-4 font-bold ${s.change7d >= 0 ? 'text-emerald-700' : 'text-red-600'}`}>
                     {s.change7d >= 0 ? `+${s.change7d}%` : `${s.change7d}%`}
                   </td>
-                  <td className="py-3 px-4">
+                  <td className="py-3.5 px-4">
                     <AgBadge advice={s.advice} />
                   </td>
-                  <td className="py-3 px-4 text-right">
+                  <td className="py-3.5 px-4 text-right">
                     {s.yard !== activeYard.yard && (
                       <button
                         onClick={() => setSelectedYardName(s.yard)}
-                        className="text-xs font-bold text-brand-900 hover:text-brand-700 underline"
+                        className="text-sm font-bold text-brand-900 hover:text-brand-700 underline"
                       >
                         Calculate
                       </button>

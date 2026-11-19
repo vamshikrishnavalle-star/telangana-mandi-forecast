@@ -27,14 +27,14 @@ export const ModelPerformancePage: React.FC = () => {
     <div className="space-y-8">
       {/* Header */}
       <div>
-        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-100 text-brand-900 text-xs font-bold mb-2">
-          <BarChart3 className="w-3.5 h-3.5" />
+        <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-brand-100 text-brand-900 text-sm font-bold mb-2">
+          <BarChart3 className="w-4 h-4" />
           <span>Evaluation Benchmark</span>
         </div>
         <h1 className="text-3xl sm:text-4xl font-extrabold text-ink-900 tracking-tight">
           Model Performance & <span className="font-serif italic font-normal text-brand-700">Validation Benchmark</span>
         </h1>
-        <p className="text-xs text-ink-600 mt-1">
+        <p className="text-sm text-ink-600 mt-1.5">
           Rigorous out-of-sample backtesting against 7 years of Telangana daily mandi arrivals (2020–2026)
         </p>
       </div>
@@ -49,13 +49,13 @@ export const ModelPerformancePage: React.FC = () => {
 
       {/* Validation Metrics Table */}
       <AgCard className="space-y-4">
-        <h2 className="text-base font-bold text-ink-900">
+        <h2 className="text-base sm:text-lg font-bold text-ink-900">
           Model Performance Metrics (Validated 2020–2026)
         </h2>
 
         <div className="overflow-x-auto">
-          <table className="w-full text-left text-xs">
-            <thead className="bg-surface text-ink-600 uppercase font-bold text-[10px] tracking-wider border-b border-black/5">
+          <table className="w-full text-left text-sm">
+            <thead className="bg-surface text-ink-700 uppercase font-bold text-xs tracking-wider border-b border-black/5">
               <tr>
                 <th className="py-3 px-4">Model</th>
                 <th className="py-3 px-4">MAE (₹/q)</th>
@@ -72,15 +72,15 @@ export const ModelPerformancePage: React.FC = () => {
                     {idx === 0 && <CheckCircle2 className="w-4 h-4 text-brand-900" />}
                     <span>{m.model}</span>
                     {idx === 0 && (
-                      <span className="text-[10px] bg-brand-900 text-white px-2 py-0.5 rounded-full font-bold ml-1">
+                      <span className="text-xs bg-brand-900 text-white px-2.5 py-0.5 rounded-full font-bold ml-1">
                         Best Performer
                       </span>
                     )}
                   </td>
-                  <td className="py-3.5 px-4 font-black text-brand-900">₹{m.mae.toFixed(2)}</td>
-                  <td className="py-3.5 px-4 text-ink-600">₹{m.rmse.toFixed(2)}</td>
+                  <td className="py-3.5 px-4 font-black text-base text-brand-900">₹{m.mae.toFixed(2)}</td>
+                  <td className="py-3.5 px-4 text-ink-700">₹{m.rmse.toFixed(2)}</td>
                   <td className="py-3.5 px-4 font-bold text-emerald-800">{m.mape.toFixed(2)}%</td>
-                  <td className="py-3.5 px-4 text-ink-600">{m.mase.toFixed(3)}</td>
+                  <td className="py-3.5 px-4 text-ink-700">{m.mase.toFixed(3)}</td>
                   <td className="py-3.5 px-4 text-right font-bold text-ink-900">{m.directionalAccuracy.toFixed(2)}%</td>
                 </tr>
               ))}
@@ -94,15 +94,15 @@ export const ModelPerformancePage: React.FC = () => {
         {/* MAE Chart */}
         <AgCard className="space-y-4">
           <div>
-            <h2 className="text-sm font-bold text-ink-900">Mean Absolute Error (₹/quintal)</h2>
-            <p className="text-[11px] text-ink-400">Lower is better • Sorted ascending by prediction error</p>
+            <h2 className="text-base font-bold text-ink-900">Mean Absolute Error (₹/quintal)</h2>
+            <p className="text-xs sm:text-sm text-ink-600">Lower is better • Sorted ascending by prediction error</p>
           </div>
           <div className="h-[250px] w-full pt-2">
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={sortedByMAE} margin={{ top: 10, right: 10, left: 0, bottom: 20 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#EEF3EE" />
-                <XAxis dataKey="model" stroke="#8A948D" tick={{ fill: '#5B665F', fontSize: 10 }} interval={0} />
-                <YAxis stroke="#8A948D" tick={{ fill: '#5B665F', fontSize: 11 }} domain={[100, 250]} />
+                <XAxis dataKey="model" stroke="#8A948D" tick={{ fill: '#5B665F', fontSize: 12 }} interval={0} />
+                <YAxis stroke="#8A948D" tick={{ fill: '#5B665F', fontSize: 12 }} domain={[100, 250]} />
                 <Tooltip
                   contentStyle={{
                     backgroundColor: '#FFFFFF',
@@ -110,7 +110,7 @@ export const ModelPerformancePage: React.FC = () => {
                     border: '1px solid rgba(0,0,0,0.08)',
                     boxShadow: '0 8px 24px rgba(16,24,20,0.06)',
                     color: '#111613',
-                    fontSize: '12px',
+                    fontSize: '13px',
                   }}
                 />
                 <Bar dataKey="mae" name="MAE (₹/q)" radius={[6, 6, 0, 0]}>
@@ -126,15 +126,15 @@ export const ModelPerformancePage: React.FC = () => {
         {/* MAPE Chart */}
         <AgCard className="space-y-4">
           <div>
-            <h2 className="text-sm font-bold text-ink-900">Mean Absolute Percentage Error (%)</h2>
-            <p className="text-[11px] text-ink-400">Lower is better • Measures relative percentage deviation</p>
+            <h2 className="text-base font-bold text-ink-900">Mean Absolute Percentage Error (%)</h2>
+            <p className="text-xs sm:text-sm text-ink-600">Lower is better • Measures relative percentage deviation</p>
           </div>
           <div className="h-[250px] w-full pt-2">
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={sortedByMAE} margin={{ top: 10, right: 10, left: 0, bottom: 20 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#EEF3EE" />
-                <XAxis dataKey="model" stroke="#8A948D" tick={{ fill: '#5B665F', fontSize: 10 }} interval={0} />
-                <YAxis stroke="#8A948D" tick={{ fill: '#5B665F', fontSize: 11 }} domain={[0, 3]} />
+                <XAxis dataKey="model" stroke="#8A948D" tick={{ fill: '#5B665F', fontSize: 12 }} interval={0} />
+                <YAxis stroke="#8A948D" tick={{ fill: '#5B665F', fontSize: 12 }} domain={[0, 3]} />
                 <Tooltip
                   contentStyle={{
                     backgroundColor: '#FFFFFF',
@@ -142,7 +142,7 @@ export const ModelPerformancePage: React.FC = () => {
                     border: '1px solid rgba(0,0,0,0.08)',
                     boxShadow: '0 8px 24px rgba(16,24,20,0.06)',
                     color: '#111613',
-                    fontSize: '12px',
+                    fontSize: '13px',
                   }}
                 />
                 <Bar dataKey="mape" name="MAPE (%)" radius={[6, 6, 0, 0]}>
@@ -159,15 +159,15 @@ export const ModelPerformancePage: React.FC = () => {
       {/* Directional Accuracy Chart */}
       <AgCard className="space-y-4">
         <div>
-          <h2 className="text-sm font-bold text-ink-900">Directional Accuracy by Model (%)</h2>
-          <p className="text-[11px] text-ink-400">Higher is better • Evaluates correctness of price direction sign</p>
+          <h2 className="text-base font-bold text-ink-900">Directional Accuracy by Model (%)</h2>
+          <p className="text-xs sm:text-sm text-ink-600">Higher is better • Evaluates correctness of price direction sign</p>
         </div>
         <div className="h-[250px] w-full pt-2">
           <ResponsiveContainer width="100%" height="100%">
             <BarChart data={sortedByMAE} margin={{ top: 10, right: 20, left: 0, bottom: 20 }}>
               <CartesianGrid strokeDasharray="3 3" stroke="#EEF3EE" />
-              <XAxis dataKey="model" stroke="#8A948D" tick={{ fill: '#5B665F', fontSize: 11 }} />
-              <YAxis stroke="#8A948D" tick={{ fill: '#5B665F', fontSize: 11 }} domain={[0, 100]} />
+              <XAxis dataKey="model" stroke="#8A948D" tick={{ fill: '#5B665F', fontSize: 12 }} />
+              <YAxis stroke="#8A948D" tick={{ fill: '#5B665F', fontSize: 12 }} domain={[0, 100]} />
               <Tooltip
                 contentStyle={{
                   backgroundColor: '#FFFFFF',
@@ -175,7 +175,7 @@ export const ModelPerformancePage: React.FC = () => {
                   border: '1px solid rgba(0,0,0,0.08)',
                   boxShadow: '0 8px 24px rgba(16,24,20,0.06)',
                   color: '#111613',
-                  fontSize: '12px',
+                  fontSize: '13px',
                 }}
               />
               <Bar dataKey="directionalAccuracy" name="Directional Accuracy (%)" radius={[6, 6, 0, 0]}>

@@ -26,7 +26,7 @@ export const Navbar: React.FC = () => {
             <span className="text-xl font-extrabold tracking-tight text-brand-900">
               Smart <span className="font-serif italic font-normal text-brand-700">Mandi</span>
             </span>
-            <span className="text-[10px] font-bold uppercase tracking-wider block text-ink-600">Telangana Advisory</span>
+            <span className="text-xs font-bold uppercase tracking-wider block text-ink-600">Telangana Advisory</span>
           </div>
         </Link>
 
@@ -37,7 +37,7 @@ export const Navbar: React.FC = () => {
               key={item.to}
               to={item.to}
               className={({ isActive }) =>
-                `px-4 py-2 rounded-full text-xs font-bold transition-all ${
+                `px-4 py-2 rounded-full text-sm font-bold transition-all ${
                   isActive
                     ? 'bg-brand-900 text-white shadow-sm'
                     : 'text-ink-600 hover:text-brand-900 hover:bg-brand-100/50'
@@ -53,7 +53,7 @@ export const Navbar: React.FC = () => {
         <div className="hidden sm:flex items-center gap-3">
           <Link
             to="/recommendation"
-            className="flex items-center gap-1.5 px-5 py-2.5 rounded-full bg-brand-900 hover:bg-brand-700 text-white text-xs font-bold transition-all shadow-md hover:shadow-lg active:scale-95"
+            className="flex items-center gap-1.5 px-5 py-2.5 rounded-full bg-brand-900 hover:bg-brand-700 text-white text-sm font-bold transition-all shadow-md hover:shadow-lg active:scale-95"
           >
             <span>Get Advice</span>
             <ArrowUpRight className="w-3.5 h-3.5" />

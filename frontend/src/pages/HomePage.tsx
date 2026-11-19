@@ -46,9 +46,9 @@ export const HomePage: React.FC = () => {
 
         {/* Hero content */}
         <div className="relative z-10 max-w-2xl space-y-6">
-          <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-emerald-950/70 backdrop-blur-md border border-emerald-500/30 text-xs font-semibold text-emerald-200 shadow-sm">
-            <span className="px-2 py-0.5 rounded-full bg-emerald-400 text-slate-950 text-[10px] font-black uppercase tracking-wider">NEW</span>
-            <span className="tracking-wider text-[11px] font-bold">AI-POWERED AGRICULTURE PLATFORM</span>
+          <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-emerald-950/70 backdrop-blur-md border border-emerald-500/30 text-sm font-semibold text-emerald-200 shadow-sm">
+            <span className="px-2.5 py-0.5 rounded-full bg-emerald-400 text-slate-950 text-xs font-black uppercase tracking-wider">NEW</span>
+            <span className="tracking-wider text-xs font-bold">AI-POWERED AGRICULTURE PLATFORM</span>
           </div>
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1] text-white">
@@ -80,17 +80,17 @@ export const HomePage: React.FC = () => {
         {/* AgFarm Glass Badge (Bottom Right) */}
         <div className="hidden md:flex absolute bottom-8 right-8 z-20 glass-badge rounded-[24px] p-5 max-w-xs text-ink-900 flex-col gap-2">
           <div className="flex items-center justify-between">
-            <span className="text-[11px] font-bold text-ink-400 uppercase tracking-wider">Today's Best Benchmark</span>
+            <span className="text-xs font-bold text-ink-600 uppercase tracking-wider">Today's Best Benchmark</span>
             <AgBadge advice={bestYard.advice} />
           </div>
           <div>
-            <span className="text-xs font-semibold text-ink-600 block">{bestYard.yard}</span>
+            <span className="text-sm font-semibold text-ink-700 block">{bestYard.yard}</span>
             <div className="text-3xl font-black text-brand-900 tracking-tight mt-0.5">
               ₹{bestYard.price.toLocaleString()}
-              <span className="text-xs font-normal text-ink-600 ml-1">/q</span>
+              <span className="text-sm font-medium text-ink-600 ml-1">/q</span>
             </div>
           </div>
-          <p className="text-[11px] text-ink-400 pt-1 border-t border-black/5">
+          <p className="text-xs text-ink-600 pt-1.5 border-t border-black/5 font-medium">
             Cotton modal rate • Updated {meta?.asOf || '2026-11-19'}
           </p>
         </div>
@@ -101,24 +101,24 @@ export const HomePage: React.FC = () => {
         <AgCard className="!p-0 overflow-hidden">
           <div className="bg-[#E7F1FB] border-b border-[#1D4ED8]/10 p-4 px-6 flex items-center gap-2.5 text-[#1D4ED8]">
             <TrendingUp className="w-5 h-5" />
-            <h2 className="text-sm font-bold tracking-tight">📈 Price Forecasting</h2>
+            <h2 className="text-base font-bold tracking-tight">📈 Price Forecasting</h2>
           </div>
           <div className="p-6">
-            <ul className="space-y-3 text-xs text-ink-600 font-medium">
-              <li className="flex items-start gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-brand-700 mt-1.5 shrink-0" />
+            <ul className="space-y-3.5 text-sm text-ink-700 font-medium">
+              <li className="flex items-start gap-2.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-brand-700 mt-2 shrink-0" />
                 <span><strong>7-day and 14-day price forecasts</strong> computed with historical arrival patterns</span>
               </li>
-              <li className="flex items-start gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-brand-700 mt-1.5 shrink-0" />
+              <li className="flex items-start gap-2.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-brand-700 mt-2 shrink-0" />
                 <span><strong>Multiple ML models:</strong> ARIMA, Random Forest, XGBoost, and Moving Average</span>
               </li>
-              <li className="flex items-start gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-brand-700 mt-1.5 shrink-0" />
+              <li className="flex items-start gap-2.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-brand-700 mt-2 shrink-0" />
                 <span><strong>95% Confidence Intervals</strong> derived directly from validated test error bounds</span>
               </li>
-              <li className="flex items-start gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-brand-700 mt-1.5 shrink-0" />
+              <li className="flex items-start gap-2.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-brand-700 mt-2 shrink-0" />
                 <span><strong>Real-time market data integration</strong> with Telangana AMC daily reports</span>
               </li>
             </ul>
@@ -128,24 +128,24 @@ export const HomePage: React.FC = () => {
         <AgCard className="!p-0 overflow-hidden">
           <div className="bg-[#E5F4E4] border-b border-[#0A7A3B]/10 p-4 px-6 flex items-center gap-2.5 text-[#0A7A3B]">
             <ShieldCheck className="w-5 h-5" />
-            <h2 className="text-sm font-bold tracking-tight">💡 Smart Recommendations</h2>
+            <h2 className="text-base font-bold tracking-tight">💡 Smart Recommendations</h2>
           </div>
           <div className="p-6">
-            <ul className="space-y-3 text-xs text-ink-600 font-medium">
-              <li className="flex items-start gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-brand-700 mt-1.5 shrink-0" />
+            <ul className="space-y-3.5 text-sm text-ink-700 font-medium">
+              <li className="flex items-start gap-2.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-brand-700 mt-2 shrink-0" />
                 <span><strong>Sell/Wait decision support</strong> with high/medium confidence indicators</span>
               </li>
-              <li className="flex items-start gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-brand-700 mt-1.5 shrink-0" />
+              <li className="flex items-start gap-2.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-brand-700 mt-2 shrink-0" />
                 <span><strong>Cost-benefit analysis:</strong> 0.1%/day warehouse storage and 2% risk discount</span>
               </li>
-              <li className="flex items-start gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-brand-700 mt-1.5 shrink-0" />
+              <li className="flex items-start gap-2.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-brand-700 mt-2 shrink-0" />
                 <span><strong>Arbitrage detection:</strong> identifies price premiums in neighboring mandis</span>
               </li>
-              <li className="flex items-start gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-brand-700 mt-1.5 shrink-0" />
+              <li className="flex items-start gap-2.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-brand-700 mt-2 shrink-0" />
                 <span><strong>Net realization calculation</strong> factoring inter-district road transport costs</span>
               </li>
             </ul>
@@ -160,7 +160,7 @@ export const HomePage: React.FC = () => {
             <h2 className="text-xl font-extrabold text-ink-900 tracking-tight">
               Quick Market Overview — Latest Prices with <span className="font-serif italic font-normal text-brand-700">Live Telemetry</span>
             </h2>
-            <p className="text-xs text-ink-600 mt-0.5">
+            <p className="text-sm text-ink-600 mt-1">
               Comparative modal price (₹/quintal) across 10 Telangana market yards
             </p>
           </div>
@@ -171,7 +171,7 @@ export const HomePage: React.FC = () => {
               <button
                 key={crop}
                 onClick={() => setSelectedCrop(crop)}
-                className={`px-3.5 py-1.5 rounded-full text-xs font-bold transition-all shrink-0 ${
+                className={`px-4 py-2 rounded-full text-sm font-bold transition-all shrink-0 ${
                   selectedCrop === crop
                     ? 'bg-brand-900 text-white shadow-sm'
                     : 'text-ink-600 hover:text-brand-900'
@@ -225,7 +225,7 @@ export const HomePage: React.FC = () => {
               <MapPin className="w-5 h-5 text-brand-900" />
               Telangana Market Yards & <span className="font-serif italic font-normal text-brand-700">Geospatial Haul</span>
             </h2>
-            <p className="text-xs text-ink-600 mt-0.5">
+            <p className="text-sm text-ink-600 mt-1">
               Locate primary terminal yards and evaluate haul distances to calculate net arbitrage returns
             </p>
           </div>
@@ -234,7 +234,7 @@ export const HomePage: React.FC = () => {
             <select
               value={selectedYard}
               onChange={(e) => setSelectedYard(e.target.value)}
-              className="bg-surface border border-black/10 text-ink-900 text-xs font-semibold rounded-full px-3.5 py-2 focus:ring-2 focus:ring-brand-900"
+              className="bg-surface border border-black/10 text-ink-900 text-sm font-semibold rounded-full px-4 py-2.5 focus:ring-2 focus:ring-brand-900"
             >
               {defaultMarketYards.map((y) => (
                 <option key={y.name} value={y.name}>
@@ -245,7 +245,7 @@ export const HomePage: React.FC = () => {
 
             <button
               onClick={() => setShowDistances(!showDistances)}
-              className={`flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold transition-all ${
+              className={`flex items-center gap-1.5 px-4 py-2.5 rounded-full text-sm font-bold transition-all ${
                 showDistances
                   ? 'bg-red-100 text-red-800 border border-red-200'
                   : 'bg-surface text-ink-600 hover:bg-black/5'
