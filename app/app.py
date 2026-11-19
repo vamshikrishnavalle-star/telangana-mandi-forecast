@@ -232,7 +232,7 @@ if page == "🏠 Home":
             for name, info in yard_geo.items()
         ])
         
-        fig_map = px.scatter_mapbox(
+        fig_map = px.scatter_map(
             geo_df,
             lat='lat',
             lon='lon',
@@ -243,14 +243,14 @@ if page == "🏠 Home":
             size='size',
             zoom=6.2,
             center={'lat': 18.2, 'lon': 79.1},
-            mapbox_style='carto-positron',
+            map_style='carto-positron',
             title=f"Market Yards across Telangana (Origin: {ref_yard})"
         )
         
         if show_lines:
             for _, row in dist_df.iterrows():
                 target_info = yard_geo[row['Mandi']]
-                fig_map.add_trace(go.Scattermapbox(
+                fig_map.add_trace(go.Scattermap(
                     lat=[ref_info['lat'], target_info['lat']],
                     lon=[ref_info['lon'], target_info['lon']],
                     mode='lines',
