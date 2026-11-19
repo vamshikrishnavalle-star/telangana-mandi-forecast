@@ -1,6 +1,5 @@
 import React from 'react';
 import { Advice } from '../../services/dataLoader';
-import { Trophy, AlertTriangle, Info } from 'lucide-react';
 
 export const AgCard: React.FC<{ children: React.ReactNode; className?: string }> = ({
   children,
@@ -71,66 +70,26 @@ export const Callout: React.FC<{
   kind: 'success' | 'info' | 'warning';
   title?: string;
   children: React.ReactNode;
-  action?: React.ReactNode;
-  className?: string;
-}> = ({ kind, title, children, action, className = '' }) => {
+}> = ({ kind, title, children }) => {
   const styles = {
-    success: {
-      card: 'bg-[#E5F4E4] border-[#0A7A3B]/25 text-[#0A4D2E]',
-      iconWrap: 'bg-[#0A7A3B]/15 text-[#0A7A3B]',
-      title: 'text-[#0A4D2E]',
-      body: 'text-[#0A4D2E]/90',
-    },
-    info: {
-      card: 'bg-[#E7F1FB] border-[#1D4ED8]/25 text-[#1E3A8A]',
-      iconWrap: 'bg-[#1D4ED8]/10 text-[#1D4ED8]',
-      title: 'text-[#1E3A8A]',
-      body: 'text-[#1E3A8A]/90',
-    },
-    warning: {
-      card: 'bg-[#FEF3C7] border-[#D97706]/25 text-[#92400E]',
-      iconWrap: 'bg-[#D97706]/15 text-[#D97706]',
-      title: 'text-[#92400E]',
-      body: 'text-[#92400E]/90',
-    },
+    success: 'bg-[#E5F4E4] border-[#0A7A3B]/20 text-[#0A4D2E]',
+    info: 'bg-[#E7F1FB] border-[#1D4ED8]/20 text-[#1E3A8A]',
+    warning: 'bg-[#FEF3C7] border-[#D97706]/20 text-[#92400E]',
   };
 
-  const getIcon = () => {
-    switch (kind) {
-      case 'success':
-        return <Trophy className="w-5 h-5 text-[#0A7A3B]" />;
-      case 'warning':
-        return <AlertTriangle className="w-5 h-5 text-[#D97706]" />;
-      case 'info':
-      default:
-        return <Info className="w-5 h-5 text-[#1D4ED8]" />;
-    }
+  const icons = {
+    success: '🏆',
+    info: '🌱',
+    warning: '⚠️',
   };
-
-  const current = styles[kind];
 
   return (
-    <div
-      className={`rounded-[20px] px-6 py-4.5 border ${current.card} flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-agfarm-sm ${className}`}
-    >
-      <div className="flex items-center gap-4 min-w-0">
-        <div className={`w-11 h-11 rounded-full flex items-center justify-center shrink-0 shadow-sm ${current.iconWrap}`}>
-          {getIcon()}
-        </div>
-        <div className="min-w-0">
-          {title && (
-            <h4 className={`text-base sm:text-lg font-bold leading-snug tracking-tight ${current.title}`}>
-              {title}
-            </h4>
-          )}
-          {children && (
-            <div className={`text-sm sm:text-base font-medium leading-relaxed mt-0.5 ${current.body}`}>
-              {children}
-            </div>
-          )}
-        </div>
+    <div className={`rounded-[20px] p-5 border ${styles[kind]} flex items-start gap-3.5 shadow-agfarm-sm`}>
+      <span className="text-xl leading-none">{icons[kind]}</span>
+      <div className="text-sm font-medium leading-relaxed">
+        {title && <strong className="block font-bold mb-1 text-base">{title}</strong>}
+        {children}
       </div>
-      {action && <div className="shrink-0 sm:self-center pl-15 sm:pl-0">{action}</div>}
     </div>
   );
 };

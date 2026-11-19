@@ -15,34 +15,32 @@ export const Navbar: React.FC = () => {
   ];
 
   return (
-    <header className="sticky top-0 z-50 px-4 sm:px-8 py-5 sm:py-6 bg-surface/95 backdrop-blur-md border-b border-black/8 shadow-sm transition-all">
-      <div className="max-w-[1280px] mx-auto flex items-center justify-between gap-4">
+    <header className="sticky top-0 z-50 px-4 sm:px-8 py-3 bg-surface/90 backdrop-blur-md border-b border-black/5">
+      <div className="max-w-[1240px] mx-auto flex items-center justify-between">
         {/* Brand */}
-        <Link to="/" className="flex items-center gap-3.5 text-brand-900 group">
-          <div className="w-12 h-12 rounded-2xl bg-brand-100 flex items-center justify-center text-2xl shadow-sm border border-brand-900/10 group-hover:scale-105 transition-transform">
+        <Link to="/" className="flex items-center gap-2.5 text-brand-900 group">
+          <div className="w-9 h-9 rounded-full bg-brand-100 flex items-center justify-center text-lg shadow-sm group-hover:scale-105 transition-transform">
             🌾
           </div>
           <div>
-            <span className="text-2xl sm:text-3xl font-extrabold tracking-tight text-brand-900 leading-tight">
+            <span className="text-xl font-extrabold tracking-tight text-brand-900">
               Smart <span className="font-serif italic font-normal text-brand-700">Mandi</span>
             </span>
-            <span className="text-xs sm:text-sm font-black uppercase tracking-[0.16em] block text-ink-600 mt-0.5">
-              Telangana Advisory
-            </span>
+            <span className="text-xs font-bold uppercase tracking-wider block text-ink-600">Telangana Advisory</span>
           </div>
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden xl:flex items-center gap-2 bg-card/95 px-4 py-2 rounded-full border border-black/8 shadow-agfarm">
+        <nav className="hidden lg:flex items-center gap-1.5 bg-card/90 px-3 py-1.5 rounded-full border border-black/5 shadow-agfarm-sm">
           {navLinks.map((item) => (
             <NavLink
               key={item.to}
               to={item.to}
               className={({ isActive }) =>
-                `px-5 py-2.5 rounded-full text-base font-bold transition-all ${
+                `px-4 py-2 rounded-full text-sm font-bold transition-all ${
                   isActive
-                    ? 'bg-brand-900 text-white shadow-md'
-                    : 'text-ink-700 hover:text-brand-900 hover:bg-brand-100/60'
+                    ? 'bg-brand-900 text-white shadow-sm'
+                    : 'text-ink-600 hover:text-brand-900 hover:bg-brand-100/50'
                 }`
               }
             >
@@ -55,47 +53,46 @@ export const Navbar: React.FC = () => {
         <div className="hidden sm:flex items-center gap-3">
           <Link
             to="/recommendation"
-            className="flex items-center gap-2 px-6 py-3 rounded-full bg-brand-900 hover:bg-brand-700 text-white text-base font-extrabold transition-all shadow-md hover:shadow-lg active:scale-95"
+            className="flex items-center gap-1.5 px-5 py-2.5 rounded-full bg-brand-900 hover:bg-brand-700 text-white text-sm font-bold transition-all shadow-md hover:shadow-lg active:scale-95"
           >
             <span>Get Advice</span>
-            <ArrowUpRight className="w-4 h-4" />
+            <ArrowUpRight className="w-3.5 h-3.5" />
           </Link>
         </div>
 
-        {/* Mobile / Tablet Toggle */}
+        {/* Mobile Toggle */}
         <button
           onClick={() => setOpen(!open)}
-          className="xl:hidden p-3 rounded-2xl bg-card border border-black/8 text-ink-900 shadow-sm hover:bg-surface transition-colors"
-          aria-label="Toggle navigation menu"
+          className="lg:hidden p-2 rounded-full bg-card border border-black/5 text-ink-900"
         >
-          {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
         </button>
       </div>
 
-      {/* Mobile / Tablet Drawer */}
+      {/* Mobile Drawer */}
       {open && (
-        <div className="xl:hidden mt-3 p-5 bg-card rounded-[24px] border border-black/8 shadow-agfarm space-y-2">
+        <div className="lg:hidden mt-2 p-4 bg-card rounded-[20px] border border-black/5 shadow-agfarm space-y-2">
           {navLinks.map((item) => (
             <NavLink
               key={item.to}
               to={item.to}
               onClick={() => setOpen(false)}
               className={({ isActive }) =>
-                `block px-5 py-3 rounded-2xl text-base font-bold transition-all ${
-                  isActive ? 'bg-brand-900 text-white shadow-sm' : 'text-ink-700 hover:bg-brand-100/50'
+                `block px-4 py-2.5 rounded-full text-xs font-bold ${
+                  isActive ? 'bg-brand-900 text-white' : 'text-ink-600 hover:bg-brand-100/50'
                 }`
               }
             >
               {item.label}
             </NavLink>
           ))}
-          <div className="pt-3 border-t border-black/5">
+          <div className="pt-2">
             <Link
               to="/recommendation"
               onClick={() => setOpen(false)}
-              className="block w-full text-center py-3.5 rounded-2xl bg-brand-900 hover:bg-brand-700 text-white text-base font-extrabold shadow-md transition-all"
+              className="block w-full text-center py-2.5 rounded-full bg-brand-900 text-white text-xs font-bold shadow-md"
             >
-              Get Sell / Wait Advisory
+              Get Sell/Wait Advice
             </Link>
           </div>
         </div>
