@@ -48,8 +48,8 @@ export const ForecastPage: React.FC = () => {
   return (
     <div className="space-y-8">
       {/* 1. Header & Accessible Filter Bar */}
-      <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
-        <div>
+      <div className="flex flex-col xl:flex-row xl:items-end justify-between gap-4">
+        <div className="max-w-2xl">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-100 text-brand-900 text-sm font-bold mb-2">
             <TrendingUp className="w-4 h-4" />
             <span>{t('fc.badge')}</span>
@@ -62,9 +62,9 @@ export const ForecastPage: React.FC = () => {
           </p>
         </div>
 
-        {/* Filter Bar */}
-        <div className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-2.5 bg-card p-2.5 sm:p-2 rounded-2xl sm:rounded-full border border-black/5 shadow-agfarm-sm w-full sm:w-auto">
-          <div className="flex items-center gap-1.5 px-2 sm:px-3">
+        {/* Filter Bar (Never wraps on laptop/desktop to preserve sleek pill shape) */}
+        <div className="flex flex-col sm:flex-row sm:flex-nowrap items-stretch sm:items-center gap-2 sm:gap-2.5 bg-card p-2 rounded-2xl sm:rounded-full border border-black/5 shadow-agfarm-sm shrink-0 w-full sm:w-auto overflow-x-auto">
+          <div className="flex items-center gap-1.5 px-2 sm:px-3 whitespace-nowrap shrink-0">
             <SlidersHorizontal className="w-4 h-4 text-brand-900" />
             <span className="text-sm font-bold text-ink-600">{t('fc.filters')}</span>
           </div>
@@ -72,7 +72,7 @@ export const ForecastPage: React.FC = () => {
           <select
             value={crop}
             onChange={(e) => setCrop(e.target.value as Crop)}
-            className="bg-surface text-ink-900 text-sm font-bold px-4 py-2 rounded-xl sm:rounded-full border border-black/5 focus:ring-2 focus:ring-brand-900 cursor-pointer w-full sm:w-auto"
+            className="bg-surface text-ink-900 text-sm font-bold px-4 py-2 rounded-xl sm:rounded-full border border-black/5 focus:ring-2 focus:ring-brand-900 cursor-pointer whitespace-nowrap shrink-0 w-full sm:w-auto"
           >
             {CROPS.map((c) => (
               <option key={c} value={c}>{cropName(c)}</option>
@@ -82,17 +82,17 @@ export const ForecastPage: React.FC = () => {
           <select
             value={yard}
             onChange={(e) => setYard(e.target.value)}
-            className="bg-surface text-ink-900 text-sm font-bold px-4 py-2 rounded-xl sm:rounded-full border border-black/5 focus:ring-2 focus:ring-brand-900 cursor-pointer w-full sm:w-auto"
+            className="bg-surface text-ink-900 text-sm font-bold px-4 py-2 rounded-xl sm:rounded-full border border-black/5 focus:ring-2 focus:ring-brand-900 cursor-pointer whitespace-nowrap shrink-0 w-full sm:w-auto"
           >
             {YARDS.map((y) => (
               <option key={y} value={y}>{yardName(y)}</option>
             ))}
           </select>
 
-          <div className="flex items-center justify-center gap-1 bg-surface p-1 rounded-xl sm:rounded-full border border-black/5 w-full sm:w-auto">
+          <div className="flex items-center justify-center gap-1 bg-surface p-1 rounded-xl sm:rounded-full border border-black/5 shrink-0 whitespace-nowrap w-full sm:w-auto">
             <button
               onClick={() => setHorizon(7)}
-              className={`flex-1 sm:flex-none px-4 py-1.5 rounded-lg sm:rounded-full text-sm font-bold transition-all text-center ${
+              className={`flex-1 sm:flex-none px-4 py-1.5 rounded-lg sm:rounded-full text-sm font-bold transition-all text-center whitespace-nowrap ${
                 horizon === 7 ? 'bg-brand-900 text-white' : 'text-ink-600 hover:text-brand-900'
               }`}
             >
@@ -100,7 +100,7 @@ export const ForecastPage: React.FC = () => {
             </button>
             <button
               onClick={() => setHorizon(14)}
-              className={`flex-1 sm:flex-none px-4 py-1.5 rounded-lg sm:rounded-full text-sm font-bold transition-all text-center ${
+              className={`flex-1 sm:flex-none px-4 py-1.5 rounded-lg sm:rounded-full text-sm font-bold transition-all text-center whitespace-nowrap ${
                 horizon === 14 ? 'bg-brand-900 text-white' : 'text-ink-600 hover:text-brand-900'
               }`}
             >
