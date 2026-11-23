@@ -3,6 +3,7 @@ import { MapContainer, TileLayer, Marker, Popup, Polyline } from 'react-leaflet'
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import './TelanganaMap.css';
+import { useLanguage } from '../../context/LanguageContext';
 
 // Fix for default Leaflet marker icons in React
 const createCustomIcon = (color: string, label: string) => {
@@ -130,6 +131,8 @@ export const TelanganaMap: React.FC<Props> = ({
   onSelectYard,
   yards = defaultMarketYards,
 }) => {
+  const { t, yardName, cropName } = useLanguage();
+
   // Find selected yard object
   const currentSelected = useMemo(
     () => yards.find((y) => y.name === selectedYard) || null,
@@ -160,23 +163,23 @@ export const TelanganaMap: React.FC<Props> = ({
         <div className="flex items-center gap-2">
           <span className="text-lg sm:text-xl">🗺️</span>
           <div>
-            <h3 className="font-semibold text-xs sm:text-sm leading-tight">Telangana Mandi Geospatial Map</h3>
-            <p className="text-[11px] sm:text-xs text-slate-400">Interactive yard locations, live prices & distance lines</p>
+            <h3 className="font-semibold text-xs sm:text-sm leading-tight">{t('map.toolbar_title')}</h3>
+            <p className="text-[11px] sm:text-xs text-slate-400">{t('map.toolbar_desc')}</p>
           </div>
         </div>
 
         <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-xs">
           <div className="flex items-center gap-1.5">
             <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-emerald-600 border border-white"></span>
-            <span className="text-[11px] sm:text-xs">Primary</span>
+            <span className="text-[11px] sm:text-xs">{t('map.primary')}</span>
           </div>
           <div className="flex items-center gap-1.5">
             <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-sky-600 border border-white"></span>
-            <span className="text-[11px] sm:text-xs">Secondary</span>
+            <span className="text-[11px] sm:text-xs">{t('map.secondary')}</span>
           </div>
           <div className="flex items-center gap-1.5">
             <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-red-600 border border-white"></span>
-            <span className="text-[11px] sm:text-xs">Selected</span>
+            <span className="text-[11px] sm:text-xs">{t('map.selected')}</span>
           </div>
         </div>
       </div>
@@ -234,7 +237,7 @@ export const TelanganaMap: React.FC<Props> = ({
                   <Popup>
                     <div className="p-1 min-w-[200px]">
                       <div className="flex items-center justify-between gap-2 border-b pb-1.5 mb-1.5">
-                        <span className="font-bold text-sm text-slate-900">{yard.name}</span>
+                        <span className="font-bold text-sm text-slate-900">{yardName(yard.name)}</span>
                         <span
                           className={`text-[10px] font-semibold px-2 py-0.5 rounded-full ${
                             yard.type === 'Primary'
@@ -242,23 +245,23 @@ export const TelanganaMap: React.FC<Props> = ({
                               : 'bg-sky-100 text-sky-800'
                           }`}
                         >
-                          {yard.type}
+                          {yard.type === 'Primary' ? t('map.primary') : t('map.secondary')}
                         </span>
                       </div>
                       <p className="text-xs text-slate-600 mb-1">
-                        <strong>District:</strong> {yard.district}
+                        <strong>{t('map.district')}</strong> {yard.district}
                       </p>
                       <p className="text-xs text-slate-600 mb-1">
-                        <strong>Crops:</strong> {yard.commodities.join(', ')}
+                        <strong>{t('map.crops')}</strong> {yard.commodities.map((c) => cropName(c)).join(', ')}
                       </p>
                       <p className="text-sm font-semibold text-emerald-700 mb-2">
-                        Benchmark: ₹{yard.currentPrice.toLocaleString()}/q
+                        {t('map.benchmark')} ₹{yard.currentPrice.toLocaleString()}/q
                       </p>
                       <button
                         onClick={() => onSelectYard(yard.name)}
                         className="w-full text-center text-xs bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-1.5 px-3 rounded-lg shadow-sm transition-colors"
                       >
-                        {isSelected ? '✓ Selected Yard' : 'Set as Origin Mandi'}
+                        {isSelected ? t('map.selected_yard') : t('map.set_origin')}
                       </button>
                     </div>
                   </Popup>
@@ -274,14 +277,14 @@ export const TelanganaMap: React.FC<Props> = ({
             <div className="flex items-center justify-between mb-2 pb-2 border-b border-slate-100">
               <div>
                 <span className="text-[10px] font-semibold tracking-wider text-slate-400 uppercase">
-                  Distances from
+                  {t('map.distances_from')}
                 </span>
                 <h4 className="text-xs font-bold text-slate-800 leading-tight">
-                  {currentSelected.name}
+                  {yardName(currentSelected.name)}
                 </h4>
               </div>
               <span className="text-xs bg-red-100 text-red-700 font-bold px-2 py-0.5 rounded-full">
-                {distances.length} Yards
+                {distances.length} {t('map.yards_count')}
               </span>
             </div>
 
@@ -293,7 +296,7 @@ export const TelanganaMap: React.FC<Props> = ({
                   className="flex items-center justify-between p-2 rounded-lg bg-slate-50 hover:bg-emerald-50 transition-colors cursor-pointer border border-slate-100 hover:border-emerald-200"
                 >
                   <div className="truncate mr-2">
-                    <p className="text-xs font-semibold text-slate-800 truncate">{item.name}</p>
+                    <p className="text-xs font-semibold text-slate-800 truncate">{yardName(item.name)}</p>
                     <p className="text-[10px] text-slate-500">
                       {item.district} • ₹{item.currentPrice.toLocaleString()}/q
                     </p>
@@ -306,7 +309,7 @@ export const TelanganaMap: React.FC<Props> = ({
             </div>
 
             <div className="mt-2.5 pt-2 border-t border-slate-100 text-[10px] text-slate-400 text-center">
-              Click any yard to view distance & price difference
+              {t('map.click_hint')}
             </div>
           </div>
         )}

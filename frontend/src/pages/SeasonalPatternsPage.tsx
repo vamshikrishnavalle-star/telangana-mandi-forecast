@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { loadSeasonal, Crop, SeasonalData } from '../services/dataLoader';
-import { AgCard, KpiCard, Callout } from '../components/agfarm/Common';
+import { AgCard, Callout } from '../components/agfarm/Common';
+import { useLanguage } from '../context/LanguageContext';
 import {
   LineChart,
   Line,
@@ -15,6 +16,7 @@ import { Sprout, SlidersHorizontal, Sun, CloudRain } from 'lucide-react';
 const CROPS: Crop[] = ['Cotton', 'Chilli', 'Maize', 'Paddy', 'Turmeric'];
 
 export const SeasonalPatternsPage: React.FC = () => {
+  const { t, cropName } = useLanguage();
   const [crop, setCrop] = useState<Crop>('Cotton');
   const [data, setData] = useState<SeasonalData | null>(null);
 
@@ -32,20 +34,21 @@ export const SeasonalPatternsPage: React.FC = () => {
         <div>
           <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-brand-100 text-brand-900 text-sm font-bold mb-2">
             <Sprout className="w-4 h-4" />
-            <span>Agronomic Seasonality</span>
+            <span>{t('sp.badge')}</span>
           </div>
           <h1 className="text-3xl sm:text-4xl font-extrabold text-ink-900 tracking-tight">
-            Seasonal Patterns & <span className="font-serif italic font-normal text-brand-700">Multi-Year Cycles</span>
+            {t('sp.title_pre')}{' '}
+            <span className="font-serif italic font-normal text-brand-700">{t('sp.title_highlight')}</span>
           </h1>
           <p className="text-sm text-ink-600 mt-1.5">
-            Intra-annual seasonal cycles, Kharif vs. Rabi price comparisons, and 7-year multi-year inflation trend
+            {t('sp.desc')}
           </p>
         </div>
 
         <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 bg-card p-2.5 sm:p-2 rounded-2xl sm:rounded-full border border-black/5 shadow-agfarm-sm w-full sm:w-auto">
           <div className="flex items-center gap-1.5 px-2 sm:px-3">
             <SlidersHorizontal className="w-4 h-4 text-brand-900" />
-            <span className="text-sm font-bold text-ink-700">Crop:</span>
+            <span className="text-sm font-bold text-ink-700">{t('fc.crop')}</span>
           </div>
           <select
             value={crop}
@@ -53,7 +56,7 @@ export const SeasonalPatternsPage: React.FC = () => {
             className="bg-surface text-ink-900 text-sm font-bold px-4 py-2 rounded-xl sm:rounded-full border border-black/5 focus:ring-2 focus:ring-brand-900 cursor-pointer w-full sm:w-auto"
           >
             {CROPS.map((c) => (
-              <option key={c} value={c}>{c}</option>
+              <option key={c} value={c}>{cropName(c)}</option>
             ))}
           </select>
         </div>
@@ -63,9 +66,9 @@ export const SeasonalPatternsPage: React.FC = () => {
       <AgCard className="space-y-4 !p-4 sm:!p-6">
         <div>
           <h2 className="text-base sm:text-lg font-bold text-ink-900">
-            Seasonal Monthly Price Patterns — {crop}
+            {t('sp.monthly_title', { crop: cropName(crop) })}
           </h2>
-          <p className="text-xs sm:text-sm text-ink-600">Average historical realization across all 12 calendar months (₹/quintal)</p>
+          <p className="text-xs sm:text-sm text-ink-600">{t('sp.monthly_desc')}</p>
         </div>
 
         <div className="h-[280px] w-full pt-2">
@@ -75,6 +78,7 @@ export const SeasonalPatternsPage: React.FC = () => {
               <XAxis dataKey="monthName" stroke="#8A948D" tick={{ fill: '#5B665F', fontSize: 11 }} />
               <YAxis stroke="#8A948D" tick={{ fill: '#5B665F', fontSize: 11 }} domain={['dataMin - 300', 'dataMax + 300']} />
               <Tooltip
+                formatter={(val: any) => [`₹${Number(val).toLocaleString()}`, t('sp.avg_price')]}
                 contentStyle={{
                   backgroundColor: '#FFFFFF',
                   borderRadius: '16px',
@@ -87,7 +91,7 @@ export const SeasonalPatternsPage: React.FC = () => {
               <Line
                 type="monotone"
                 dataKey="avgPrice"
-                name="Average Price (₹)"
+                name={t('sp.avg_price')}
                 stroke="#1D4ED8"
                 strokeWidth={3}
                 dot={{ r: 4, fill: '#1D4ED8' }}
@@ -97,9 +101,9 @@ export const SeasonalPatternsPage: React.FC = () => {
         </div>
       </AgCard>
 
-      {/* 2. Kharif vs Rabi Comparison & Corrected Wording */}
+      {/* 2. Kharif vs Rabi Comparison */}
       <div className="space-y-4">
-        <h2 className="text-base sm:text-lg font-bold text-ink-900">Kharif vs Rabi Season Comparison</h2>
+        <h2 className="text-base sm:text-lg font-bold text-ink-900">{t('sp.kr_title')}</h2>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div className="bg-card rounded-[20px] p-5 border border-black/5 shadow-agfarm flex items-center gap-4">
@@ -107,12 +111,12 @@ export const SeasonalPatternsPage: React.FC = () => {
               <CloudRain className="w-6 h-6" />
             </div>
             <div>
-              <span className="text-sm font-semibold text-ink-700">Kharif Season Avg (Monsoon)</span>
+              <span className="text-sm font-semibold text-ink-700">{t('sp.kharif_label')}</span>
               <div className="text-2xl sm:text-3xl font-black text-ink-900 tracking-tight mt-0.5">
                 ₹{data?.kharifAvg.toLocaleString() || 0}
                 <span className="text-sm font-normal text-ink-600 ml-1">/q</span>
               </div>
-              <p className="text-xs text-ink-600 mt-1">June to November peak arrivals</p>
+              <p className="text-xs text-ink-600 mt-1">{t('sp.kharif_desc')}</p>
             </div>
           </div>
 
@@ -121,21 +125,20 @@ export const SeasonalPatternsPage: React.FC = () => {
               <Sun className="w-6 h-6" />
             </div>
             <div>
-              <span className="text-sm font-semibold text-ink-700">Rabi Season Avg (Winter / Summer)</span>
+              <span className="text-sm font-semibold text-ink-700">{t('sp.rabi_label')}</span>
               <div className="text-2xl sm:text-3xl font-black text-ink-900 tracking-tight mt-0.5">
                 ₹{data?.rabiAvg.toLocaleString() || 0}
                 <span className="text-sm font-normal text-ink-600 ml-1">/q</span>
               </div>
-              <p className="text-xs text-ink-600 mt-1">December to May harvest market</p>
+              <p className="text-xs text-ink-600 mt-1">{t('sp.rabi_desc')}</p>
             </div>
           </div>
         </div>
 
-        {/* Wording fix from DESIGN.md issue 8: "Kharif discount: X% below Rabi" */}
-        <Callout kind="info" title="Seasonal Price Dynamic">
+        <Callout kind="info" title={t('sp.dynamic_title')}>
           {isDiscount
-            ? `Kharif discount: ${Math.abs(discount)}% below Rabi season due to concentrated monsoon arrivals entering state market yards simultaneously.`
-            : `Kharif premium: +${discount}% compared to Rabi season for ${crop}.`}
+            ? t('sp.dynamic_discount', { pct: Math.abs(discount) })
+            : t('sp.dynamic_premium', { pct: discount, crop: cropName(crop) })}
         </Callout>
       </div>
 
@@ -143,9 +146,9 @@ export const SeasonalPatternsPage: React.FC = () => {
       <AgCard className="space-y-4 !p-4 sm:!p-6">
         <div>
           <h2 className="text-base sm:text-lg font-bold text-ink-900">
-            Multi-Year Price Trend (2020–2026) — {crop}
+            {t('sp.yearly_title', { crop: cropName(crop) })}
           </h2>
-          <p className="text-xs sm:text-sm text-ink-600">7-year annual modal realization across all Telangana yards (₹/quintal)</p>
+          <p className="text-xs sm:text-sm text-ink-600">{t('sp.yearly_desc')}</p>
         </div>
 
         <div className="h-[250px] w-full pt-2">
@@ -155,6 +158,7 @@ export const SeasonalPatternsPage: React.FC = () => {
               <XAxis dataKey="year" stroke="#8A948D" tick={{ fill: '#5B665F', fontSize: 11 }} />
               <YAxis stroke="#8A948D" tick={{ fill: '#5B665F', fontSize: 11 }} domain={['dataMin - 500', 'dataMax + 500']} />
               <Tooltip
+                formatter={(val: any) => [`₹${Number(val).toLocaleString()}`, t('sp.annual_avg')]}
                 contentStyle={{
                   backgroundColor: '#FFFFFF',
                   borderRadius: '16px',
@@ -167,7 +171,7 @@ export const SeasonalPatternsPage: React.FC = () => {
               <Line
                 type="monotone"
                 dataKey="avg"
-                name="Annual Average (₹)"
+                name={t('sp.annual_avg')}
                 stroke="#0A4D2E"
                 strokeWidth={3}
                 dot={{ r: 4, fill: '#0A4D2E' }}

@@ -13,6 +13,7 @@ import {
   ResponsiveContainer
 } from 'recharts';
 import { TrendingUp, SlidersHorizontal } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 const CROPS: Crop[] = ['Cotton', 'Chilli', 'Maize', 'Paddy', 'Turmeric'];
 const YARDS = [
@@ -35,6 +36,7 @@ export const ForecastPage: React.FC = () => {
 
   const [history, setHistory] = useState<PricePoint[]>([]);
   const [forecast, setForecast] = useState<ForecastResult | null>(null);
+  const { language, t, cropName, yardName } = useLanguage();
 
   useEffect(() => {
     loadPriceHistory(crop, yard).then(setHistory);
@@ -50,13 +52,13 @@ export const ForecastPage: React.FC = () => {
         <div>
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-100 text-brand-900 text-sm font-bold mb-2">
             <TrendingUp className="w-4 h-4" />
-            <span>Time-Series Engine</span>
+            <span>{t('fc.badge')}</span>
           </div>
           <h1 className="text-3xl sm:text-4xl font-extrabold text-ink-900 tracking-tight">
-            Price Forecast & <span className="font-serif italic font-normal text-brand-700">Predictive Intelligence</span>
+            {t('fc.title_pre')} <span className="font-serif italic font-normal text-brand-700">{t('fc.title_highlight')}</span>
           </h1>
           <p className="text-sm text-ink-600 mt-1.5">
-            180-day modal price history combined with model-derived 95% Confidence Interval band
+            {t('fc.desc')}
           </p>
         </div>
 
@@ -64,7 +66,7 @@ export const ForecastPage: React.FC = () => {
         <div className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-2.5 bg-card p-2.5 sm:p-2 rounded-2xl sm:rounded-full border border-black/5 shadow-agfarm-sm w-full sm:w-auto">
           <div className="flex items-center gap-1.5 px-2 sm:px-3">
             <SlidersHorizontal className="w-4 h-4 text-brand-900" />
-            <span className="text-sm font-bold text-ink-600">Filters:</span>
+            <span className="text-sm font-bold text-ink-600">{t('fc.filters')}</span>
           </div>
 
           <select
@@ -73,7 +75,7 @@ export const ForecastPage: React.FC = () => {
             className="bg-surface text-ink-900 text-sm font-bold px-4 py-2 rounded-xl sm:rounded-full border border-black/5 focus:ring-2 focus:ring-brand-900 cursor-pointer w-full sm:w-auto"
           >
             {CROPS.map((c) => (
-              <option key={c} value={c}>{c}</option>
+              <option key={c} value={c}>{cropName(c)}</option>
             ))}
           </select>
 
@@ -83,7 +85,7 @@ export const ForecastPage: React.FC = () => {
             className="bg-surface text-ink-900 text-sm font-bold px-4 py-2 rounded-xl sm:rounded-full border border-black/5 focus:ring-2 focus:ring-brand-900 cursor-pointer w-full sm:w-auto"
           >
             {YARDS.map((y) => (
-              <option key={y} value={y}>{y}</option>
+              <option key={y} value={y}>{yardName(y)}</option>
             ))}
           </select>
 
@@ -94,7 +96,7 @@ export const ForecastPage: React.FC = () => {
                 horizon === 7 ? 'bg-brand-900 text-white' : 'text-ink-600 hover:text-brand-900'
               }`}
             >
-              7 Days
+              {t('fc.days_7')}
             </button>
             <button
               onClick={() => setHorizon(14)}
@@ -102,7 +104,7 @@ export const ForecastPage: React.FC = () => {
                 horizon === 14 ? 'bg-brand-900 text-white' : 'text-ink-600 hover:text-brand-900'
               }`}
             >
-              14 Days
+              {t('fc.days_14')}
             </button>
           </div>
         </div>
@@ -112,9 +114,9 @@ export const ForecastPage: React.FC = () => {
       <AgCard className="space-y-4 !p-4 sm:!p-6">
         <div>
           <h2 className="text-base sm:text-lg font-bold text-ink-900">
-            Price History: {crop} at {yard} (Recent 180 Days)
+            {t('fc.history_title').replace('{crop}', cropName(crop)).replace('{yard}', yardName(yard))}
           </h2>
-          <p className="text-xs sm:text-sm text-ink-600">Modal price (solid blue) with daily Min and Max trade bands (dashed)</p>
+          <p className="text-xs sm:text-sm text-ink-600">{t('fc.history_desc')}</p>
         </div>
 
         <div className="h-[280px] w-full pt-2">
@@ -132,11 +134,12 @@ export const ForecastPage: React.FC = () => {
                   color: '#111613',
                   fontSize: '12px',
                 }}
+                formatter={(val: any) => [`₹${Number(val).toLocaleString()}/q`]}
               />
               <Legend wrapperStyle={{ paddingTop: '8px' }} />
-              <Line type="monotone" dataKey="modal" name="Modal Price" stroke="#1D4ED8" strokeWidth={2.5} dot={false} />
-              <Line type="monotone" dataKey="max" name="Max Price" stroke="#16A34A" strokeWidth={1.5} strokeDasharray="4 4" dot={false} />
-              <Line type="monotone" dataKey="min" name="Min Price" stroke="#DC2626" strokeWidth={1.5} strokeDasharray="4 4" dot={false} />
+              <Line type="monotone" dataKey="modal" name={t('fc.modal_price')} stroke="#1D4ED8" strokeWidth={2.5} dot={false} />
+              <Line type="monotone" dataKey="max" name={t('fc.max_price')} stroke="#16A34A" strokeWidth={1.5} strokeDasharray="4 4" dot={false} />
+              <Line type="monotone" dataKey="min" name={t('fc.min_price')} stroke="#DC2626" strokeWidth={1.5} strokeDasharray="4 4" dot={false} />
             </ComposedChart>
           </ResponsiveContainer>
         </div>
@@ -148,14 +151,14 @@ export const ForecastPage: React.FC = () => {
           <div>
             <h2 className="text-base sm:text-lg font-bold text-ink-900 flex items-center gap-2">
               <span className="w-2.5 h-2.5 rounded-full bg-red-600" />
-              {horizon}-Day Price Forecast with 95% Confidence Interval Band
+              {t('fc.forecast_title').replace('{horizon}', String(horizon))}
             </h2>
             <p className="text-xs sm:text-sm text-ink-600">
-              Model: {forecast?.model || 'Random Forest'} • Validated test error interval
+              {t('fc.forecast_desc').replace('{model}', forecast?.model || 'Random Forest')}
             </p>
           </div>
           <span className="text-xs sm:text-sm bg-brand-100 text-brand-900 font-bold px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full border border-brand-900/10 self-start sm:self-auto">
-            As of {forecast?.asOf || '2026-11-19'}
+            {t('fc.as_of').replace('{date}', forecast?.asOf || '2026-11-19')}
           </span>
         </div>
 
@@ -174,11 +177,12 @@ export const ForecastPage: React.FC = () => {
                   color: '#111613',
                   fontSize: '12px',
                 }}
+                formatter={(val: any) => [`₹${Number(val).toLocaleString()}/q`]}
               />
               <Legend wrapperStyle={{ paddingTop: '8px' }} />
-              <Area type="monotone" dataKey="upper" name="Upper 95% Bound" stroke="transparent" fill="rgba(220, 38, 38, 0.12)" />
-              <Area type="monotone" dataKey="lower" name="Lower 95% Bound" stroke="transparent" fill="rgba(220, 38, 38, 0.12)" />
-              <Line type="monotone" dataKey="forecast" name="Forecast Price" stroke="#DC2626" strokeWidth={3} dot={{ r: 5, fill: '#DC2626' }} />
+              <Area type="monotone" dataKey="upper" name={t('fc.upper_bound')} stroke="transparent" fill="rgba(220, 38, 38, 0.12)" />
+              <Area type="monotone" dataKey="lower" name={t('fc.lower_bound')} stroke="transparent" fill="rgba(220, 38, 38, 0.12)" />
+              <Line type="monotone" dataKey="forecast" name={t('fc.fc_price').replace('{horizon}', String(horizon))} stroke="#DC2626" strokeWidth={3} dot={{ r: 5, fill: '#DC2626' }} />
             </ComposedChart>
           </ResponsiveContainer>
         </div>
@@ -187,34 +191,34 @@ export const ForecastPage: React.FC = () => {
       {/* 4. 5 Summary KPI Cards (Exact match to doc spec) */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3.5 sm:gap-4">
         <KpiCard
-          label="Current Price"
+          label={t('fc.curr_price')}
           value={`₹${(lastObserved?.modal || forecast?.currentPrice || 0).toLocaleString()}`}
           unit="/q"
-          subtext="Observed modal rate"
+          subtext={t('fc.sub_observed')}
         />
         <KpiCard
-          label={`${horizon}d Forecast Price`}
+          label={t('fc.fc_price').replace('{horizon}', String(horizon))}
           value={`₹${(forecast?.forecastPrice || 0).toLocaleString()}`}
           delta={`${forecast?.expectedChangePct && forecast.expectedChangePct > 0 ? '+' : ''}${forecast?.expectedChangePct || 0}%`}
           unit="/q"
-          subtext="Model prediction"
+          subtext={t('fc.sub_pred')}
         />
         <KpiCard
-          label={`Expected ${horizon}d Change`}
+          label={t('fc.expected_change').replace('{horizon}', String(horizon))}
           value={`${forecast?.expectedChangePct && forecast.expectedChangePct > 0 ? '+' : ''}${forecast?.expectedChangePct || 0}%`}
-          subtext="Net trend drift"
+          subtext={t('fc.sub_trend')}
         />
         <KpiCard
-          label="Forecast Range"
+          label={t('fc.range')}
           value={`₹${forecast?.rangeMin.toLocaleString() || 0}`}
           unit={`– ₹${forecast?.rangeMax.toLocaleString() || 0}`}
-          subtext="95% CI bound spread"
+          subtext={t('fc.sub_range')}
         />
         <div className="sm:col-span-2 lg:col-span-1">
           <KpiCard
-            label="Confidence Score"
+            label={t('fc.confidence')}
             value={`${((forecast?.confidence || 0.95) * 100).toFixed(1)}%`}
-            subtext="Model validation score"
+            subtext={t('fc.sub_conf')}
           />
         </div>
       </div>

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { loadModels, ModelMetrics } from '../services/dataLoader';
 import { AgCard, Callout } from '../components/agfarm/Common';
+import { useLanguage } from '../context/LanguageContext';
 import {
   BarChart,
   Bar,
@@ -14,6 +15,7 @@ import {
 import { BarChart3, CheckCircle2 } from 'lucide-react';
 
 export const ModelPerformancePage: React.FC = () => {
+  const { t } = useLanguage();
   const [models, setModels] = useState<ModelMetrics[]>([]);
 
   useEffect(() => {
@@ -29,40 +31,45 @@ export const ModelPerformancePage: React.FC = () => {
       <div>
         <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-brand-100 text-brand-900 text-sm font-bold mb-2">
           <BarChart3 className="w-4 h-4" />
-          <span>Evaluation Benchmark</span>
+          <span>{t('mp.badge')}</span>
         </div>
         <h1 className="text-3xl sm:text-4xl font-extrabold text-ink-900 tracking-tight">
-          Model Performance & <span className="font-serif italic font-normal text-brand-700">Validation Benchmark</span>
+          {t('mp.title_pre')}{' '}
+          <span className="font-serif italic font-normal text-brand-700">{t('mp.title_highlight')}</span>
         </h1>
         <p className="text-sm text-ink-600 mt-1.5">
-          Rigorous out-of-sample backtesting against 7 years of Telangana daily mandi arrivals (2020–2026)
+          {t('mp.desc')}
         </p>
       </div>
 
       {/* Dynamic Best Model Callout Banner */}
       <Callout
         kind="success"
-        title={`Best Performing Model: ${bestModel.model} with MAE of ₹${bestModel.mae.toFixed(2)} and MAPE of ${bestModel.mape.toFixed(2)}%`}
+        title={t('mp.best_callout_title', {
+          model: bestModel.model,
+          mae: bestModel.mae.toFixed(2),
+          mape: bestModel.mape.toFixed(2)
+        })}
       >
-        Criterion: lowest Mean Absolute Error across test folds. Minimizes rupee-per-quintal prediction deviation.
+        {t('mp.best_callout_desc')}
       </Callout>
 
       {/* Validation Metrics Table */}
       <AgCard className="space-y-4">
         <h2 className="text-base sm:text-lg font-bold text-ink-900">
-          Model Performance Metrics (Validated 2020–2026)
+          {t('mp.table_title')}
         </h2>
 
         <div className="overflow-x-auto">
           <table className="w-full text-left text-sm">
             <thead className="bg-surface text-ink-700 uppercase font-bold text-xs tracking-wider border-b border-black/5">
               <tr>
-                <th className="py-3 px-4">Model</th>
-                <th className="py-3 px-4">MAE (₹/q)</th>
-                <th className="py-3 px-4">RMSE (₹/q)</th>
-                <th className="py-3 px-4">MAPE (%)</th>
-                <th className="py-3 px-4">MASE</th>
-                <th className="py-3 px-4 text-right">Directional Accuracy (%)</th>
+                <th className="py-3 px-4">{t('mp.th_model')}</th>
+                <th className="py-3 px-4">{t('mp.th_mae')}</th>
+                <th className="py-3 px-4">{t('mp.th_rmse')}</th>
+                <th className="py-3 px-4">{t('mp.th_mape')}</th>
+                <th className="py-3 px-4">{t('mp.th_mase')}</th>
+                <th className="py-3 px-4 text-right">{t('mp.th_da')}</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-black/5 font-medium text-ink-900">
@@ -73,7 +80,7 @@ export const ModelPerformancePage: React.FC = () => {
                     <span>{m.model}</span>
                     {idx === 0 && (
                       <span className="text-xs bg-brand-900 text-white px-2.5 py-0.5 rounded-full font-bold ml-1">
-                        Best Performer
+                        {t('mp.best_performer')}
                       </span>
                     )}
                   </td>
@@ -94,8 +101,8 @@ export const ModelPerformancePage: React.FC = () => {
         {/* MAE Chart */}
         <AgCard className="space-y-4 !p-4 sm:!p-6">
           <div>
-            <h2 className="text-base font-bold text-ink-900">Mean Absolute Error (₹/quintal)</h2>
-            <p className="text-xs sm:text-sm text-ink-600">Lower is better • Sorted ascending by prediction error</p>
+            <h2 className="text-base font-bold text-ink-900">{t('mp.mae_chart_title')}</h2>
+            <p className="text-xs sm:text-sm text-ink-600">{t('mp.mae_chart_desc')}</p>
           </div>
           <div className="h-[260px] sm:h-[280px] w-full pt-2">
             <ResponsiveContainer width="100%" height="100%">
@@ -104,6 +111,7 @@ export const ModelPerformancePage: React.FC = () => {
                 <XAxis dataKey="model" stroke="#8A948D" tick={{ fill: '#5B665F', fontSize: 11 }} interval={0} angle={-25} textAnchor="end" />
                 <YAxis stroke="#8A948D" tick={{ fill: '#5B665F', fontSize: 11 }} domain={[100, 250]} />
                 <Tooltip
+                  formatter={(val: any) => [`₹${Number(val).toFixed(2)}`, 'MAE']}
                   contentStyle={{
                     backgroundColor: '#FFFFFF',
                     borderRadius: '16px',
@@ -126,8 +134,8 @@ export const ModelPerformancePage: React.FC = () => {
         {/* MAPE Chart */}
         <AgCard className="space-y-4 !p-4 sm:!p-6">
           <div>
-            <h2 className="text-base font-bold text-ink-900">Mean Absolute Percentage Error (%)</h2>
-            <p className="text-xs sm:text-sm text-ink-600">Lower is better • Measures relative percentage deviation</p>
+            <h2 className="text-base font-bold text-ink-900">{t('mp.mape_chart_title')}</h2>
+            <p className="text-xs sm:text-sm text-ink-600">{t('mp.mape_chart_desc')}</p>
           </div>
           <div className="h-[260px] sm:h-[280px] w-full pt-2">
             <ResponsiveContainer width="100%" height="100%">
@@ -136,6 +144,7 @@ export const ModelPerformancePage: React.FC = () => {
                 <XAxis dataKey="model" stroke="#8A948D" tick={{ fill: '#5B665F', fontSize: 11 }} interval={0} angle={-25} textAnchor="end" />
                 <YAxis stroke="#8A948D" tick={{ fill: '#5B665F', fontSize: 11 }} domain={[0, 3]} />
                 <Tooltip
+                  formatter={(val: any) => [`${Number(val).toFixed(2)}%`, 'MAPE']}
                   contentStyle={{
                     backgroundColor: '#FFFFFF',
                     borderRadius: '16px',
@@ -159,8 +168,8 @@ export const ModelPerformancePage: React.FC = () => {
       {/* Directional Accuracy Chart */}
       <AgCard className="space-y-4 !p-4 sm:!p-6">
         <div>
-          <h2 className="text-base font-bold text-ink-900">Directional Accuracy by Model (%)</h2>
-          <p className="text-xs sm:text-sm text-ink-600">Higher is better • Evaluates correctness of price direction sign</p>
+          <h2 className="text-base font-bold text-ink-900">{t('mp.da_chart_title')}</h2>
+          <p className="text-xs sm:text-sm text-ink-600">{t('mp.da_chart_desc')}</p>
         </div>
         <div className="h-[260px] sm:h-[280px] w-full pt-2">
           <ResponsiveContainer width="100%" height="100%">
@@ -169,6 +178,7 @@ export const ModelPerformancePage: React.FC = () => {
               <XAxis dataKey="model" stroke="#8A948D" tick={{ fill: '#5B665F', fontSize: 11 }} interval={0} angle={-25} textAnchor="end" />
               <YAxis stroke="#8A948D" tick={{ fill: '#5B665F', fontSize: 11 }} domain={[0, 100]} />
               <Tooltip
+                formatter={(val: any) => [`${Number(val).toFixed(2)}%`, 'DA']}
                 contentStyle={{
                   backgroundColor: '#FFFFFF',
                   borderRadius: '16px',

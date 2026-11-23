@@ -5,6 +5,7 @@ import { AgBadge, AgCard } from '../components/agfarm/Common';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import TelanganaMap, { defaultMarketYards } from '../components/ui/TelanganaMap';
 import { ArrowUpRight, TrendingUp, ShieldCheck, MapPin, Navigation, Sparkles } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 export const HomePage: React.FC = () => {
   const [meta, setMeta] = useState<MetaData | null>(null);
@@ -13,6 +14,7 @@ export const HomePage: React.FC = () => {
   const [activeSnapshots, setActiveSnapshots] = useState<YardSnapshot[]>([]);
   const [selectedYard, setSelectedYard] = useState<string>('Hyderabad RCI Market');
   const [showDistances, setShowDistances] = useState<boolean>(true);
+  const { language, t, cropName, yardName } = useLanguage();
 
   useEffect(() => {
     loadMeta().then(setMeta);
@@ -48,16 +50,16 @@ export const HomePage: React.FC = () => {
         <div className="relative z-10 max-w-2xl space-y-5 sm:space-y-6">
           <div className="inline-flex items-center gap-2 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full bg-emerald-950/70 backdrop-blur-md border border-emerald-500/30 text-xs sm:text-sm font-semibold text-emerald-200 shadow-sm">
             <span className="px-2 py-0.5 rounded-full bg-emerald-400 text-slate-950 text-[10px] sm:text-xs font-black uppercase tracking-wider">NEW</span>
-            <span className="tracking-wider text-[11px] sm:text-xs font-bold">AI-POWERED AGRICULTURE</span>
+            <span className="tracking-wider text-[11px] sm:text-xs font-bold">{t('hero.badge')}</span>
           </div>
 
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.15] text-white">
-            Driving the Future of Agriculture <br className="hidden sm:inline" />
-            with <span className="font-serif italic font-normal text-emerald-200">Smart Innovation</span>
+            {t('hero.title_pre')} <br className="hidden sm:inline" />
+            <span className="font-serif italic font-normal text-emerald-200">{t('hero.title_highlight')}</span>
           </h1>
 
           <p className="text-sm sm:text-base text-brand-100/90 font-medium max-w-xl leading-relaxed">
-            Data-backed 7-day and 14-day crop price forecasting and intelligent Sell/Wait decision support for Telangana farmers across 10 state market yards.
+            {t('hero.desc')}
           </p>
 
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3 pt-2 w-full sm:w-auto">
@@ -65,21 +67,21 @@ export const HomePage: React.FC = () => {
               to="/forecast"
               className="px-6 py-3 rounded-full bg-white text-brand-900 hover:bg-brand-100 font-bold text-sm transition-all shadow-md active:scale-95 flex items-center justify-center gap-2"
             >
-              <span>View Forecast</span>
+              <span>{t('hero.btn_forecast')}</span>
               <ArrowUpRight className="w-4 h-4" />
             </Link>
             <Link
               to="/market-comparison"
               className="px-6 py-3 rounded-full bg-transparent border-2 border-white/40 hover:border-white text-white font-bold text-sm transition-all active:scale-95 text-center"
             >
-              Compare Mandis
+              {t('hero.btn_compare')}
             </Link>
           </div>
 
           {/* Mobile-only compact benchmark pill */}
           <div className="flex md:hidden items-center justify-between bg-white/10 backdrop-blur-md rounded-2xl p-3.5 border border-white/15">
             <div>
-              <span className="text-[11px] uppercase tracking-wider text-emerald-200 font-bold block">Best Benchmark ({bestYard.yard})</span>
+              <span className="text-[11px] uppercase tracking-wider text-emerald-200 font-bold block">{t('hero.best_benchmark')} ({yardName(bestYard.yard)})</span>
               <div className="text-xl font-black text-white mt-0.5">
                 ₹{bestYard.price.toLocaleString()}<span className="text-xs font-normal text-emerald-200 ml-1">/q</span>
               </div>
@@ -91,18 +93,18 @@ export const HomePage: React.FC = () => {
         {/* AgFarm Glass Badge (Bottom Right, Desktop) */}
         <div className="hidden md:flex absolute bottom-8 right-8 z-20 glass-badge rounded-[24px] p-5 max-w-xs text-ink-900 flex-col gap-2">
           <div className="flex items-center justify-between">
-            <span className="text-xs font-bold text-ink-600 uppercase tracking-wider">Today's Best Benchmark</span>
+            <span className="text-xs font-bold text-ink-600 uppercase tracking-wider">{t('hero.best_benchmark')}</span>
             <AgBadge advice={bestYard.advice} />
           </div>
           <div>
-            <span className="text-sm font-semibold text-ink-700 block">{bestYard.yard}</span>
+            <span className="text-sm font-semibold text-ink-700 block">{yardName(bestYard.yard)}</span>
             <div className="text-3xl font-black text-brand-900 tracking-tight mt-0.5">
               ₹{bestYard.price.toLocaleString()}
               <span className="text-sm font-medium text-ink-600 ml-1">/q</span>
             </div>
           </div>
           <p className="text-xs text-ink-600 pt-1.5 border-t border-black/5 font-medium">
-            Cotton modal rate • Updated {meta?.asOf || '2026-11-19'}
+            {t('hero.cotton_rate')} • {t('hero.updated')} {meta?.asOf || '2026-11-19'}
           </p>
         </div>
       </section>
@@ -112,25 +114,25 @@ export const HomePage: React.FC = () => {
         <AgCard className="!p-0 overflow-hidden">
           <div className="bg-[#E7F1FB] border-b border-[#1D4ED8]/10 p-4 px-6 flex items-center gap-2.5 text-[#1D4ED8]">
             <TrendingUp className="w-5 h-5" />
-            <h2 className="text-base font-bold tracking-tight">📈 Price Forecasting</h2>
+            <h2 className="text-base font-bold tracking-tight">📈 {t('feat.forecasting_title')}</h2>
           </div>
           <div className="p-6">
             <ul className="space-y-3.5 text-sm text-ink-700 font-medium">
               <li className="flex items-start gap-2.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-brand-700 mt-2 shrink-0" />
-                <span><strong>7-day and 14-day price forecasts</strong> computed with historical arrival patterns</span>
+                <span>{t('feat.forecasting_b1')}</span>
               </li>
               <li className="flex items-start gap-2.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-brand-700 mt-2 shrink-0" />
-                <span><strong>Multiple ML models:</strong> ARIMA, Random Forest, XGBoost, and Moving Average</span>
+                <span>{t('feat.forecasting_b2')}</span>
               </li>
               <li className="flex items-start gap-2.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-brand-700 mt-2 shrink-0" />
-                <span><strong>95% Confidence Intervals</strong> derived directly from validated test error bounds</span>
+                <span>{t('feat.forecasting_b3')}</span>
               </li>
               <li className="flex items-start gap-2.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-brand-700 mt-2 shrink-0" />
-                <span><strong>Real-time market data integration</strong> with Telangana AMC daily reports</span>
+                <span>{t('feat.forecasting_b4')}</span>
               </li>
             </ul>
           </div>
@@ -139,25 +141,25 @@ export const HomePage: React.FC = () => {
         <AgCard className="!p-0 overflow-hidden">
           <div className="bg-[#E5F4E4] border-b border-[#0A7A3B]/10 p-4 px-6 flex items-center gap-2.5 text-[#0A7A3B]">
             <ShieldCheck className="w-5 h-5" />
-            <h2 className="text-base font-bold tracking-tight">💡 Smart Recommendations</h2>
+            <h2 className="text-base font-bold tracking-tight">💡 {t('feat.rec_title')}</h2>
           </div>
           <div className="p-6">
             <ul className="space-y-3.5 text-sm text-ink-700 font-medium">
               <li className="flex items-start gap-2.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-brand-700 mt-2 shrink-0" />
-                <span><strong>Sell/Wait decision support</strong> with high/medium confidence indicators</span>
+                <span>{t('feat.rec_b1')}</span>
               </li>
               <li className="flex items-start gap-2.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-brand-700 mt-2 shrink-0" />
-                <span><strong>Cost-benefit analysis:</strong> 0.1%/day warehouse storage and 2% risk discount</span>
+                <span>{t('feat.rec_b2')}</span>
               </li>
               <li className="flex items-start gap-2.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-brand-700 mt-2 shrink-0" />
-                <span><strong>Arbitrage detection:</strong> identifies price premiums in neighboring mandis</span>
+                <span>{t('feat.rec_b3')}</span>
               </li>
               <li className="flex items-start gap-2.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-brand-700 mt-2 shrink-0" />
-                <span><strong>Net realization calculation</strong> factoring inter-district road transport costs</span>
+                <span>{t('feat.rec_b4')}</span>
               </li>
             </ul>
           </div>
@@ -169,10 +171,10 @@ export const HomePage: React.FC = () => {
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3.5">
           <div>
             <h2 className="text-lg sm:text-xl font-extrabold text-ink-900 tracking-tight">
-              Quick Market Overview — Latest Prices with <span className="font-serif italic font-normal text-brand-700">Live Telemetry</span>
+              {t('overview.title_pre')} <span className="font-serif italic font-normal text-brand-700">{t('overview.title_highlight')}</span>
             </h2>
             <p className="text-xs sm:text-sm text-ink-600 mt-1">
-              Comparative modal price (₹/quintal) across 10 Telangana market yards
+              {t('overview.desc')}
             </p>
           </div>
 
@@ -188,7 +190,7 @@ export const HomePage: React.FC = () => {
                     : 'text-ink-600 hover:text-brand-900'
                 }`}
               >
-                {crop}
+                {cropName(crop)}
               </button>
             ))}
           </div>
@@ -206,6 +208,7 @@ export const HomePage: React.FC = () => {
                 interval={0}
                 angle={-30}
                 textAnchor="end"
+                tickFormatter={(val) => yardName(val)}
               />
               <YAxis
                 stroke="#8A948D"
@@ -221,8 +224,10 @@ export const HomePage: React.FC = () => {
                   color: '#111613',
                   fontSize: '12px',
                 }}
+                formatter={(val: any) => [`₹${Number(val).toLocaleString()}/q`, t('fc.modal_price')]}
+                labelFormatter={(label) => yardName(String(label))}
               />
-              <Bar dataKey="price" fill="#0A4D2E" radius={[6, 6, 0, 0]} name="Modal Price (₹/q)" />
+              <Bar dataKey="price" fill="#0A4D2E" radius={[6, 6, 0, 0]} name={t('overview.desc')} />
             </BarChart>
           </ResponsiveContainer>
         </div>
@@ -234,10 +239,10 @@ export const HomePage: React.FC = () => {
           <div>
             <h2 className="text-lg sm:text-xl font-extrabold text-ink-900 flex items-center gap-2">
               <MapPin className="w-5 h-5 text-brand-900" />
-              <span>Telangana Market Yards & <span className="font-serif italic font-normal text-brand-700">Geospatial Haul</span></span>
+              <span>{t('map.title_pre')} <span className="font-serif italic font-normal text-brand-700">{t('map.title_highlight')}</span></span>
             </h2>
             <p className="text-xs sm:text-sm text-ink-600 mt-1">
-              Locate primary terminal yards and evaluate haul distances to calculate net arbitrage returns
+              {t('map.desc')}
             </p>
           </div>
 
@@ -249,7 +254,7 @@ export const HomePage: React.FC = () => {
             >
               {defaultMarketYards.map((y) => (
                 <option key={y.name} value={y.name}>
-                  {y.name}
+                  {yardName(y.name)}
                 </option>
               ))}
             </select>
@@ -263,7 +268,7 @@ export const HomePage: React.FC = () => {
               }`}
             >
               <Navigation className="w-3.5 h-3.5" />
-              <span>{showDistances ? 'Hide Distance Lines' : 'Show Distance Lines'}</span>
+              <span>{showDistances ? t('map.hide_lines') : t('map.show_lines')}</span>
             </button>
           </div>
         </div>

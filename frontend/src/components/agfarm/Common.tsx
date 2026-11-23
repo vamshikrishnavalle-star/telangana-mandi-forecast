@@ -1,5 +1,6 @@
 import React from 'react';
 import { Advice } from '../../services/dataLoader';
+import { useLanguage } from '../../context/LanguageContext';
 
 export const AgCard: React.FC<{ children: React.ReactNode; className?: string }> = ({
   children,
@@ -16,7 +17,10 @@ export const AgBadge: React.FC<{ advice: Advice | string; className?: string }> 
   advice,
   className = '',
 }) => {
-  const isSell = advice.toLowerCase().includes('sell');
+  const { adviceName } = useLanguage();
+  const isSell = advice.toLowerCase().includes('sell') || advice.includes('అమ్మ');
+  const label = adviceName(advice);
+
   return (
     <span
       className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-sm font-black tracking-wide ${
@@ -26,7 +30,7 @@ export const AgBadge: React.FC<{ advice: Advice | string; className?: string }> 
       } ${className}`}
     >
       <span className={`w-2 h-2 rounded-full ${isSell ? 'bg-[#0A7A3B]' : 'bg-[#D97706]'}`} />
-      {advice}
+      {label}
     </span>
   );
 };
