@@ -42,15 +42,15 @@ export const SeasonalPatternsPage: React.FC = () => {
           </p>
         </div>
 
-        <div className="flex items-center gap-2.5 bg-card p-2 rounded-full border border-black/5 shadow-agfarm-sm">
-          <div className="flex items-center gap-1.5 px-3">
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 bg-card p-2.5 sm:p-2 rounded-2xl sm:rounded-full border border-black/5 shadow-agfarm-sm w-full sm:w-auto">
+          <div className="flex items-center gap-1.5 px-2 sm:px-3">
             <SlidersHorizontal className="w-4 h-4 text-brand-900" />
             <span className="text-sm font-bold text-ink-700">Crop:</span>
           </div>
           <select
             value={crop}
             onChange={(e) => setCrop(e.target.value as Crop)}
-            className="bg-surface text-ink-900 text-sm font-bold px-4 py-2 rounded-full border border-black/5 focus:ring-2 focus:ring-brand-900 cursor-pointer"
+            className="bg-surface text-ink-900 text-sm font-bold px-4 py-2 rounded-xl sm:rounded-full border border-black/5 focus:ring-2 focus:ring-brand-900 cursor-pointer w-full sm:w-auto"
           >
             {CROPS.map((c) => (
               <option key={c} value={c}>{c}</option>
@@ -60,7 +60,7 @@ export const SeasonalPatternsPage: React.FC = () => {
       </div>
 
       {/* 1. Monthly Seasonal Line Chart */}
-      <AgCard className="space-y-4">
+      <AgCard className="space-y-4 !p-4 sm:!p-6">
         <div>
           <h2 className="text-base sm:text-lg font-bold text-ink-900">
             Seasonal Monthly Price Patterns — {crop}
@@ -70,10 +70,10 @@ export const SeasonalPatternsPage: React.FC = () => {
 
         <div className="h-[280px] w-full pt-2">
           <ResponsiveContainer width="100%" height="100%">
-            <LineChart data={data?.monthly || []} margin={{ top: 10, right: 20, left: 10, bottom: 10 }}>
+            <LineChart data={data?.monthly || []} margin={{ top: 10, right: 10, left: -10, bottom: 10 }}>
               <CartesianGrid strokeDasharray="3 3" stroke="#EEF3EE" />
-              <XAxis dataKey="monthName" stroke="#8A948D" tick={{ fill: '#5B665F', fontSize: 12 }} />
-              <YAxis stroke="#8A948D" tick={{ fill: '#5B665F', fontSize: 12 }} domain={['dataMin - 300', 'dataMax + 300']} />
+              <XAxis dataKey="monthName" stroke="#8A948D" tick={{ fill: '#5B665F', fontSize: 11 }} />
+              <YAxis stroke="#8A948D" tick={{ fill: '#5B665F', fontSize: 11 }} domain={['dataMin - 300', 'dataMax + 300']} />
               <Tooltip
                 contentStyle={{
                   backgroundColor: '#FFFFFF',
@@ -90,7 +90,7 @@ export const SeasonalPatternsPage: React.FC = () => {
                 name="Average Price (₹)"
                 stroke="#1D4ED8"
                 strokeWidth={3}
-                dot={{ r: 5, fill: '#1D4ED8' }}
+                dot={{ r: 4, fill: '#1D4ED8' }}
               />
             </LineChart>
           </ResponsiveContainer>
@@ -140,7 +140,7 @@ export const SeasonalPatternsPage: React.FC = () => {
       </div>
 
       {/* 3. 7-Year Multi-Year Price Trends (2020–2026) */}
-      <AgCard className="space-y-4">
+      <AgCard className="space-y-4 !p-4 sm:!p-6">
         <div>
           <h2 className="text-base sm:text-lg font-bold text-ink-900">
             Multi-Year Price Trend (2020–2026) — {crop}
@@ -150,10 +150,10 @@ export const SeasonalPatternsPage: React.FC = () => {
 
         <div className="h-[250px] w-full pt-2">
           <ResponsiveContainer width="100%" height="100%">
-            <LineChart data={data?.yearly || []} margin={{ top: 10, right: 20, left: 10, bottom: 10 }}>
+            <LineChart data={data?.yearly || []} margin={{ top: 10, right: 10, left: -10, bottom: 10 }}>
               <CartesianGrid strokeDasharray="3 3" stroke="#EEF3EE" />
-              <XAxis dataKey="year" stroke="#8A948D" tick={{ fill: '#5B665F', fontSize: 12 }} />
-              <YAxis stroke="#8A948D" tick={{ fill: '#5B665F', fontSize: 12 }} domain={['dataMin - 500', 'dataMax + 500']} />
+              <XAxis dataKey="year" stroke="#8A948D" tick={{ fill: '#5B665F', fontSize: 11 }} />
+              <YAxis stroke="#8A948D" tick={{ fill: '#5B665F', fontSize: 11 }} domain={['dataMin - 500', 'dataMax + 500']} />
               <Tooltip
                 contentStyle={{
                   backgroundColor: '#FFFFFF',
@@ -170,7 +170,7 @@ export const SeasonalPatternsPage: React.FC = () => {
                 name="Annual Average (₹)"
                 stroke="#0A4D2E"
                 strokeWidth={3}
-                dot={{ r: 5, fill: '#0A4D2E' }}
+                dot={{ r: 4, fill: '#0A4D2E' }}
               />
             </LineChart>
           </ResponsiveContainer>

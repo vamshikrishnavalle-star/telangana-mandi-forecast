@@ -64,7 +64,7 @@ export const RecommendationPage: React.FC = () => {
         </div>
 
         {/* Inputs Bar */}
-        <div className="flex flex-wrap items-center gap-3 bg-card p-2.5 rounded-full border border-black/5 shadow-agfarm-sm">
+        <div className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-2.5 sm:gap-3 bg-card p-2.5 rounded-2xl sm:rounded-full border border-black/5 shadow-agfarm-sm w-full sm:w-auto">
           <div className="flex items-center gap-1.5 px-2">
             <SlidersHorizontal className="w-4 h-4 text-brand-900" />
             <span className="text-sm font-bold text-ink-700">Crop:</span>
@@ -72,56 +72,58 @@ export const RecommendationPage: React.FC = () => {
           <select
             value={crop}
             onChange={(e) => setCrop(e.target.value as Crop)}
-            className="bg-surface text-ink-900 text-sm font-bold px-4 py-2 rounded-full border border-black/5 focus:ring-2 focus:ring-brand-900 cursor-pointer"
+            className="bg-surface text-ink-900 text-sm font-bold px-4 py-2 rounded-xl sm:rounded-full border border-black/5 focus:ring-2 focus:ring-brand-900 cursor-pointer w-full sm:w-auto"
           >
             {CROPS.map((c) => (
               <option key={c} value={c}>{c}</option>
             ))}
           </select>
 
-          <div className="flex items-center gap-1.5 px-2 border-l border-black/5">
-            <Calculator className="w-4 h-4 text-brand-900" />
-            <span className="text-sm font-bold text-ink-700">Quantity:</span>
-          </div>
-          <div className="flex items-center gap-1.5">
-            <input
-              type="number"
-              min={1}
-              max={1000}
-              value={quantity}
-              onChange={(e) => setQuantity(Math.max(1, Number(e.target.value)))}
-              className="w-24 bg-surface text-ink-900 text-sm font-black px-3.5 py-2 rounded-full border border-black/5 focus:ring-2 focus:ring-brand-900"
-            />
-            <span className="text-sm font-bold text-ink-600 pr-2">quintals</span>
+          <div className="flex items-center gap-2 sm:gap-1.5 px-2 sm:border-l border-black/5 pt-2 sm:pt-0 border-t sm:border-t-0">
+            <div className="flex items-center gap-1.5">
+              <Calculator className="w-4 h-4 text-brand-900" />
+              <span className="text-sm font-bold text-ink-700">Quantity:</span>
+            </div>
+            <div className="flex items-center gap-1.5 flex-1 sm:flex-none">
+              <input
+                type="number"
+                min={1}
+                max={1000}
+                value={quantity}
+                onChange={(e) => setQuantity(Math.max(1, Number(e.target.value)))}
+                className="w-20 sm:w-24 bg-surface text-ink-900 text-sm font-black px-3.5 py-1.5 sm:py-2 rounded-xl sm:rounded-full border border-black/5 focus:ring-2 focus:ring-brand-900"
+              />
+              <span className="text-sm font-bold text-ink-600 pr-1">q</span>
+            </div>
           </div>
         </div>
       </div>
 
       {/* 2. Hero Decision Card (AgFarm style) */}
       <div
-        className={`rounded-[28px] p-8 border shadow-agfarm transition-all ${
+        className={`rounded-[24px] sm:rounded-[28px] p-5 sm:p-8 border shadow-agfarm transition-all ${
           isWait
             ? 'bg-[#FEF3C7]/40 border-[#F59E0B]/30'
             : 'bg-[#E5F4E4]/60 border-[#0A7A3B]/30'
         }`}
       >
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-black/5">
-          <div className="flex items-center gap-4">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-5 sm:pb-6 border-b border-black/5">
+          <div className="flex flex-col sm:flex-row sm:items-center gap-3.5 sm:gap-4">
             <div
-              className={`w-14 h-14 rounded-full flex items-center justify-center text-2xl shadow-sm ${
+              className={`w-12 h-12 sm:w-14 sm:h-14 rounded-full flex items-center justify-center text-xl sm:text-2xl shadow-sm shrink-0 ${
                 isWait ? 'bg-[#F59E0B] text-white' : 'bg-[#0A7A3B] text-white'
               }`}
             >
-              {isWait ? <Clock className="w-7 h-7" /> : <CheckCircle2 className="w-7 h-7" />}
+              {isWait ? <Clock className="w-6 h-6 sm:w-7 sm:h-7" /> : <CheckCircle2 className="w-6 h-6 sm:w-7 sm:h-7" />}
             </div>
             <div>
-              <div className="flex items-center gap-2">
-                <span className="text-sm font-bold text-ink-700 uppercase tracking-wider">
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="text-xs sm:text-sm font-bold text-ink-700 uppercase tracking-wider">
                   Target Mandi: {activeYard.yard}
                 </span>
                 <AgBadge advice={activeYard.advice} />
               </div>
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-ink-900 tracking-tight mt-1">
+              <h2 className="text-2xl sm:text-4xl font-extrabold text-ink-900 tracking-tight mt-1">
                 {isWait ? (
                   <>
                     Wait 7 to 14 Days <span className="font-serif italic font-normal text-brand-700">Before Selling</span>
@@ -135,34 +137,34 @@ export const RecommendationPage: React.FC = () => {
             </div>
           </div>
 
-          <div className="bg-card px-4 py-2.5 rounded-full border border-black/5 shadow-sm text-right">
-            <span className="text-xs font-bold text-ink-500 uppercase tracking-wider block">Decision Confidence</span>
-            <span className="text-sm sm:text-base font-black text-brand-900">High (95% validated interval)</span>
+          <div className="bg-card px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-2xl sm:rounded-full border border-black/5 shadow-sm text-left sm:text-right self-start sm:self-auto">
+            <span className="text-[10px] sm:text-xs font-bold text-ink-500 uppercase tracking-wider block">Decision Confidence</span>
+            <span className="text-sm sm:text-base font-black text-brand-900">High (95% interval)</span>
           </div>
         </div>
 
         {/* Financial Highlights */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-6">
-          <div className="bg-card rounded-[20px] p-5 border border-black/5">
-            <span className="text-sm font-semibold text-ink-700">Today's Realization ({quantity} q)</span>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 pt-5 sm:pt-6">
+          <div className="bg-card rounded-[20px] p-4 sm:p-5 border border-black/5">
+            <span className="text-xs sm:text-sm font-semibold text-ink-700">Today's Realization ({quantity} q)</span>
             <div className="text-2xl sm:text-3xl font-black text-ink-900 mt-1">
               ₹{totalRevenueToday.toLocaleString()}
             </div>
             <span className="text-xs sm:text-sm text-ink-600 block mt-0.5">₹{price.toLocaleString()}/q spot rate</span>
           </div>
 
-          <div className="bg-card rounded-[20px] p-5 border border-black/5">
-            <span className="text-sm font-semibold text-ink-700">Expected 7d Net Gain (Total)</span>
+          <div className="bg-card rounded-[20px] p-4 sm:p-5 border border-black/5">
+            <span className="text-xs sm:text-sm font-semibold text-ink-700">Expected 7d Net Gain (Total)</span>
             <div className={`text-2xl sm:text-3xl font-black mt-1 ${isWait ? 'text-emerald-700' : 'text-ink-600'}`}>
               {isWait ? `+₹${totalNetGainWait.toLocaleString()}` : '₹0'}
             </div>
             <span className="text-xs sm:text-sm text-ink-600 block mt-0.5">
-              {isWait ? `+₹${netGainPerQ}/q after storage & risk` : 'Hold carries negative risk-adjusted margin'}
+              {isWait ? `+₹${netGainPerQ}/q net risk buffer` : 'Hold carries negative margin'}
             </span>
           </div>
 
-          <div className="bg-card rounded-[20px] p-5 border border-black/5">
-            <span className="text-sm font-semibold text-ink-700">Projected 7d Price</span>
+          <div className="bg-card rounded-[20px] p-4 sm:p-5 border border-black/5">
+            <span className="text-xs sm:text-sm font-semibold text-ink-700">Projected 7d Price</span>
             <div className="text-2xl sm:text-3xl font-black text-brand-900 mt-1">
               ₹{Math.round(price * (1 + expectedGainPct / 100)).toLocaleString()}
             </div>

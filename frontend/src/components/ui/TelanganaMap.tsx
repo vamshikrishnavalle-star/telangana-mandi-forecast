@@ -156,34 +156,34 @@ export const TelanganaMap: React.FC<Props> = ({
   return (
     <div className="telangana-map-wrapper relative rounded-2xl overflow-hidden shadow-lg border border-slate-200 bg-white">
       {/* Map Header Toolbar */}
-      <div className="bg-slate-900 text-white px-5 py-3 flex flex-wrap items-center justify-between gap-3">
+      <div className="bg-slate-900 text-white px-4 sm:px-5 py-3 flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
         <div className="flex items-center gap-2">
-          <span className="text-xl">🗺️</span>
+          <span className="text-lg sm:text-xl">🗺️</span>
           <div>
-            <h3 className="font-semibold text-sm leading-tight">Telangana Mandi Geospatial Map</h3>
-            <p className="text-xs text-slate-400">Interactive yard locations, live prices & distance lines</p>
+            <h3 className="font-semibold text-xs sm:text-sm leading-tight">Telangana Mandi Geospatial Map</h3>
+            <p className="text-[11px] sm:text-xs text-slate-400">Interactive yard locations, live prices & distance lines</p>
           </div>
         </div>
 
-        <div className="flex items-center gap-4 text-xs">
+        <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-xs">
           <div className="flex items-center gap-1.5">
-            <span className="w-3 h-3 rounded-full bg-emerald-600 border border-white"></span>
-            <span>Primary Mandi</span>
+            <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-emerald-600 border border-white"></span>
+            <span className="text-[11px] sm:text-xs">Primary</span>
           </div>
           <div className="flex items-center gap-1.5">
-            <span className="w-3 h-3 rounded-full bg-sky-600 border border-white"></span>
-            <span>Secondary Mandi</span>
+            <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-sky-600 border border-white"></span>
+            <span className="text-[11px] sm:text-xs">Secondary</span>
           </div>
           <div className="flex items-center gap-1.5">
-            <span className="w-3 h-3 rounded-full bg-red-600 border border-white"></span>
-            <span>Selected Reference</span>
+            <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-red-600 border border-white"></span>
+            <span className="text-[11px] sm:text-xs">Selected</span>
           </div>
         </div>
       </div>
 
-      <div className="relative">
+      <div className="relative flex flex-col sm:block">
         {/* Leaflet Map */}
-        <div className="map-view-container h-[520px] w-full" style={{ isolation: 'isolate', overflow: 'hidden', position: 'relative' }}>
+        <div className="map-view-container h-[360px] sm:h-[500px] w-full" style={{ isolation: 'isolate', overflow: 'hidden', position: 'relative' }}>
           <MapContainer
             center={[18.1124, 79.0193]} // Geographical center of Telangana
             zoom={7}
@@ -268,9 +268,9 @@ export const TelanganaMap: React.FC<Props> = ({
           </MapContainer>
         </div>
 
-        {/* Distance Side Floating Card (Appears when yard selected) */}
+        {/* Distance Side Floating Card (Adapts to relative below on mobile, absolute floating on sm+) */}
         {currentSelected && (
-          <div className="absolute top-4 right-4 z-[1000] w-72 bg-white/95 backdrop-blur-md rounded-xl shadow-2xl border border-slate-200 p-4 max-h-[460px] overflow-y-auto">
+          <div className="relative sm:absolute sm:top-4 sm:right-4 z-[1000] w-full sm:w-72 bg-white/95 backdrop-blur-md rounded-none sm:rounded-xl shadow-lg sm:shadow-2xl border-t sm:border border-slate-200 p-3 sm:p-4 max-h-[320px] sm:max-h-[460px] overflow-y-auto">
             <div className="flex items-center justify-between mb-2 pb-2 border-b border-slate-100">
               <div>
                 <span className="text-[10px] font-semibold tracking-wider text-slate-400 uppercase">
@@ -285,7 +285,7 @@ export const TelanganaMap: React.FC<Props> = ({
               </span>
             </div>
 
-            <div className="space-y-2 mt-2">
+            <div className="space-y-1.5 sm:space-y-2 mt-2">
               {distances.map((item) => (
                 <div
                   key={item.name}
@@ -305,7 +305,7 @@ export const TelanganaMap: React.FC<Props> = ({
               ))}
             </div>
 
-            <div className="mt-3 pt-2 border-t border-slate-100 text-[10px] text-slate-400 text-center">
+            <div className="mt-2.5 pt-2 border-t border-slate-100 text-[10px] text-slate-400 text-center">
               Click any yard to view distance & price difference
             </div>
           </div>

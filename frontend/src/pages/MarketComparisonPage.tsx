@@ -48,8 +48,8 @@ export const MarketComparisonPage: React.FC = () => {
         </div>
 
         {/* Crop Select & View Tabs */}
-        <div className="flex flex-wrap items-center gap-2.5 bg-card p-2 rounded-full border border-black/5 shadow-agfarm-sm">
-          <div className="flex items-center gap-1.5 px-3">
+        <div className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-2.5 bg-card p-2.5 sm:p-2 rounded-2xl sm:rounded-full border border-black/5 shadow-agfarm-sm w-full sm:w-auto">
+          <div className="flex items-center gap-1.5 px-2 sm:px-3">
             <SlidersHorizontal className="w-4 h-4 text-brand-900" />
             <span className="text-sm font-bold text-ink-600">Crop:</span>
           </div>
@@ -57,17 +57,17 @@ export const MarketComparisonPage: React.FC = () => {
           <select
             value={crop}
             onChange={(e) => setCrop(e.target.value as Crop)}
-            className="bg-surface text-ink-900 text-sm font-bold px-4 py-2 rounded-full border border-black/5 focus:ring-2 focus:ring-brand-900 cursor-pointer"
+            className="bg-surface text-ink-900 text-sm font-bold px-4 py-2 rounded-xl sm:rounded-full border border-black/5 focus:ring-2 focus:ring-brand-900 cursor-pointer w-full sm:w-auto"
           >
             {CROPS.map((c) => (
               <option key={c} value={c}>{c}</option>
             ))}
           </select>
 
-          <div className="flex items-center gap-1 bg-surface p-1 rounded-full border border-black/5">
+          <div className="flex items-center justify-center gap-1 bg-surface p-1 rounded-xl sm:rounded-full border border-black/5 w-full sm:w-auto">
             <button
               onClick={() => setActiveTab('today')}
-              className={`px-4 py-1.5 rounded-full text-sm font-bold transition-all ${
+              className={`flex-1 sm:flex-none px-4 py-1.5 rounded-lg sm:rounded-full text-sm font-bold transition-all text-center ${
                 activeTab === 'today' ? 'bg-brand-900 text-white' : 'text-ink-600 hover:text-brand-900'
               }`}
             >
@@ -75,7 +75,7 @@ export const MarketComparisonPage: React.FC = () => {
             </button>
             <button
               onClick={() => setActiveTab('ranking')}
-              className={`px-4 py-1.5 rounded-full text-sm font-bold transition-all ${
+              className={`flex-1 sm:flex-none px-4 py-1.5 rounded-lg sm:rounded-full text-sm font-bold transition-all text-center ${
                 activeTab === 'ranking' ? 'bg-brand-900 text-white' : 'text-ink-600 hover:text-brand-900'
               }`}
             >
@@ -93,25 +93,25 @@ export const MarketComparisonPage: React.FC = () => {
       {/* Tab 1: Today's Comparison (Color Coded Bars + Detailed Table) */}
       {activeTab === 'today' ? (
         <>
-          <AgCard className="space-y-4">
-            <div className="flex items-center justify-between">
+          <AgCard className="space-y-4 !p-4 sm:!p-6">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
               <div>
-                <h2 className="text-lg font-bold text-ink-900">
+                <h2 className="text-base sm:text-lg font-bold text-ink-900">
                   {crop} Prices Across Market Yards
                 </h2>
-                <p className="text-sm text-ink-600">Green = Sell Now, Amber = Wait (sorted descending)</p>
+                <p className="text-xs sm:text-sm text-ink-600">Green = Sell Now, Amber = Wait (sorted descending)</p>
               </div>
-              <div className="flex items-center gap-4 text-sm font-bold text-ink-600">
+              <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-xs sm:text-sm font-bold text-ink-600">
                 <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-full bg-[#0A7A3B]" /> Sell Now</span>
                 <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-full bg-[#F59E0B]" /> Wait</span>
               </div>
             </div>
 
-            <div className="h-[300px] w-full pt-2">
+            <div className="h-[280px] sm:h-[300px] w-full pt-2">
               <ResponsiveContainer width="100%" height="100%">
-                <BarChart data={sorted} margin={{ top: 10, right: 20, left: 10, bottom: 40 }}>
+                <BarChart data={sorted} margin={{ top: 10, right: 10, left: -10, bottom: 45 }}>
                   <CartesianGrid strokeDasharray="3 3" stroke="#EEF3EE" />
-                  <XAxis dataKey="yard" stroke="#8A948D" tick={{ fill: '#5B665F', fontSize: 10 }} interval={0} angle={-25} textAnchor="end" />
+                  <XAxis dataKey="yard" stroke="#8A948D" tick={{ fill: '#5B665F', fontSize: 10 }} interval={0} angle={-30} textAnchor="end" />
                   <YAxis stroke="#8A948D" tick={{ fill: '#5B665F', fontSize: 11 }} domain={['dataMin - 500', 'dataMax + 200']} />
                   <Tooltip
                     contentStyle={{

@@ -11,12 +11,12 @@ import RecommendationPage from './pages/RecommendationPage';
 export function App() {
   return (
     <HashRouter>
-      <div className="min-h-screen bg-surface flex flex-col font-sans selection:bg-brand-900 selection:text-white">
+      <div className="min-h-screen bg-surface flex flex-col font-sans selection:bg-brand-900 selection:text-white overflow-x-hidden">
         {/* AgFarm Navbar */}
         <Navbar />
 
         {/* Content Container */}
-        <main className="flex-1 max-w-[1240px] w-full mx-auto px-4 sm:px-8 py-8 md:py-10">
+        <main className="flex-1 max-w-[1240px] w-full mx-auto px-3.5 sm:px-6 md:px-8 py-5 sm:py-8 md:py-10">
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/forecast" element={<ForecastPage />} />

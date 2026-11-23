@@ -92,17 +92,17 @@ export const ModelPerformancePage: React.FC = () => {
       {/* Single-Hue Charts Rule: Best model in --brand-900 (#0A4D2E), rest in neutral (#B8C4BA) */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* MAE Chart */}
-        <AgCard className="space-y-4">
+        <AgCard className="space-y-4 !p-4 sm:!p-6">
           <div>
             <h2 className="text-base font-bold text-ink-900">Mean Absolute Error (₹/quintal)</h2>
             <p className="text-xs sm:text-sm text-ink-600">Lower is better • Sorted ascending by prediction error</p>
           </div>
-          <div className="h-[250px] w-full pt-2">
+          <div className="h-[260px] sm:h-[280px] w-full pt-2">
             <ResponsiveContainer width="100%" height="100%">
-              <BarChart data={sortedByMAE} margin={{ top: 10, right: 10, left: 0, bottom: 20 }}>
+              <BarChart data={sortedByMAE} margin={{ top: 10, right: 10, left: -10, bottom: 35 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#EEF3EE" />
-                <XAxis dataKey="model" stroke="#8A948D" tick={{ fill: '#5B665F', fontSize: 12 }} interval={0} />
-                <YAxis stroke="#8A948D" tick={{ fill: '#5B665F', fontSize: 12 }} domain={[100, 250]} />
+                <XAxis dataKey="model" stroke="#8A948D" tick={{ fill: '#5B665F', fontSize: 11 }} interval={0} angle={-25} textAnchor="end" />
+                <YAxis stroke="#8A948D" tick={{ fill: '#5B665F', fontSize: 11 }} domain={[100, 250]} />
                 <Tooltip
                   contentStyle={{
                     backgroundColor: '#FFFFFF',
@@ -124,17 +124,17 @@ export const ModelPerformancePage: React.FC = () => {
         </AgCard>
 
         {/* MAPE Chart */}
-        <AgCard className="space-y-4">
+        <AgCard className="space-y-4 !p-4 sm:!p-6">
           <div>
             <h2 className="text-base font-bold text-ink-900">Mean Absolute Percentage Error (%)</h2>
             <p className="text-xs sm:text-sm text-ink-600">Lower is better • Measures relative percentage deviation</p>
           </div>
-          <div className="h-[250px] w-full pt-2">
+          <div className="h-[260px] sm:h-[280px] w-full pt-2">
             <ResponsiveContainer width="100%" height="100%">
-              <BarChart data={sortedByMAE} margin={{ top: 10, right: 10, left: 0, bottom: 20 }}>
+              <BarChart data={sortedByMAE} margin={{ top: 10, right: 10, left: -10, bottom: 35 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#EEF3EE" />
-                <XAxis dataKey="model" stroke="#8A948D" tick={{ fill: '#5B665F', fontSize: 12 }} interval={0} />
-                <YAxis stroke="#8A948D" tick={{ fill: '#5B665F', fontSize: 12 }} domain={[0, 3]} />
+                <XAxis dataKey="model" stroke="#8A948D" tick={{ fill: '#5B665F', fontSize: 11 }} interval={0} angle={-25} textAnchor="end" />
+                <YAxis stroke="#8A948D" tick={{ fill: '#5B665F', fontSize: 11 }} domain={[0, 3]} />
                 <Tooltip
                   contentStyle={{
                     backgroundColor: '#FFFFFF',
@@ -157,17 +157,17 @@ export const ModelPerformancePage: React.FC = () => {
       </div>
 
       {/* Directional Accuracy Chart */}
-      <AgCard className="space-y-4">
+      <AgCard className="space-y-4 !p-4 sm:!p-6">
         <div>
           <h2 className="text-base font-bold text-ink-900">Directional Accuracy by Model (%)</h2>
           <p className="text-xs sm:text-sm text-ink-600">Higher is better • Evaluates correctness of price direction sign</p>
         </div>
-        <div className="h-[250px] w-full pt-2">
+        <div className="h-[260px] sm:h-[280px] w-full pt-2">
           <ResponsiveContainer width="100%" height="100%">
-            <BarChart data={sortedByMAE} margin={{ top: 10, right: 20, left: 0, bottom: 20 }}>
+            <BarChart data={sortedByMAE} margin={{ top: 10, right: 10, left: -10, bottom: 35 }}>
               <CartesianGrid strokeDasharray="3 3" stroke="#EEF3EE" />
-              <XAxis dataKey="model" stroke="#8A948D" tick={{ fill: '#5B665F', fontSize: 12 }} />
-              <YAxis stroke="#8A948D" tick={{ fill: '#5B665F', fontSize: 12 }} domain={[0, 100]} />
+              <XAxis dataKey="model" stroke="#8A948D" tick={{ fill: '#5B665F', fontSize: 11 }} interval={0} angle={-25} textAnchor="end" />
+              <YAxis stroke="#8A948D" tick={{ fill: '#5B665F', fontSize: 11 }} domain={[0, 100]} />
               <Tooltip
                 contentStyle={{
                   backgroundColor: '#FFFFFF',
