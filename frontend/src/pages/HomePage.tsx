@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { loadSnapshot, loadMeta, YardSnapshot, MetaData, Crop } from '../services/dataLoader';
 import { AgBadge, AgCard } from '../components/agfarm/Common';
+import { MandiTicker } from '../components/agfarm/MandiTicker';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import TelanganaMap, { defaultMarketYards } from '../components/ui/TelanganaMap';
 import { ArrowUpRight, TrendingUp, ShieldCheck, MapPin, Navigation, Sparkles } from 'lucide-react';
@@ -33,7 +34,10 @@ export const HomePage: React.FC = () => {
   };
 
   return (
-    <div className="space-y-12">
+    <div className="space-y-8 sm:space-y-10">
+      {/* 0. Stock-Exchange Style Live Mandi Price Ticker */}
+      <MandiTicker />
+
       {/* 1. AgFarm Hero Section */}
       <section className="relative rounded-[28px] sm:rounded-[32px] overflow-hidden bg-brand-900 min-h-[440px] sm:min-h-[520px] flex items-center p-5 sm:p-10 lg:p-16 text-white shadow-2xl">
         {/* Background photo & overlay */}

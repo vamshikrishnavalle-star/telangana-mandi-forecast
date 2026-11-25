@@ -68,3 +68,32 @@ body {
 .leaflet-tile-container img:not([src]) {
   visibility: hidden;
 }
+
+/* ----------------------------------------------------------------
+   Stock-exchange style continuous horizontal mandi ticker
+   ---------------------------------------------------------------- */
+@keyframes mandi-marquee {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.animate-mandi-marquee {
+  display: flex;
+  width: max-content;
+  animation: mandi-marquee 55s linear infinite;
+  will-change: transform;
+}
+
+.animate-mandi-marquee:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-mandi-marquee {
+    animation: none;
+  }
+}
