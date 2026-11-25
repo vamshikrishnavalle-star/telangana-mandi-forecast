@@ -6,7 +6,7 @@ export interface LanguageContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
   toggleLanguage: () => void;
-  t: (key: string, fallback?: string) => string;
+  t: (key: string, paramsOrFallback?: Record<string, string | number> | string) => string;
   cropName: (crop: string) => string;
   yardName: (yard: string) => string;
   adviceName: (advice: string) => string;
@@ -490,16 +490,20 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     setLanguageState((prev) => (prev === 'en' ? 'te' : 'en'));
   };
 
-  const t = (key: string, fallback?: string): string => {
+  const t = (key: string, paramsOrFallback?: Record<string, string | number> | string): string => {
     const dict = translations[language] || translations.en;
-    if (dict[key]) {
-      return dict[key];
-    }
     const enDict = translations.en;
-    if (enDict[key]) {
-      return enDict[key];
+    let text =
+      dict[key] ||
+      enDict[key] ||
+      (typeof paramsOrFallback === 'string' ? paramsOrFallback : key);
+
+    if (paramsOrFallback && typeof paramsOrFallback === 'object') {
+      for (const [paramKey, paramVal] of Object.entries(paramsOrFallback)) {
+        text = text.replace(new RegExp(`\\{${paramKey}\\}`, 'g'), String(paramVal));
+      }
     }
-    return fallback || key;
+    return text;
   };
 
   const cropName = (crop: string): string => {
