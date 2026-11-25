@@ -30,8 +30,8 @@ export const SeasonalPatternsPage: React.FC = () => {
   return (
     <div className="space-y-8">
       {/* Header & Filter */}
-      <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
-        <div>
+      <div className="flex flex-col xl:flex-row xl:items-end justify-between gap-4">
+        <div className="max-w-2xl">
           <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-brand-100 text-brand-900 text-sm font-bold mb-2">
             <Sprout className="w-4 h-4" />
             <span>{t('sp.badge')}</span>
@@ -45,15 +45,15 @@ export const SeasonalPatternsPage: React.FC = () => {
           </p>
         </div>
 
-        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 bg-card p-2.5 sm:p-2 rounded-2xl sm:rounded-full border border-black/5 shadow-agfarm-sm w-full sm:w-auto">
-          <div className="flex items-center gap-1.5 px-2 sm:px-3">
+        <div className="flex flex-col sm:flex-row sm:flex-nowrap items-stretch sm:items-center gap-2.5 bg-card p-2 rounded-2xl sm:rounded-full border border-black/5 shadow-agfarm-sm shrink-0 w-full sm:w-auto">
+          <div className="flex items-center gap-1.5 px-2 sm:px-3 whitespace-nowrap shrink-0">
             <SlidersHorizontal className="w-4 h-4 text-brand-900" />
             <span className="text-sm font-bold text-ink-700">{t('fc.crop')}</span>
           </div>
           <select
             value={crop}
             onChange={(e) => setCrop(e.target.value as Crop)}
-            className="bg-surface text-ink-900 text-sm font-bold px-4 py-2 rounded-xl sm:rounded-full border border-black/5 focus:ring-2 focus:ring-brand-900 cursor-pointer w-full sm:w-auto"
+            className="bg-surface text-ink-900 text-sm font-bold px-4 py-2 rounded-xl sm:rounded-full border border-black/5 focus:ring-2 focus:ring-brand-900 cursor-pointer whitespace-nowrap shrink-0 w-full sm:w-auto"
           >
             {CROPS.map((c) => (
               <option key={c} value={c}>{cropName(c)}</option>

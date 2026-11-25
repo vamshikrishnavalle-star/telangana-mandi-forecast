@@ -51,8 +51,8 @@ export const RecommendationPage: React.FC = () => {
   return (
     <div className="space-y-8">
       {/* 1. Header & Crop/Quantity Filter */}
-      <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
-        <div>
+      <div className="flex flex-col xl:flex-row xl:items-end justify-between gap-4">
+        <div className="max-w-2xl">
           <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-brand-100 text-brand-900 text-sm font-bold mb-2">
             <ShieldCheck className="w-4 h-4" />
             <span>{t('rec.badge')}</span>
@@ -66,28 +66,28 @@ export const RecommendationPage: React.FC = () => {
           </p>
         </div>
 
-        {/* Inputs Bar */}
-        <div className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-2.5 sm:gap-3 bg-card p-2.5 rounded-2xl sm:rounded-full border border-black/5 shadow-agfarm-sm w-full sm:w-auto">
-          <div className="flex items-center gap-1.5 px-2">
+        {/* Inputs Bar (Never wraps on laptop/desktop to preserve sleek pill shape) */}
+        <div className="flex flex-col sm:flex-row sm:flex-nowrap items-stretch sm:items-center gap-2 sm:gap-3 bg-card p-2 rounded-2xl sm:rounded-full border border-black/5 shadow-agfarm-sm shrink-0 w-full sm:w-auto">
+          <div className="flex items-center gap-1.5 px-2 whitespace-nowrap shrink-0">
             <SlidersHorizontal className="w-4 h-4 text-brand-900" />
             <span className="text-sm font-bold text-ink-700">{t('rec.crop')}</span>
           </div>
           <select
             value={crop}
             onChange={(e) => setCrop(e.target.value as Crop)}
-            className="bg-surface text-ink-900 text-sm font-bold px-4 py-2 rounded-xl sm:rounded-full border border-black/5 focus:ring-2 focus:ring-brand-900 cursor-pointer w-full sm:w-auto"
+            className="bg-surface text-ink-900 text-sm font-bold px-4 py-2 rounded-xl sm:rounded-full border border-black/5 focus:ring-2 focus:ring-brand-900 cursor-pointer whitespace-nowrap shrink-0 w-full sm:w-auto"
           >
             {CROPS.map((c) => (
               <option key={c} value={c}>{cropName(c)}</option>
             ))}
           </select>
 
-          <div className="flex items-center gap-2 sm:gap-1.5 px-2 sm:border-l border-black/5 pt-2 sm:pt-0 border-t sm:border-t-0">
-            <div className="flex items-center gap-1.5">
+          <div className="flex items-center gap-2 sm:gap-1.5 px-2 sm:border-l border-black/5 pt-2 sm:pt-0 border-t sm:border-t-0 whitespace-nowrap shrink-0">
+            <div className="flex items-center gap-1.5 shrink-0">
               <Calculator className="w-4 h-4 text-brand-900" />
               <span className="text-sm font-bold text-ink-700">{t('rec.quantity')}</span>
             </div>
-            <div className="flex items-center gap-1.5 flex-1 sm:flex-none">
+            <div className="flex items-center gap-1.5 flex-1 sm:flex-none shrink-0">
               <input
                 type="number"
                 min={1}
@@ -96,7 +96,7 @@ export const RecommendationPage: React.FC = () => {
                 onChange={(e) => setQuantity(Math.max(1, Number(e.target.value)))}
                 className="w-20 sm:w-24 bg-surface text-ink-900 text-sm font-black px-3.5 py-1.5 sm:py-2 rounded-xl sm:rounded-full border border-black/5 focus:ring-2 focus:ring-brand-900"
               />
-              <span className="text-sm font-bold text-ink-600 pr-1">{t('rec.quintals')}</span>
+              <span className="text-sm font-bold text-ink-600 pr-1 whitespace-nowrap">{t('rec.quintals')}</span>
             </div>
           </div>
         </div>
