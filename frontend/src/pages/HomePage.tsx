@@ -35,11 +35,12 @@ export const HomePage: React.FC = () => {
 
   return (
     <div className="space-y-8 sm:space-y-10">
-      {/* 0. Stock-Exchange Style Live Mandi Price Ticker */}
-      <MandiTicker />
+      <div className="space-y-4 sm:space-y-5">
+        {/* 0. Stock-Exchange Style Live Mandi Price Ticker */}
+        <MandiTicker />
 
-      {/* 1. AgFarm Hero Section */}
-      <section className="relative rounded-[28px] sm:rounded-[32px] overflow-hidden bg-brand-900 min-h-[440px] sm:min-h-[520px] flex items-center p-5 sm:p-10 lg:p-16 text-white shadow-2xl">
+        {/* 1. AgFarm Hero Section */}
+        <section className="relative rounded-[28px] sm:rounded-[32px] overflow-hidden bg-brand-900 min-h-[440px] sm:min-h-[520px] flex items-center p-5 sm:p-10 lg:p-16 text-white shadow-2xl">
         {/* Background photo & overlay */}
         <div
           className="absolute inset-0 bg-cover bg-center opacity-40 mix-blend-overlay"
@@ -112,6 +113,7 @@ export const HomePage: React.FC = () => {
           </p>
         </div>
       </section>
+      </div>
 
       {/* 2. Key Features Cards */}
       <section className="grid grid-cols-1 md:grid-cols-2 gap-6">

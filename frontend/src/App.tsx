@@ -18,7 +18,7 @@ export function App() {
           <Navbar />
 
           {/* Content Container */}
-          <main className="flex-1 max-w-[1240px] w-full mx-auto px-3.5 sm:px-6 md:px-8 py-5 sm:py-8 md:py-10">
+          <main className="flex-1 max-w-[1240px] w-full mx-auto px-3.5 sm:px-6 md:px-8 pt-3 pb-6 sm:pt-4 sm:pb-8 md:pt-5 md:pb-8">
             <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/forecast" element={<ForecastPage />} />
